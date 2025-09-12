@@ -20,6 +20,15 @@ A folyamatot továbbá a rendszer logikátlan felépítése is késlelteti, amel
 Az értékesítő a számára szükséges információkat (termékinformációk, készleten lévő termékek) körülményesen éri el.
 A nap nyugtázásának nehézsége is kellemetlen pont ügyfeleink számára, hiszen ekkor az értékesítő munkatársnak manuálisan kell összegyűjtenie a korábbi eladási, illetve visszavételezési információkat.
 
+3. TODO - Zoli - Vágyálom rendszer
+A projekt célja a növekvő követelmények lekövetése azáltal, hogy egy stabilabb és kifinomultabb felületet fejlesztünk.
+Az alkalmazásnak egyszerűvé és gördülékennyé kell tennie az eladási folyamatot.
+Az értékesítőnek gyors hozzáférést kell biztosítania a kiválasztott termékekhez, amelyet a vásárlói igényeknek megfelelő szűrési lehetőségek segítik.
+Mind a vásárlók, mind a munkatársak számára fontos információknak elérhetőnek kell lenniük a felületen, ezzel támogatva és gyorsítva a döntési folyamatot.
+A beszerzési folyamatokban is kiemelt szerepet kell kapnia a felületnek: a keresett termékek készletének növelése néhány kattintással elvégezhető legyen.
+A rendszer üzemeltetését a háttérből egy jogosult felhasználónak kell kezelnie.
+Az eladók hozzáadását és üzletekhez való hozzárendelését egy adminisztrátornak kell elvégeznie, és a rendszernek ezt a folyamatot minden szempontból támogatnia és megkönnyítenie kell.
+
 5. TODO - Geri
 
 
