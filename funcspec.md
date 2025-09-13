@@ -18,14 +18,27 @@
 
 
 3. TODO - Geri
-
-
-
-
-
-
-
-
+| Modul         | Név                       | Kifejtés 
+| Jogosultság   | Bejelentkezés             | A felhasználó email-cím és jelszó segítségével léphet be a rendszerbe; hibás adatok esetén hibaüzenetet kap. 
+| Jogosultság   | Regisztráció              | Új felhasználók számára regisztrációs lehetőség, jelszó biztonságos (kódolt) tárolásával és adatok validálásával. 
+| Jogosultság   | Jogosultsági szintek      | Többszintű jogosultság (admin, értékesítő, partner, vásárló), eltérő hozzáférési és kezelési lehetőségekkel. 
+| Felhasználói  | Terméklista               | Bejelentkezést követően a rendszer megjeleníti az adott üzlet aktuális készletét, frissített állapotban. 
+| Felhasználói  | Készletjelzés             | Alacsony készletszámnál automatikus figyelmeztetés, valamint fiktív raktárból történő bővítési lehetőség. 
+| Felhasználói  | Keresés                   | Számlaszám, terméknév, ár, típus vagy egyéb paraméter alapján történő keresés. 
+| Felhasználói  | Szűrés                    | A találatok szűrése különféle tulajdonságok szerint (pl. kategória, árkategória, gyártó). 
+| Felhasználói  | Kosár funkció             | A felhasználó kosárba helyezheti a kiválasztott termékeket, megtekintheti a végösszeget és a tételek listáját. 
+| Felhasználói  | Vásárlás támogatása       | A rendszer biztosítja a gördülékeny vásárlási folyamatot, a tételek véglegesítését és a tranzakciók biztonságát. 
+| Riport        | Napi riport               | Manuálisan indítható riport az adott napon eladott termékekről. 
+| Riport        | Heti/Havi riport          | Automatikusan generált riportok Excel formátumban, időzítő segítségével, a periódust követően. 
+| Riport        | Riport tartalom           | A riportok tartalmazzák az eladott termékek listáját, a készletmozgásokat és a bevételi adatokat. 
+| Adminisztráció| Készletkezelés            | Az adminisztrátor jogosult a készletek manuális bővítésére, frissítésére, szinkronizálására. 
+| Adminisztráció| Felhasználókezelés        | Új eladók és adminok hozzáadása, üzletekhez rendelése, jogosultsági szintek meghatározása. 
+| Adminisztráció| Partner hozzáférés        | Partnercégek regisztrációja, hozzáférési szintek kiosztása, készlet-hozzárendelés az üzletekhez. 
+| Adminisztráció| Számlák kezelése          | Számlák sztornózása, javítása, valamint egyedi számlaszám alapján történő visszakeresése. 
+| Rendszer      | Stabil működés            | A felület reszponzív és gyors, nagy terhelés alatt is stabil működést biztosít. 
+| Rendszer      | Naplózás                  | A rendszer naplózza a felhasználói műveleteket, a készletváltozásokat és a riportok generálását. 
+| Rendszer      | Biztonság                 | Adatkezelés a GDPR előírásai szerint, kódolt adatbázis-tárolás és biztonságos jelszókezelés. 
+| Rendszer      | Szabványoknak megfelelés  | A fejlesztésnek és működésnek igazodnia kell az ISO/IEC 27001, ISO/IEC 25010 szabványokhoz. 
 
 4. TODO - Marciű
 
