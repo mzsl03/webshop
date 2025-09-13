@@ -89,9 +89,25 @@
 
 
 
-9. TODO - Zoli
+9. TODO - Zoli - Forgatókönyv
 
+- Cél: Az értékesítő sikeresen elad egy terméket, kiállítja a számlát, majd a nap végén riportot készít az eladásokról
 
+- Szereplők:
+    - Értékesítő
+    - Rendszer
+
+- Lépések:
+    1. Az értékesítő bejelentkezik a rendszerbe
+    2. A főoldalon megjelennek az aktuálisan elérhető termékek
+    3. Az értékesítő kereséssel vagy szűréssel kiválasztja a megfelelő terméket
+    4. A termékre kattintva a rendszer megjeleníti a hozzá tartozó specifikációkat, amelyeket az értékesítő az ügyfélnek bemutathat
+    5. A kiválasztott termék(ek)et az értékesítő a kosárba helyezi
+    6. Az ügyfél dönt a vásárlásról, majd az értékesítő kitölti a számlához szükséges adatokat
+    7. A rendszer nyomtatási előnézete biztosít az adatok ellenőrzéséhez
+    8. Ha minden rendben, megtörténik a fizetés és a számla kiállítása
+    9. Ha a termékkel probléma merül fel, az értékesítő sztornózhatja a számlát, a rendszer ekkor automatikusan módosítja a termék státuszát
+    10. A nap végén az értékesítő napi riportot generál, amely összesíti az eladott termékeket és a bevételeket
 
 
 10. TODO - Zsolti
