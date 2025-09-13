@@ -46,7 +46,12 @@ Az eladók hozzáadását és üzletekhez való hozzárendelését egy adminiszt
 | Egyéb            | Vásárlói élmény                   | A rendszer gördülékennyé teszi az értékesítők munkáját és javítja a vásárlói élményt. 
 
 5. TODO - Geri
-
+A rendszernek meg kell felelnie az adatvédelemre és információbiztonságra vonatkozó jogszabályoknak, különösen a GDPR előírásainak.  
+Biztosítania kell az elektronikus kereskedelemre vonatkozó hazai és EU-s szabályok betartását, a vásárlói jogok és biztonságos tranzakciók garantálásával.  
+Az adatok tárolását kódolt formában kell megvalósítani, az ISO/IEC 27001 szabvány ajánlásai szerint.  
+A szoftver minőségét az ISO/IEC 25010 szabvány jellemzői (megbízhatóság, használhatóság, teljesítmény) alapján kell biztosítani.    
+A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli előírások betartását.  
+Összességében a rendszernek biztonságosnak, jogszerűnek és hosszú távon fenntarthatónak kell lennie. 
 
 6. TODO - Marci
 
