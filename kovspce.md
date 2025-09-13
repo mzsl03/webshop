@@ -74,14 +74,20 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
 
 
 8. TODO - Geri
-
-
-
-
-
-
-
-
+| Modul         | Név                | Kifejtés 
+| Jogosultság   | Bejelentkezés      | A felhasználó email-cím és jelszó segítségével léphet be a rendszerbe, sikertelen próbálkozás esetén hibaüzenetet kap. 
+| Jogosultság   | Készletjelzés      | A rendszer alacsony készletszám esetén jelzést ad, és lehetőséget biztosít fiktív raktárból való bővítésre. 
+| Felhasználói  | Terméklista        | Bejelentkezés után megjelenik az aktuálisan elérhető termékek listája az adott üzlet készlete alapján. 
+| Felhasználói  | Keresés és szűrés  | A felhasználó kereshet és szűrhet számlaszám, ár, típus és egyéb tulajdonságok alapján. 
+| Felhasználói  | Kosár funkció      | A felhasználó a kiválasztott termékeket kosárba teheti, és azonnal láthatja a végösszeget. 
+| Riport        | Napi riport        | Az értékesítők napi riportot készíthetnek az eladott termékekről, manuálisan indítva. 
+| Riport        | Heti/Havi riport   | A rendszer automatikusan heti és havi riportokat generál Excel formátumban, időzítő segítségével. 
+| Riport        | Riport tartalom    | A riportok tartalmazzák az eladott termékek adatait, a készlet állapotát és a napi bevételeket. 
+| Adminisztráció| Készletkezelés     | Az adminisztrátor jogosult a készletek frissítésére, bővítésére és üzletek közti szinkronizálására. 
+| Adminisztráció| Felhasználókezelés | Az admin eladók hozzáadását, üzletekhez rendelését és jogosultságaik kezelését végzi. 
+| Adminisztráció| Partner hozzáférés | A partnercégek hozzáférést kapnak, és az értékesítők az adott üzlet készlete alapján dolgoznak. 
+| Rendszer      | Stabil működés     | A rendszer reszponzív és megbízható működésével támogatja a gördülékeny vásárlási folyamatot. 
+| Rendszer      | Naplózás           | A naplózás segíti az adminisztrációt, és a háttérből jogosult felhasználó végzi a rendszer üzemeltetését. 
 
 9. TODO - Zoli
 
