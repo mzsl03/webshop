@@ -1,4 +1,4 @@
-1. TODO - Zoli/Zsolti
+1. TODO - Zoli/Zsolti - Áttekintés
 A rendszer funkcionális felépítése az értékesítési folyamat támogatására épül. Az alkalmazás egyik főbb modulja a bejelentkezés és jogosultságkezelés, mivel az értékesítők csak azonosítás után tudnak a rendszerhez hozzáférni. A jogosultságok határozzák meg, hogy ki milyen funciót érhet el.
 Az értékesítő látja az elérhető termékeket és ezzel együtt az aktuális készletet. A rendszer figyelmeztet alacsony készletszint esetén, és lehetőséget ad a készlet bővítésére egy fiktív raktárból.
 A felhasználó keresőmező és szűrők segítségével gyorsan megtalálhatja a termékeket vagy számlákat (pl.: cikkszám, ár, típus szerint)
@@ -7,7 +7,7 @@ A rendszer számlát állít ki a vásárlásról. Probléma esetén az értéke
 A rendszer napi, heti és havi riportokat generál az eladásokból. A heti és havi riportok automatikus készülnek el Excel formátumban, támogatva a készlet és a bevétel ellenőrzését.
 
 
-2. TODO - Zoli/Zsolti
+2. TODO - Zoli/Zsolti - Jelenlegi helyzet
 
 Partnercégeink egyre nagyobb mértékben támaszkodnak digitális értékesítési csatornákra, ezért mindennapi munkájukhoz elengedhetetlenné vált egy korszerű, gyors és megbízható rendszer használata. A jelenleg működő megoldás azonban már nem képes megfelelni ezeknek az elvárásoknak. A felület bonyolult és nehezen áttekinthető, emiatt az értékesítők számára a termékek böngészése és a szükséges adatok elérése sok időt vesz igénybe.
 A terhelhetőség hiányosságai miatt a rendszer lassulásokkal, időszakos fennakadásokkal működik, ami közvetlenül hátráltatja az értékesítési folyamatokat és negatívan hat az ügyfélélményre is. Különösen problémás a napi zárás folyamata: az értékesítőknek manuálisan kell összegyűjteniük az eladások és visszavételezések adatait, ami időigényes és hibalehetőségekkel terhelt.

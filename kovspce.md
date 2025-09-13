@@ -108,15 +108,23 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
 | Rendszer      | Stabil működés     | A rendszer reszponzív és megbízható működésével támogatja a gördülékeny vásárlási folyamatot. 
 | Rendszer      | Naplózás           | A naplózás segíti az adminisztrációt, és a háttérből jogosult felhasználó végzi a rendszer üzemeltetését. 
 
-9. TODO - Zoli
+9. TODO - Zoli - Riportok
 
+- Szabad riport
+   - A szabad riport során a megrendelő általános elvárásait, elképzeléseit rögzítettük az új rendszerrel kapcsolatban. A legfontosabb megállapítások:
+   - A rendszer legyen gyors és átlátható, mivel napi szinten használják az értékesítők.
+   - A termékek böngészése és szűrése egyszerű, reszponzív felületen történjen.
+   - Fontos a készletkezelés támogatása: alacsony készletszám esetén automatikus jelzés és lehetőség a pótlásra.
+   - Az értékesítőknek szükségük van jogosultságokra a számlák sztornózásához, valamint a rendelések követéséhez.
+   - Riportolási funkciók kiemelt jelentőséggel bírnak: napi, heti és havi riportok szükségesek, amelyek támogatják a bevétel és készlet ellenőrzését.
 
-
-
-
-
-
-
+- Irányított riport
+   - Az irányított riport kérdőíves, pontosító kérdésekre épült, amelyek segítségével számszerűsíthetők és tisztázhatók voltak az igények. A főbb eredmények:
+   - A riportok formátuma Excel legyen, mivel a partnerek megszokták és belső rendszereikben is használják.
+   - A heti és havi riportok automatikusan, időzítve generálódjanak (a hét/hónap elején).
+   - A riportok tartalmazzák az eladott termékek adatait, mennyiségeit, árát és a napi összbevételt.
+   - Több partnercég használja a rendszert, ezért a riportokban a céges azonosító is szerepeljen.
+   - A riportgenerálás ne terhelje túl a rendszert, futása háttérfolyamatban történjen.
 
 10. TODO - Zsolti Fogalomtár
 
