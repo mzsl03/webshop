@@ -29,14 +29,23 @@ A beszerzési folyamatokban is kiemelt szerepet kell kapnia a felületnek: a ker
 A rendszer üzemeltetését a háttérből egy jogosult felhasználónak kell kezelnie.
 Az eladók hozzáadását és üzletekhez való hozzárendelését egy adminisztrátornak kell elvégeznie, és a rendszernek ezt a folyamatot minden szempontból támogatnia és megkönnyítenie kell.
 
+4. TODO - Geri
+
+| Kategória        | Funkció                           | Leírás 
+| Felhasználói     | Bejelentkezés és terméklista      | Reszponzív, átlátható felületen bejelentkezés után láthatóvá válnak az elérhető termékek. 
+| Felhasználói     | Keresés és szűrés                 | A felhasználók ár, típus vagy egyéb tulajdonságok szerint kereshetnek és szűrhetnek. 
+| Felhasználói     | Kosár funkció                     | A kiválasztott termékek kosárban kezelhetők, a végösszeg azonnal megjelenik. 
+| Felhasználói     | Készletjelzés                     | Alacsony készletszám esetén a rendszer figyelmezteti a felelős felhasználót. 
+| Felhasználói     | Napi riport készítése             | Az értékesítők napi riportot készíthetnek az eladott termékekről. 
+| Adminisztrációs  | Rendelés és számla kezelés        | Az értékesítők monitorozhatják a rendeléseket, sztornózhatják a számlákat. 
+| Adminisztrációs  | Partnercégek hozzáférése          | Az admin kezeli a partnercégek jogosultságait, a terméklisták üzletenkénti aktualizálását. 
+| Adminisztrációs  | Jogosultságkezelés                | A felhasználói jogosultságok kiosztása és karbantartása. 
+| Egyéb            | Heti és havi riportok             | A rendszer automatikusan generál riportokat Excel formátumban, a készlet- és bevételi adatokkal. 
+| Egyéb            | Riport- és naplózás támogatása    | A riportok és naplózás csökkentik a manuális adminisztrációs terheket, átláthatóságot biztosítanak. 
+| Egyéb            | Stabil működés és információelérés| Gyors, stabil rendszer, amely támogatja a vásárlási és döntési folyamatokat. 
+| Egyéb            | Vásárlói élmény                   | A rendszer gördülékennyé teszi az értékesítők munkáját és javítja a vásárlói élményt. 
+
 5. TODO - Geri
-
-
-
-
-
-
-
 
 
 6. TODO - Marci
