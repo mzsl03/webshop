@@ -9,11 +9,9 @@ A rendszer napi, heti és havi riportokat generál az eladásokból. A heti és 
 
 2. TODO - Zoli/Zsolti
 
-
-
-
-
-
+Partnercégeink egyre nagyobb mértékben támaszkodnak digitális értékesítési csatornákra, ezért mindennapi munkájukhoz elengedhetetlenné vált egy korszerű, gyors és megbízható rendszer használata. A jelenleg működő megoldás azonban már nem képes megfelelni ezeknek az elvárásoknak. A felület bonyolult és nehezen áttekinthető, emiatt az értékesítők számára a termékek böngészése és a szükséges adatok elérése sok időt vesz igénybe.
+A terhelhetőség hiányosságai miatt a rendszer lassulásokkal, időszakos fennakadásokkal működik, ami közvetlenül hátráltatja az értékesítési folyamatokat és negatívan hat az ügyfélélményre is. Különösen problémás a napi zárás folyamata: az értékesítőknek manuálisan kell összegyűjteniük az eladások és visszavételezések adatait, ami időigényes és hibalehetőségekkel terhelt.
+Mindezek következtében a meglévő rendszer nemcsak a hatékony munkavégzést akadályozza, hanem hosszabb távon versenyhátrányt is okozhat partnereink számára. Az új alkalmazás bevezetésével cél, hogy egy reszponzív, jól strukturált és felhasználóbarát felület álljon rendelkezésre, amely egyszerűsíti az értékesítési folyamatokat, támogatja a mindennapi adminisztrációt, valamint biztosítja a gyors és pontos riportálást.
 
 
 
