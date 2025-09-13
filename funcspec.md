@@ -1,10 +1,10 @@
 1. TODO - Zoli/Zsolti
-
-
-
-
-
-
+A rendszer funkcionális felépítése az értékesítési folyamat támogatására épül. Az alkalmazás egyik főbb modulja a bejelentkezés és jogosultságkezelés, mivel az értékesítők csak azonosítás után tudnak a rendszerhez hozzáférni. A jogosultságok határozzák meg, hogy ki milyen funciót érhet el.
+Az értékesítő látja az elérhető termékeket és ezzel együtt az aktuális készletet. A rendszer figyelmeztet alacsony készletszint esetén, és lehetőséget ad a készlet bővítésére egy fiktív raktárból.
+A felhasználó keresőmező és szűrők segítségével gyorsan megtalálhatja a termékeket vagy számlákat (pl.: cikkszám, ár, típus szerint)
+A kiválasztott termékek kosárba helyezhetők, majd az ügyfél döntését követően megkezdődhet a rendelés véglegesítése. A rendszer előnézetet biztosít a számla ellenőrzéséhez.
+A rendszer számlát állít ki a vásárlásról. Probléma esetén az értékesítő sztorhózhatja a számlát, amely automatikusan megváltoztatja a termék státuszát.
+A rendszer napi, heti és havi riportokat generál az eladásokból. A heti és havi riportok automatikus készülnek el Excel formátumban, támogatva a készlet és a bevétel ellenőrzését.
 
 
 2. TODO - Zoli/Zsolti
@@ -40,7 +40,7 @@
 | Rendszer      | Biztonság                 | Adatkezelés a GDPR előírásai szerint, kódolt adatbázis-tárolás és biztonságos jelszókezelés. 
 | Rendszer      | Szabványoknak megfelelés  | A fejlesztésnek és működésnek igazodnia kell az ISO/IEC 27001, ISO/IEC 25010 szabványokhoz. 
 
-4. TODO - Marciű
+4. TODO - Marci
 
 
 
