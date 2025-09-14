@@ -131,7 +131,7 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
 
 | Fogalomtár     |                                                                                                                                     |
 |:---------------|:------------------------------------------------------------------------------------------------------------------------------------|
-| Értékesítő     | A rendszer felhasználója, aki termékeket értékesít, rendelések állapotát képes figyeli, számlákat kezel és napi riportokat készít.  |
+| Értékesítő     | A rendszer felhasználója, aki termékeket értékesít, rendelések állapotát képes figyelni, számlákat kezel és napi riportokat készít. |
 | Adminisztrátor | Jogosult felhasználó, aki kezeli az eladókat, hozzárendeli őket az üzletekhez és felügyeli a rendszer működését.                    |
 | Sztornózás     | Már kiállított számla érvénytelenítése a rendszerben                                                                                |
 | Riport         | Összesítő dokumentum, amely tartalmazza az adott időszakban (nap, hét, hónap) eladott termékek adatait és a bevételt.               |
