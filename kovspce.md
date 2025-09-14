@@ -1,4 +1,7 @@
-1. TODO - Zoli/Zsolti - Áttekintés
+# Phoneshop Követelmény Specifikáció
+
+### Áttekintés
+
 Az alkalmazás célja, hogy reszponzív felület által az értékesítők számára kényelmes és egyszerű eladási felületet biztosítson.
 A rendszer gyakori használata miatt a felület kialakításánál kiemelt szempont a kezelhetőség és az átláthatóság.
 Bejelentkezést követően láthatóvá válik az elérhető termékek listája.
@@ -12,7 +15,8 @@ A rendszer napi, heti és havi riportokat biztosít, amelyek közül a heti és 
 A rendszer által generált riport tartalmazza az eladott termékek adatait, támogatva a raktárkészlet és a napi bevétel folyamatos ellenőrzését.
 A gördülékeny vásárlást segíti elő az eladó által kezelt kosár funkció, amelyben sorban helyezkednek el a megvásárolni kívánt tételek és a végösszeg is.
 
-2. TODO - Zsolti - Jelenlegi helyzet
+### Jelenlegi helyzet
+
 Az okos elektronikai cikkek iránti kereslet növekedése következtében partnercégeink igényei is növekednek, és egyre több megkeresés érkezik hozzánk korszerű, webes felület iránt.
 Az elmúlt években jól működő rendszer hiányosságaira partnereink hívták fel a figyelmet.
 Terhelhetősége nem megfelelő, így a termékek értékesítése időigényes és frusztráló felhasználóink számára.
@@ -20,7 +24,8 @@ A folyamatot továbbá a rendszer logikátlan felépítése is késlelteti, amel
 Az értékesítő a számára szükséges információkat (termékinformációk, készleten lévő termékek) körülményesen éri el.
 A nap nyugtázásának nehézsége is kellemetlen pont ügyfeleink számára, hiszen ekkor az értékesítő munkatársnak manuálisan kell összegyűjtenie a korábbi eladási, illetve visszavételezési információkat.
 
-3. TODO - Zoli - Vágyálom rendszer
+### Vágyálom rendszer
+
 A projekt célja a növekvő követelmények lekövetése azáltal, hogy egy stabilabb és kifinomultabb felületet fejlesztünk.
 Az alkalmazásnak egyszerűvé és gördülékennyé kell tennie az eladási folyamatot.
 Az értékesítőnek gyors hozzáférést kell biztosítania a kiválasztott termékekhez, amelyet a vásárlói igényeknek megfelelő szűrési lehetőségek segítik.
@@ -29,7 +34,7 @@ A beszerzési folyamatokban is kiemelt szerepet kell kapnia a felületnek: a ker
 A rendszer üzemeltetését a háttérből egy jogosult felhasználónak kell kezelnie.
 Az eladók hozzáadását és üzletekhez való hozzárendelését egy adminisztrátornak kell elvégeznie, és a rendszernek ezt a folyamatot minden szempontból támogatnia és megkönnyítenie kell.
 
-4. TODO - Geri
+### Funckionális követelmények
 
 | Kategória        | Funkció                           | Leírás 
 | Felhasználói     | Bejelentkezés és terméklista      | Reszponzív, átlátható felületen bejelentkezés után láthatóvá válnak az elérhető termékek. 
@@ -45,7 +50,8 @@ Az eladók hozzáadását és üzletekhez való hozzárendelését egy adminiszt
 | Egyéb            | Stabil működés és információelérés| Gyors, stabil rendszer, amely támogatja a vásárlási és döntési folyamatokat. 
 | Egyéb            | Vásárlói élmény                   | A rendszer gördülékennyé teszi az értékesítők munkáját és javítja a vásárlói élményt. 
 
-5. TODO - Geri
+### A rendszerre vonatkozó törvények, rendeletek, szabványok
+
 A rendszernek meg kell felelnie az adatvédelemre és információbiztonságra vonatkozó jogszabályoknak, különösen a GDPR előírásainak.  
 Biztosítania kell az elektronikus kereskedelemre vonatkozó hazai és EU-s szabályok betartását, a vásárlói jogok és biztonságos tranzakciók garantálásával.  
 Az adatok tárolását kódolt formában kell megvalósítani, az ISO/IEC 27001 szabvány ajánlásai szerint.  
@@ -53,7 +59,8 @@ A szoftver minőségét az ISO/IEC 25010 szabvány jellemzői (megbízhatóság,
 A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli előírások betartását.  
 Összességében a rendszernek biztonságosnak, jogszerűnek és hosszú távon fenntarthatónak kell lennie. 
 
-6. TODO - Marci
+### Jelenlegi üzleti folyamatok modellje
+
    1. Termékkezelés
    - A termékeket manuálisan töltjük fel a webáruház admin felületén.
    - Minden termékhez megadjuk a nevet, leírást, árat, képet és műszaki specifikációkat.
@@ -76,7 +83,7 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
    - A készletet manuálisan frissítjük.
    - Bevétel és kiadás nyomon követése alap szinten történik.
    
-7. TODO - Marci
+### Igényelt üzleti folyamatok modellje
 
 -	Termékfeltöltés - a webáruházba A rendszernek lehetővé kell tennie új termékek gyors és strukturált feltöltését az adminisztrációs felületen keresztül.
 -   Termékadatok begyűjtése (név, leírás, ár, kép, specifikációk)- A termékekhez tartozó alapvető információk feltöltése, a vásárlók részletes tájékoztatása érdekében.
@@ -93,7 +100,8 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
 -	Bevétel-kiadás kimutatás - A webáruház pénzügyi teljesítményéről való részletes kimutatása.
 
 
-8. TODO - Geri
+### Követelménylista
+
 | Modul         | Név                | Kifejtés 
 | Jogosultság   | Bejelentkezés      | A felhasználó email-cím és jelszó segítségével léphet be a rendszerbe, sikertelen próbálkozás esetén hibaüzenetet kap. 
 | Jogosultság   | Készletjelzés      | A rendszer alacsony készletszám esetén jelzést ad, és lehetőséget biztosít fiktív raktárból való bővítésre. 
@@ -109,7 +117,7 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
 | Rendszer      | Stabil működés     | A rendszer reszponzív és megbízható működésével támogatja a gördülékeny vásárlási folyamatot. 
 | Rendszer      | Naplózás           | A naplózás segíti az adminisztrációt, és a háttérből jogosult felhasználó végzi a rendszer üzemeltetését. 
 
-9. TODO - Zoli - Riportok
+### Riportok
 
 - Szabad riport
    - A szabad riport során a megrendelő általános elvárásait, elképzeléseit rögzítettük az új rendszerrel kapcsolatban. A legfontosabb megállapítások:
@@ -126,8 +134,6 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
       - A riportok tartalmazzák az eladott termékek adatait, mennyiségeit, árát és a napi összbevételt.
       - Több partnercég használja a rendszert, ezért a riportokban a céges azonosító is szerepeljen.
       - A riportgenerálás ne terhelje túl a rendszert, futása háttérfolyamatban történjen.
-
-10. TODO - Zsolti Fogalomtár
 
 | Fogalomtár     |                                                                                                                                     |
 |:---------------|:------------------------------------------------------------------------------------------------------------------------------------|

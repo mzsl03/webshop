@@ -1,4 +1,7 @@
-1. TODO - Zoli/Zsolti - Áttekintés
+# Phoneshop Funkcionális Specifikáció
+
+### Áttekintés
+
 A rendszer funkcionális felépítése az értékesítési folyamat támogatására épül. Az alkalmazás egyik főbb modulja a bejelentkezés és jogosultságkezelés, mivel az értékesítők csak azonosítás után tudnak a rendszerhez hozzáférni. A jogosultságok határozzák meg, hogy ki milyen funciót érhet el.
 Az értékesítő látja az elérhető termékeket és ezzel együtt az aktuális készletet. A rendszer figyelmeztet alacsony készletszint esetén, és lehetőséget ad a készlet bővítésére egy fiktív raktárból.
 A felhasználó keresőmező és szűrők segítségével gyorsan megtalálhatja a termékeket vagy számlákat (pl.: cikkszám, ár, típus szerint)
@@ -7,15 +10,14 @@ A rendszer számlát állít ki a vásárlásról. Probléma esetén az értéke
 A rendszer napi, heti és havi riportokat generál az eladásokból. A heti és havi riportok automatikus készülnek el Excel formátumban, támogatva a készlet és a bevétel ellenőrzését.
 
 
-2. TODO - Zoli/Zsolti - Jelenlegi helyzet
+### Jelenlegi helyzet
 
 Partnercégeink egyre nagyobb mértékben támaszkodnak digitális értékesítési csatornákra, ezért mindennapi munkájukhoz elengedhetetlenné vált egy korszerű, gyors és megbízható rendszer használata. A jelenleg működő megoldás azonban már nem képes megfelelni ezeknek az elvárásoknak. A felület bonyolult és nehezen áttekinthető, emiatt az értékesítők számára a termékek böngészése és a szükséges adatok elérése sok időt vesz igénybe.
 A terhelhetőség hiányosságai miatt a rendszer lassulásokkal, időszakos fennakadásokkal működik, ami közvetlenül hátráltatja az értékesítési folyamatokat és negatívan hat az ügyfélélményre is. Különösen problémás a napi zárás folyamata: az értékesítőknek manuálisan kell összegyűjteniük az eladások és visszavételezések adatait, ami időigényes és hibalehetőségekkel terhelt.
 Mindezek következtében a meglévő rendszer nemcsak a hatékony munkavégzést akadályozza, hanem hosszabb távon versenyhátrányt is okozhat partnereink számára. Az új alkalmazás bevezetésével cél, hogy egy reszponzív, jól strukturált és felhasználóbarát felület álljon rendelkezésre, amely egyszerűsíti az értékesítési folyamatokat, támogatja a mindennapi adminisztrációt, valamint biztosítja a gyors és pontos riportálást.
 
+### Követelmény lista
 
-
-3. TODO - Geri
 | Modul         | Név                       | Kifejtés 
 | Jogosultság   | Bejelentkezés             | A felhasználó email-cím és jelszó segítségével léphet be a rendszerbe; hibás adatok esetén hibaüzenetet kap. 
 | Jogosultság   | Regisztráció              | Új felhasználók számára regisztrációs lehetőség, jelszó biztonságos (kódolt) tárolásával és adatok validálásával. 
@@ -38,8 +40,8 @@ Mindezek következtében a meglévő rendszer nemcsak a hatékony munkavégzést
 | Rendszer      | Biztonság                 | Adatkezelés a GDPR előírásai szerint, kódolt adatbázis-tárolás és biztonságos jelszókezelés. 
 | Rendszer      | Szabványoknak megfelelés  | A fejlesztésnek és működésnek igazodnia kell az ISO/IEC 27001, ISO/IEC 25010 szabványokhoz. 
 
-4. TODO - Marci
-   ### Jelenlegi üzleti folyamatok modellje
+### Jelenlegi üzleti folyamatok modellje
+
    1. Termékkezelés
    - A termékeket manuálisan töltjük fel a webáruház admin felületén.
    - Minden termékhez megadjuk a nevet, leírást, árat, képet és műszaki specifikációkat.
@@ -62,9 +64,8 @@ Mindezek következtében a meglévő rendszer nemcsak a hatékony munkavégzést
    - A készletet manuálisan frissítjük.
    - Bevétel és kiadás nyomon követése alap szinten történik.
 
+### Igényelt üzleti folyamatok modellje
 
-5. TODO - Marci
-    ### Igényelt üzleti folyamatok modellje
 -	Termékfeltöltés - a webáruházba A rendszernek lehetővé kell tennie új termékek gyors és strukturált feltöltését az adminisztrációs felületen keresztül.
 -   Termékadatok begyűjtése (név, leírás, ár, kép, specifikációk)- A termékekhez tartozó alapvető információk feltöltése, a vásárlók részletes tájékoztatása érdekében.
 -	Kategorizálás, módosítása, törlése - A termékek besorolása kategóriákba segíti a kereshetőséget.
@@ -79,9 +80,7 @@ Mindezek következtében a meglévő rendszer nemcsak a hatékony munkavégzést
 -	Készletfigyelés - Az adminisztrátorok valós időben követhetik a készletmozgásokat, és időben reagálhatnak a hiányokra.
 -	Bevétel-kiadás kimutatás - A webáruház pénzügyi teljesítményéről való részletes kimutatása.
 
-
-6. TODO - Zsolti
- ### Használati esetek
+### Használati esetek
 
 Az Adminisztrátor felelős a rendszer problémamentes működéséért és a felhasználók kezeléséért.
 Jogosultsága a teljes rendszerre kiterjed, így minden funkciót elér.
@@ -124,9 +123,6 @@ Feladatai és jogosultságai a következők:
 Említésre méltó ezen túl, hogy a vásárló maga az eladási folyamat egy pontján sem kap hozzáférést a funkciók kezeléséhez.
 A termékleírás megtekintésén túl nincsen más privilégiuma az üzletbe betérő fogyasztónak.
 
-
-
-
 7. TODO - Zsolti
 
 
@@ -137,7 +133,8 @@ A termékleírás megtekintésén túl nincsen más privilégiuma az üzletbe be
 
 
 
-8. TODO - Zoli - Forgatókönyv
+
+### Forgatókönyv
 
 - Cél: Az értékesítő sikeresen elad egy terméket, kiállítja a számlát, majd a nap végén riportot készít az eladásokról
 
@@ -157,7 +154,7 @@ A termékleírás megtekintésén túl nincsen más privilégiuma az üzletbe be
     9. Ha a termékkel probléma merül fel, az értékesítő sztornózhatja a számlát, a rendszer ekkor automatikusan módosítja a termék státuszát
     10. A nap végén az értékesítő napi riportot generál, amely összesíti az eladott termékeket és a bevételeket
 
-9. TODO - Zsolti
+### Funkció – követelmény megfeleltetés.
 
 | Funkció (Név)      | Modul          | Kapcsolódó követelmény(ek)                                                                                                            |
 |--------------------|----------------|---------------------------------------------------------------------------------------------------------------------------------------|
@@ -172,8 +169,6 @@ A termékleírás megtekintésén túl nincsen más privilégiuma az üzletbe be
 | Felhasználókezelés | Adminisztráció | Az adminisztrátornak kezelnie kell az eladókat és üzletekhez rendeléseiket.                                                           |
 | Partner hozzáférés | Adminisztráció | A partnercégek hozzáférést kell kapjanak a rendszerhez, és az értékesítőknek az adott üzlet készletei alapján kell dolgozniuk.        |
 | Stabil működés     | Rendszer       | A rendszernek reszponzívnak kell lennie, és biztosítania kell a gördülékeny működést az értékesítési folyamat során.                  |
-
-10. TODO - Zsolti
 
 | Fogalomtár     |                                                                                                                                     |
 |:---------------|:------------------------------------------------------------------------------------------------------------------------------------|
