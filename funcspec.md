@@ -68,11 +68,48 @@ Mindezek következtében a meglévő rendszer nemcsak a hatékony munkavégzést
 
 
 7. TODO - Zsolti
+ ### Használati esetek
 
+Az Adminisztrátor felelős a rendszer problémamentes működéséért és a felhasználók kezeléséért.
+Jogosultsága a teljes rendszerre kiterjed, így minden funkciót elér.
+Feladatai többek között a következők:
+- Bejelentkezés a rendszerbe email-cím és jelszó segítségével.
+- Felhasználókezelés:
+  - Hozzáférés a felhasználók listájához, ahol módosíthatja azok adatait (név, email, jelszó).
+  - Új értékesítők hozzáadása a rendszerhez.
+  - Felhasználók törlése a rendszerből.
+- Partner hozzáférés kezelése:
+  - Készletek hozzárendelése a partnercégekhez és üzletekhez.
+- Globális felügyelet:
+  - Rendszerbeállítások és biztonsági funkciók kezelése.
+  - A riportkészítés folyamatának ellenőrzése.
 
+Az Értékesítő a rendszer mindennapi felhasználója, aki a termékek értékesítéséért, számlák kezeléséért és riportok készítéséért felel.
+Feladatai és jogosultságai a következők:
+- Bejelentkezés a rendszerbe email-cím és jelszó megadásával.
+- Termékek megtekintése:
+  - A bejelentkezést követően megjelenik az adott üzlet aktuális készlete.
+  - A készlet automatikusan frissített, így mindig pontos adatokat mutat.
+- Keresés és szűrés:
+  - Termékek vagy számlák keresése számlaszám, terméknév, cikkszám, ár vagy típus alapján.
+  - A találatok szűrése kategória, árkategória vagy gyártó szerint.
+- Kosár funkció:
+  - A kiválasztott termékek kosárba helyezése.
+  - A kosár tartalmának megtekintése, módosítása és a végösszeg azonnali megjelenítése.
+- Vásárlás lebonyolítása:
+  - A vásárló döntése után a számla elkészítése, és vásárlás véglegesítése.
+- Számla sztornózása:
+  - Hibás vagy érvénytelen számla esetén annak érvénytelenítése (sztornózás).
+- Készletjelzés és bővítés:
+  - A rendszer figyelmezteti az értékesítőt, ha a készletszint alacsony.
+  - Lehetősége van fiktív raktárból bővíteni a készletet.
+- Riportok készítése:
+  - Napi riport manuális indítása a nap végén, amely összesíti az eladásokat és bevételeket.
+  - A riport Excel formátumban letölthető.
+  - Az Értékesítő célja, hogy gyorsan és pontosan kiszolgálja az ügyfeleket, miközben folyamatosan követi a készlet alakulását és adminisztrálja az értékesítési folyamatokat.
 
-
-
+Említésre méltó ezen túl, hogy a vásárló maga az eladási folyamat egy pontján sem kap hozzáférést a funkciók kezeléséhez.
+A termékleírás megtekintésén túl nincsen más privilégiuma az üzletbe betérő fogyasztónak.
 
 
 
