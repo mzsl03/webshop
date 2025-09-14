@@ -36,19 +36,20 @@ Az eladók hozzáadását és üzletekhez való hozzárendelését egy adminiszt
 
 ### Funckionális követelmények
 
-| Kategória        | Funkció                           | Leírás 
-| Felhasználói     | Bejelentkezés és terméklista      | Reszponzív, átlátható felületen bejelentkezés után láthatóvá válnak az elérhető termékek. 
-| Felhasználói     | Keresés és szűrés                 | A felhasználók ár, típus vagy egyéb tulajdonságok szerint kereshetnek és szűrhetnek. 
-| Felhasználói     | Kosár funkció                     | A kiválasztott termékek kosárban kezelhetők, a végösszeg azonnal megjelenik. 
-| Felhasználói     | Készletjelzés                     | Alacsony készletszám esetén a rendszer figyelmezteti a felelős felhasználót. 
-| Felhasználói     | Napi riport készítése             | Az értékesítők napi riportot készíthetnek az eladott termékekről. 
-| Adminisztrációs  | Rendelés és számla kezelés        | Az értékesítők monitorozhatják a rendeléseket, sztornózhatják a számlákat. 
-| Adminisztrációs  | Partnercégek hozzáférése          | Az admin kezeli a partnercégek jogosultságait, a terméklisták üzletenkénti aktualizálását. 
-| Adminisztrációs  | Jogosultságkezelés                | A felhasználói jogosultságok kiosztása és karbantartása. 
-| Egyéb            | Heti és havi riportok             | A rendszer automatikusan generál riportokat Excel formátumban, a készlet- és bevételi adatokkal. 
-| Egyéb            | Riport- és naplózás támogatása    | A riportok és naplózás csökkentik a manuális adminisztrációs terheket, átláthatóságot biztosítanak. 
-| Egyéb            | Stabil működés és információelérés| Gyors, stabil rendszer, amely támogatja a vásárlási és döntési folyamatokat. 
-| Egyéb            | Vásárlói élmény                   | A rendszer gördülékennyé teszi az értékesítők munkáját és javítja a vásárlói élményt. 
+| Kategória       | Funkció                            | Leírás                                                                                              |
+|-----------------|------------------------------------|-----------------------------------------------------------------------------------------------------|
+| Felhasználói    | Bejelentkezés és terméklista       | Reszponzív, átlátható felületen bejelentkezés után láthatóvá válnak az elérhető termékek.           |
+| Felhasználói    | Keresés és szűrés                  | A felhasználók ár, típus vagy egyéb tulajdonságok szerint kereshetnek és szűrhetnek.                |
+| Felhasználói    | Kosár funkció                      | A kiválasztott termékek kosárban kezelhetők, a végösszeg azonnal megjelenik.                        |
+| Felhasználói    | Készletjelzés                      | Alacsony készletszám esetén a rendszer figyelmezteti a felelős felhasználót.                        |
+| Felhasználói    | Napi riport készítése              | Az értékesítők napi riportot készíthetnek az eladott termékekről.                                   |
+| Adminisztrációs | Rendelés és számla kezelés         | Az értékesítők monitorozhatják a rendeléseket, sztornózhatják a számlákat.                          |
+| Adminisztrációs | Partnercégek hozzáférése           | Az admin kezeli a partnercégek jogosultságait, a terméklisták üzletenkénti aktualizálását.          |
+| Adminisztrációs | Jogosultságkezelés                 | A felhasználói jogosultságok kiosztása és karbantartása.                                            |
+| Egyéb           | Heti és havi riportok              | A rendszer automatikusan generál riportokat Excel formátumban, a készlet- és bevételi adatokkal.    |
+| Egyéb           | Riport- és naplózás támogatása     | A riportok és naplózás csökkentik a manuális adminisztrációs terheket, átláthatóságot biztosítanak. |
+| Egyéb           | Stabil működés és információelérés | Gyors, stabil rendszer, amely támogatja a vásárlási és döntési folyamatokat.                        |
+| Egyéb           | Vásárlói élmény                    | A rendszer gördülékennyé teszi az értékesítők munkáját és javítja a vásárlói élményt.               |
 
 ### A rendszerre vonatkozó törvények, rendeletek, szabványok
 
@@ -100,22 +101,23 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
 -	Bevétel-kiadás kimutatás - A webáruház pénzügyi teljesítményéről való részletes kimutatása.
 
 
-### Követelménylista
+### Követelmény lista
 
-| Modul         | Név                | Kifejtés 
-| Jogosultság   | Bejelentkezés      | A felhasználó email-cím és jelszó segítségével léphet be a rendszerbe, sikertelen próbálkozás esetén hibaüzenetet kap. 
-| Jogosultság   | Készletjelzés      | A rendszer alacsony készletszám esetén jelzést ad, és lehetőséget biztosít fiktív raktárból való bővítésre. 
-| Felhasználói  | Terméklista        | Bejelentkezés után megjelenik az aktuálisan elérhető termékek listája az adott üzlet készlete alapján. 
-| Felhasználói  | Keresés és szűrés  | A felhasználó kereshet és szűrhet számlaszám, ár, típus és egyéb tulajdonságok alapján. 
-| Felhasználói  | Kosár funkció      | A felhasználó a kiválasztott termékeket kosárba teheti, és azonnal láthatja a végösszeget. 
-| Riport        | Napi riport        | Az értékesítők napi riportot készíthetnek az eladott termékekről, manuálisan indítva. 
-| Riport        | Heti/Havi riport   | A rendszer automatikusan heti és havi riportokat generál Excel formátumban, időzítő segítségével. 
-| Riport        | Riport tartalom    | A riportok tartalmazzák az eladott termékek adatait, a készlet állapotát és a napi bevételeket. 
-| Adminisztráció| Készletkezelés     | Az adminisztrátor jogosult a készletek frissítésére, bővítésére és üzletek közti szinkronizálására. 
-| Adminisztráció| Felhasználókezelés | Az admin eladók hozzáadását, üzletekhez rendelését és jogosultságaik kezelését végzi. 
-| Adminisztráció| Partner hozzáférés | A partnercégek hozzáférést kapnak, és az értékesítők az adott üzlet készlete alapján dolgoznak. 
-| Rendszer      | Stabil működés     | A rendszer reszponzív és megbízható működésével támogatja a gördülékeny vásárlási folyamatot. 
-| Rendszer      | Naplózás           | A naplózás segíti az adminisztrációt, és a háttérből jogosult felhasználó végzi a rendszer üzemeltetését. 
+| Modul          | Név                | Kifejtés                                                                                                               |
+|----------------|--------------------|------------------------------------------------------------------------------------------------------------------------|
+| Jogosultság    | Bejelentkezés      | A felhasználó email-cím és jelszó segítségével léphet be a rendszerbe, sikertelen próbálkozás esetén hibaüzenetet kap. |
+| Jogosultság    | Készletjelzés      | A rendszer alacsony készletszám esetén jelzést ad, és lehetőséget biztosít fiktív raktárból való bővítésre.            |
+| Felhasználói   | Terméklista        | Bejelentkezés után megjelenik az aktuálisan elérhető termékek listája az adott üzlet készlete alapján.                 |
+| Felhasználói   | Keresés és szűrés  | A felhasználó kereshet és szűrhet számlaszám, ár, típus és egyéb tulajdonságok alapján.                                |
+| Felhasználói   | Kosár funkció      | A felhasználó a kiválasztott termékeket kosárba teheti, és azonnal láthatja a végösszeget.                             |
+| Riport         | Napi riport        | Az értékesítők napi riportot készíthetnek az eladott termékekről, manuálisan indítva.                                  |
+| Riport         | Heti/Havi riport   | A rendszer automatikusan heti és havi riportokat generál Excel formátumban, időzítő segítségével.                      |
+| Riport         | Riport tartalom    | A riportok tartalmazzák az eladott termékek adatait, a készlet állapotát és a napi bevételeket.                        |
+| Adminisztráció | Készletkezelés     | Az adminisztrátor jogosult a készletek frissítésére, bővítésére és üzletek közti szinkronizálására.                    |
+| Adminisztráció | Felhasználókezelés | Az admin eladók hozzáadását, üzletekhez rendelését és jogosultságaik kezelését végzi.                                  |
+| Adminisztráció | Partner hozzáférés | A partnercégek hozzáférést kapnak, és az értékesítők az adott üzlet készlete alapján dolgoznak.                        |
+| Rendszer       | Stabil működés     | A rendszer reszponzív és megbízható működésével támogatja a gördülékeny vásárlási folyamatot.                          |
+| Rendszer       | Naplózás           | A naplózás segíti az adminisztrációt, és a háttérből jogosult felhasználó végzi a rendszer üzemeltetését.              |
 
 ### Riportok
 
