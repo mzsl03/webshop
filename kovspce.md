@@ -78,19 +78,19 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
    
 7. TODO - Marci
 
-⦁	Termékfeltöltés - a webáruházba A rendszernek lehetővé kell tennie új termékek gyors és strukturált feltöltését az adminisztrációs felületen keresztül.
-⦁   Termékadatok begyűjtése (név, leírás, ár, kép, specifikációk)- A termékekhez tartozó alapvető információk feltöltése, a vásárlók részletes tájékoztatása érdekében.
-⦁	Kategorizálás, módosítása, törlése - A termékek besorolása kategóriákba segíti a kereshetőséget.
-⦁	Készletkezelés integráció - A webáruház kapcsolódjon a raktárkészlethez, információt nyújtson a termékek elérhetőségéről.
-⦁	Kulcsszavas keresés, szűrés kategóriák szerint - A felhasználók számára biztosítani kell egy hatékony kereső- és szűrőrendszert, hogy gyorsan megtalálják a kívánt termékeket.
-⦁	Termékek hozzáadása/eltávolítása, árösszesítés - A kosár funkcióval az eladó hozzáadhatja vagy eltávolíthatja a termékeket, miközben a rendszer automatikusan kiszámítja a végösszeget.
-⦁	Kosárba helyezés - A kiválasztott terméket a felhasználó egy kattintással a kosárba helyezheti, ahol később módosíthatja a mennyiséget.
-⦁	Megrendelés leadása - A vásárló a kosár tartalmát megerősítve elindíthatja a rendelési folyamatot.
-⦁	Rendelés visszaigazolása - A sikeres tranzakció után a vásárló automatikus visszaigazolást kap a rendelés részleteiről.
-⦁	Regisztráció, bejelentkezés, rendeléskövetés - A felhasználók saját fiókot hozhatnak létre, ahol nyomon követhetik korábbi és aktuális rendeléseiket.
-⦁	Termékek, rendelések, felhasználók kezelése - Az adminisztrációs felületen keresztül az üzemeltetők kezelhetik a terméklistát, a rendeléseket és a vásárlói adatokat.
-⦁	Készletfigyelés - Az adminisztrátorok valós időben követhetik a készletmozgásokat, és időben reagálhatnak a hiányokra.
-⦁	Bevétel-kiadás kimutatás - A webáruház pénzügyi teljesítményéről való részletes kimutatása.
+-	Termékfeltöltés - a webáruházba A rendszernek lehetővé kell tennie új termékek gyors és strukturált feltöltését az adminisztrációs felületen keresztül.
+-   Termékadatok begyűjtése (név, leírás, ár, kép, specifikációk)- A termékekhez tartozó alapvető információk feltöltése, a vásárlók részletes tájékoztatása érdekében.
+-	Kategorizálás, módosítása, törlése - A termékek besorolása kategóriákba segíti a kereshetőséget.
+-	Készletkezelés integráció - A webáruház kapcsolódjon a raktárkészlethez, információt nyújtson a termékek elérhetőségéről.
+-	Kulcsszavas keresés, szűrés kategóriák szerint - A felhasználók számára biztosítani kell egy hatékony kereső- és szűrőrendszert, hogy gyorsan megtalálják a kívánt termékeket.
+-	Termékek hozzáadása/eltávolítása, árösszesítés - A kosár funkcióval az eladó hozzáadhatja vagy eltávolíthatja a termékeket, miközben a rendszer automatikusan kiszámítja a végösszeget.
+-	Kosárba helyezés - A kiválasztott terméket a felhasználó egy kattintással a kosárba helyezheti, ahol később módosíthatja a mennyiséget.
+-	Megrendelés leadása - A vásárló a kosár tartalmát megerősítve elindíthatja a rendelési folyamatot.
+-	Rendelés visszaigazolása - A sikeres tranzakció után a vásárló automatikus visszaigazolást kap a rendelés részleteiről.
+-	Regisztráció, bejelentkezés, rendeléskövetés - A felhasználók saját fiókot hozhatnak létre, ahol nyomon követhetik korábbi és aktuális rendeléseiket.
+-	Termékek, rendelések, felhasználók kezelése - Az adminisztrációs felületen keresztül az üzemeltetők kezelhetik a terméklistát, a rendeléseket és a vásárlói adatokat.
+-	Készletfigyelés - Az adminisztrátorok valós időben követhetik a készletmozgásokat, és időben reagálhatnak a hiányokra.
+-	Bevétel-kiadás kimutatás - A webáruház pénzügyi teljesítményéről való részletes kimutatása.
 
 
 8. TODO - Geri
