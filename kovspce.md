@@ -55,26 +55,26 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
 
 6. TODO - Marci
    1. Termékkezelés
-   A termékeket manuálisan töltjük fel a webáruház admin felületén.
-   Minden termékhez megadjuk a nevet, leírást, árat, képet és műszaki specifikációkat.
-   A termékeket kategóriákba soroljuk, szükség esetén módosítjuk vagy töröljük.
-   A készletet egy adatbázis táblázatban vezetjük, később integrációval bővítjük.
+   - A termékeket manuálisan töltjük fel a webáruház admin felületén.
+   - Minden termékhez megadjuk a nevet, leírást, árat, képet és műszaki specifikációkat.
+   - A termékeket kategóriákba soroljuk, szükség esetén módosítjuk vagy töröljük.
+   - A készletet egy adatbázis táblázatban vezetjük, később integrációval bővítjük.
    2. Szűrés, keresés
-   A látogatók kategóriák szerint böngészhetnek.
-   Egyszerű kulcsszavas keresés áll rendelkezésre.
-   A termékek szűrése ár, típus vagy márka alapján történik.
+   - A látogatók kategóriák szerint böngészhetnek.
+   - Egyszerű kulcsszavas keresés áll rendelkezésre.
+   - A termékek szűrése ár, típus vagy márka alapján történik.
    3. Kosár és rendelés
-   Az eladó kosárba helyezheti a kiválasztott termékeket.
-   A kosárban módosíthatják a mennyiséget, eltávolíthatnak termékeket.
-   A rendszer kiszámítja az összesített árat.
+   - Az eladó kosárba helyezheti a kiválasztott termékeket.
+   - A kosárban módosíthatják a mennyiséget, eltávolíthatnak termékeket.
+   - A rendszer kiszámítja az összesített árat.
    4. Felhasználók
-   Az admin regisztrálja az eladókat.
-   Az eladók később bejelentkezhetnek.
-   A fiókjukban nyomon követhetik rendeléseiket.
+   - Az admin regisztrálja az eladókat.
+   - Az eladók később bejelentkezhetnek.
+   - A fiókjukban nyomon követhetik rendeléseiket.
    5. Adminisztráció
-   A rendelések nyilvántartása Excelben történik.
-   A készletet manuálisan frissítjük.
-   Bevétel és kiadás nyomon követése alap szinten történik.
+   - A rendelések nyilvántartása Excelben történik.
+   - A készletet manuálisan frissítjük.
+   - Bevétel és kiadás nyomon követése alap szinten történik.
    
 7. TODO - Marci
 
