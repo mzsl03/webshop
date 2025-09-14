@@ -123,16 +123,10 @@ Feladatai és jogosultságai a következők:
 Említésre méltó ezen túl, hogy a vásárló maga az eladási folyamat egy pontján sem kap hozzáférést a funkciók kezeléséhez.
 A termékleírás megtekintésén túl nincsen más privilégiuma az üzletbe betérő fogyasztónak.
 
-7. TODO - Zsolti
+### Képernyő terv
 
-
-
-
-
-
-
-
-
+![Image of front-page](./img/main_menu_figma_preview.png)
+*A webalkalmazás főoldalának tervrajza*
 
 ### Forgatókönyv
 
