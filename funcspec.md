@@ -39,35 +39,48 @@ Mindezek következtében a meglévő rendszer nemcsak a hatékony munkavégzést
 | Rendszer      | Szabványoknak megfelelés  | A fejlesztésnek és működésnek igazodnia kell az ISO/IEC 27001, ISO/IEC 25010 szabványokhoz. 
 
 4. TODO - Marci
-
-
-
-
-
-
-
+   ### Jelenlegi üzleti folyamatok modellje
+   1. Termékkezelés
+   A termékeket manuálisan töltjük fel a webáruház admin felületén.
+   Minden termékhez megadjuk a nevet, leírást, árat, képet és műszaki specifikációkat.
+   A termékeket kategóriákba soroljuk, szükség esetén módosítjuk vagy töröljük.
+   A készletet egy adatbázis táblázatban vezetjük, később integrációval bővítjük.
+   2. Szűrés, keresés
+   A látogatók kategóriák szerint böngészhetnek.
+   Egyszerű kulcsszavas keresés áll rendelkezésre.
+   A termékek szűrése ár, típus vagy márka alapján történik.
+   3. Kosár és rendelés
+   Az eladó kosárba helyezheti a kiválasztott termékeket.
+   A kosárban módosíthatják a mennyiséget, eltávolíthatnak termékeket.
+   A rendszer kiszámítja az összesített árat.
+   4. Felhasználók
+   Az admin regisztrálja az eladókat.
+   Az eladók később bejelentkezhetnek.
+   A fiókjukban nyomon követhetik rendeléseiket.
+   5. Adminisztráció
+   A rendelések nyilvántartása Excelben történik.
+   A készletet manuálisan frissítjük.
+   Bevétel és kiadás nyomon követése alap szinten történik.
 
 
 5. TODO - Marci
+    ### Igényelt üzleti folyamatok modellje
+⦁	Termékfeltöltés - a webáruházba A rendszernek lehetővé kell tennie új termékek gyors és strukturált feltöltését az adminisztrációs felületen keresztül.
+⦁   Termékadatok begyűjtése (név, leírás, ár, kép, specifikációk)- A termékekhez tartozó alapvető információk feltöltése, a vásárlók részletes tájékoztatása érdekében.
+⦁	Kategorizálás, módosítása, törlése - A termékek besorolása kategóriákba segíti a kereshetőséget.
+⦁	Készletkezelés integráció - A webáruház kapcsolódjon a raktárkészlethez, információt nyújtson a termékek elérhetőségéről.
+⦁	Kulcsszavas keresés, szűrés kategóriák szerint - A felhasználók számára biztosítani kell egy hatékony kereső- és szűrőrendszert, hogy gyorsan megtalálják a kívánt termékeket.
+⦁	Termékek hozzáadása/eltávolítása, árösszesítés - A kosár funkcióval az eladó hozzáadhatja vagy eltávolíthatja a termékeket, miközben a rendszer automatikusan kiszámítja a végösszeget.
+⦁	Kosárba helyezés - A kiválasztott terméket a felhasználó egy kattintással a kosárba helyezheti, ahol később módosíthatja a mennyiséget.
+⦁	Megrendelés leadása - A vásárló a kosár tartalmát megerősítve elindíthatja a rendelési folyamatot.
+⦁	Rendelés visszaigazolása - A sikeres tranzakció után a vásárló automatikus visszaigazolást kap a rendelés részleteiről.
+⦁	Regisztráció, bejelentkezés, rendeléskövetés - A felhasználók saját fiókot hozhatnak létre, ahol nyomon követhetik korábbi és aktuális rendeléseiket.
+⦁	Termékek, rendelések, felhasználók kezelése - Az adminisztrációs felületen keresztül az üzemeltetők kezelhetik a terméklistát, a rendeléseket és a vásárlói adatokat.
+⦁	Készletfigyelés - Az adminisztrátorok valós időben követhetik a készletmozgásokat, és időben reagálhatnak a hiányokra.
+⦁	Bevétel-kiadás kimutatás - A webáruház pénzügyi teljesítményéről való részletes kimutatása.
 
 
-
-
-
-
-
-
-
-6. TODO - Marci
-
-
-
-
-
-
-
-
-7. TODO - Zsolti
+6. TODO - Zsolti
  ### Használati esetek
 
 Az Adminisztrátor felelős a rendszer problémamentes működéséért és a felhasználók kezeléséért.
@@ -114,7 +127,7 @@ A termékleírás megtekintésén túl nincsen más privilégiuma az üzletbe be
 
 
 
-8. TODO - Zsolti
+7. TODO - Zsolti
 
 
 
@@ -124,7 +137,7 @@ A termékleírás megtekintésén túl nincsen más privilégiuma az üzletbe be
 
 
 
-9. TODO - Zoli - Forgatókönyv
+8. TODO - Zoli - Forgatókönyv
 
 - Cél: Az értékesítő sikeresen elad egy terméket, kiállítja a számlát, majd a nap végén riportot készít az eladásokról
 
@@ -144,8 +157,7 @@ A termékleírás megtekintésén túl nincsen más privilégiuma az üzletbe be
     9. Ha a termékkel probléma merül fel, az értékesítő sztornózhatja a számlát, a rendszer ekkor automatikusan módosítja a termék státuszát
     10. A nap végén az értékesítő napi riportot generál, amely összesíti az eladott termékeket és a bevételeket
 
-
-10. TODO - Zsolti
+9. TODO - Zsolti
 
 | Funkció (Név)      | Modul          | Kapcsolódó követelmény(ek)                                                                                                            |
 |--------------------|----------------|---------------------------------------------------------------------------------------------------------------------------------------|
@@ -161,8 +173,7 @@ A termékleírás megtekintésén túl nincsen más privilégiuma az üzletbe be
 | Partner hozzáférés | Adminisztráció | A partnercégek hozzáférést kell kapjanak a rendszerhez, és az értékesítőknek az adott üzlet készletei alapján kell dolgozniuk.        |
 | Stabil működés     | Rendszer       | A rendszernek reszponzívnak kell lennie, és biztosítania kell a gördülékeny működést az értékesítési folyamat során.                  |
 
-
-11. TODO - Zsolti
+10. TODO - Zsolti
 
 | Fogalomtár     |                                                                                                                                     |
 |:---------------|:------------------------------------------------------------------------------------------------------------------------------------|
