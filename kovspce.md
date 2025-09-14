@@ -68,7 +68,8 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
    A kosárban módosíthatják a mennyiséget, eltávolíthatnak termékeket.
    A rendszer kiszámítja az összesített árat.
    4. Felhasználók
-   A vásárlók regisztrálhatnak és bejelentkezhetnek.
+   Az admin regisztrálja az eladókat.
+   Az eladók később bejelentkezhetnek.
    A fiókjukban nyomon követhetik rendeléseiket.
    5. Adminisztráció
    A rendelések nyilvántartása Excelben történik.
@@ -82,7 +83,7 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
 ⦁	Kategorizálás, módosítása, törlése - A termékek besorolása kategóriákba segíti a kereshetőséget.
 ⦁	Készletkezelés integráció - A webáruház kapcsolódjon a raktárkészlethez, információt nyújtson a termékek elérhetőségéről.
 ⦁	Kulcsszavas keresés, szűrés kategóriák szerint - A felhasználók számára biztosítani kell egy hatékony kereső- és szűrőrendszert, hogy gyorsan megtalálják a kívánt termékeket.
-⦁	Termékek hozzáadása/eltávolítása, árösszesítés - A kosár funkcióval a vásárlók hozzáadhatják vagy eltávolíthatják a termékeket, miközben a rendszer automatikusan kiszámítja a végösszeget.
+⦁	Termékek hozzáadása/eltávolítása, árösszesítés - A kosár funkcióval az eladó hozzáadhatja vagy eltávolíthatja a termékeket, miközben a rendszer automatikusan kiszámítja a végösszeget.
 ⦁	Kosárba helyezés - A kiválasztott terméket a felhasználó egy kattintással a kosárba helyezheti, ahol később módosíthatja a mennyiséget.
 ⦁	Megrendelés leadása - A vásárló a kosár tartalmát megerősítve elindíthatja a rendelési folyamatot.
 ⦁	Rendelés visszaigazolása - A sikeres tranzakció után a vásárló automatikus visszaigazolást kap a rendelés részleteiről.
@@ -90,7 +91,7 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
 ⦁	Termékek, rendelések, felhasználók kezelése - Az adminisztrációs felületen keresztül az üzemeltetők kezelhetik a terméklistát, a rendeléseket és a vásárlói adatokat.
 ⦁	Készletfigyelés - Az adminisztrátorok valós időben követhetik a készletmozgásokat, és időben reagálhatnak a hiányokra.
 ⦁	Bevétel-kiadás kimutatás - A webáruház pénzügyi teljesítményéről való részletes kimutatása.
-⦁	Értesítés rendelésről, szállításról - A rendszer automatikusan értesítést küld a vásárlóknak a rendelés állapotáról és a szállítási információkról.
+
 
 8. TODO - Geri
 | Modul         | Név                | Kifejtés 
