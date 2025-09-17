@@ -20,6 +20,7 @@ egyszerűsítse a munkatársak mindennapi tevékenységeit,
 valamint pontos és naprakész információkat biztosítson a készletekről és az értékesítésekről.
 
 ![Kép az alkalmazás elképzelt működési folyamatáról](./img/workflow_model.png)
+
 *A rendszer működésének folyamatábrája*
 
 2. Zsolti
