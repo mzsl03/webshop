@@ -55,7 +55,8 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 | Tesztelés                  | Unit és funkcionális tesztek végrehajtása | 1         | 10      | 10               | 0          | 10            |
 *Az Becslés/Aktuális becslés/Eltelt idő/Hátralévő idő oszlopok órában értendőek*
 
-
+![Kép egy kördiagramról, amely százalékokat tartalmaz a hátralévő teendőkről](/img/pie_chart_of_todo_tasks.png)
+*Kördiagram a hátralévő teendőkről*
 
 
 3. Zoli
@@ -89,14 +90,23 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
 
 6. Zsolti
+### Fizikai környezet
 
+Az alkalmazás webes platformra készül, reszponzív kialakítással, így asztali számítógépeken és laptopokon is használható.
+A rendszer nem igényel telepítést a felhasználó eszközére, mivel modern böngészőből érhető el (Chrome, Firefox, Edge, Safari).
 
+A szerveroldali környezet a tervek szerint helyi (lokális) szerveren kerül kialakításra,
+mivel ennek üzemeltetése jelentősen alacsonyabb költséggel jár,
+így partnereink számára gazdaságosabb megoldást biztosít a rendszer hosszú távú fenntartására.
 
+A rendszer teljes mértékben open source komponensekre épül, nem használ megvásárolt, zárt forráskódú szoftvert.
 
+**Fejlesztésre használt eszközök:**
 
-
-
-
+- Pycharm Professional - backend fejlesztése (Python Django keretrendszere)
+- Visual Studio Code - fronted fejlesztése (HTML/CSS)
+- Figma - felhasználói felület tervezése, képernyő tervezés
+- Git és Github - verziókezelés és csapatmunka támogatása
 
 7. Geri
 
