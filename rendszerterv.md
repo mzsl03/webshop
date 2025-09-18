@@ -24,11 +24,36 @@ valamint pontos és naprakész információkat biztosítson a készletekről és
 *A rendszer működésének folyamatábrája*
 
 2. Zsolti
-### 
+### Projektterv
 
+**Csapattagok és közös felelősség körök**
 
+A négy fejlesztő egységes csapatként dolgozik, így mindenki részt vesz a backend, 
+frontend, tesztelés és dokumentáció feladataiban is.
 
+A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
+**Fő feladatkörök:**
+
+- **Backend fejlesztés:** adatbázis, API-k, üzleti logika megvalósítása.
+- **Frontend fejlesztés:** reszponzív Angular alapú felhasználói felület kialakítása.
+- **Tesztelés:** egység- és funkcionális tesztek készítése, hibajavítás.
+- **Dokumentáció:** követelmény- és rendszerterv, tesztterv, végső projektleírás elkészítése.
+
+| Funkció / Story            | Feladat / Task                            | Prioritás | Becslés | Aktuális becslés | Eltelt idő | Hátralévő idő |
+|----------------------------|-------------------------------------------|-----------|---------|------------------|------------|---------------|
+| Követelményspecifikáció    | Dokumentum elkészítése                    | 0         | 10      | 10               | 10         | 0             |
+| Funkcionális specifikáció  | Funkciók és folyamatok leírása            | 0         | 10      | 10               | 10         | 0             |
+| Rendszerterv               | Architektúra és adatmodell kidolgozása    | 0         | 14      | 14               | 8          | 6             |
+| Adatmodell                 | Adatbázis struktúra megtervezése          | 1         | 6       | 6                | 4          | 2             |
+| Backend alapfunkciók       | API fejlesztés és üzleti logika           | 2         | 12      | 12               | 2          | 10            |
+| Frontend alapok            | HTML/CSS, UI tervezés                     | 2         | 10      | 10               | 3          | 7             |
+| Login funkció              | Bejelentkezés és jogosultságkezelés       | 2         | 8       | 8                | 0          | 8             |
+| Termékkezelés              | Termékek megjelenítése, keresés, szűrés   | 2         | 10      | 10               | 0          | 10            |
+| Kosár funkció              | Kosár logika és UI implementálása         | 2         | 10      | 10               | 0          | 10            |
+| Riport funkció             | Napi/heti/havi riport készítése           | 1         | 8       | 8                | 0          | 8             |
+| Tesztelés                  | Unit és funkcionális tesztek végrehajtása | 1         | 10      | 10               | 0          | 10            |
+*Az Becslés/Aktuális becslés/Eltelt idő/Hátralévő idő oszlopok órában értendőek*
 
 
 
