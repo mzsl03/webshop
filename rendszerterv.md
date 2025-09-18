@@ -53,6 +53,7 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 | Kosár funkció              | Kosár logika és UI implementálása         | 2         | 10      | 10               | 0          | 10            |
 | Riport funkció             | Napi/heti/havi riport készítése           | 1         | 8       | 8                | 0          | 8             |
 | Tesztelés                  | Unit és funkcionális tesztek végrehajtása | 1         | 10      | 10               | 0          | 10            |
+
 *Az Becslés/Aktuális becslés/Eltelt idő/Hátralévő idő oszlopok órában értendőek*
 
 ![Kép egy kördiagramról, amely százalékokat tartalmaz a hátralévő teendőkről](/img/pie_chart_of_todo_tasks.png)
