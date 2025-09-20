@@ -1,0 +1,58 @@
+<!doctype html>
+{% load static %}
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kezdetleges Webshop</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>MinimalShop</span>
+      </div>
+      <span class="cart" title="Egyszerű kosár számláló">
+        🛒 Kosár <span class="dot" id="cartCount">0</span>
+      </span>
+    </div>
+  </header>
+
+  <main class="wrap" id="app" style="padding-top:22px; display:flex; gap:20px;">
+    <!-- Bal oldali szűrők -->
+    <aside class="filters" style="width:250px; flex-shrink:0;">
+      <h3>Szűrők</h3>
+      <label class="ctrl" style="display:block; margin-bottom:12px;">
+        🔎 <input id="q" type="search" placeholder="Keresés (pl. „fülhallgató”)" style="width:100%;" />
+      </label>
+      <label class="ctrl" style="display:block; margin-bottom:12px;">
+        🗂️
+        <select id="cat" style="width:100%;">
+          <option value="all">Összes kategória</option>
+          <option value="telefon">Telefon</option>
+          <option value="füles">Fülhallgató</option>
+          <option value="laptop">Laptop</option>
+          <option value="kieg">Kiegészítő</option>
+        </select>
+      </label>
+      <button class="btn" id="clear" style="width:100%;">Szűrők törlése</button>
+    </aside>
+
+    <!-- Jobb oldali termékek -->
+    <section class="products" style="flex:1;">
+      <div id="grid" class="grid"></div>
+      <div id="empty" class="empty" hidden>
+        Nem találtunk a szűrésnek megfelelő terméket.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:18px 0;">
+      <small class="muted">SZFM-Webshop 2025</small>
+    </div>
+  </footer>
+</body>
+</html>
