@@ -213,14 +213,44 @@ amely csapat az elvárt működést próbálják elérni.
 
 
 
-12. Marci
+12. ### Telepitési terv
+
+Webes elérés és kliensoldali követelmények - A szoftver webes felületének használatához nincs szükség külön telepítendő 
+alkalmazásra. A felhasználók számára elegendő egy modern, ajánlott böngésző telepítése (pl. Google Chrome, Mozilla Firefox, 
+Opera vagy Safari). Az alkalmazás platformfüggetlen, és közvetlenül elérhető az interneten keresztül, így a kliensek a 
+webszerverhez böngészőn keresztül csatlakoznak, további konfiguráció nélkül.
 
 
+13. ### Karbantartási terv
+
+A webáruház karbantartása rendszeres és tervezett feladatokat igényel annak érdekében, hogy a 
+rendszer biztonságosan, gyorsan és megbízhatóan működjön. A karbantartási terv az alábbi területekre terjed ki:
+
+- **Technikai karbantartás**: Rendszeres frissítések a szerver operációs rendszerére, 
+a webkiszolgálóra, a backend technológiákra (pl. PHP, Node.js), valamint a használt keretrendszer 
+komponenseire. A bővítmények és modulok frissítése szintén fontos a kompatibilitás és biztonság érdekében. 
+Az adatbázis optimalizálása, indexek karbantartása. A biztonsági mentések rendszeres tesztelése.
 
 
+- **Biztonsági karbantartás**: A webáruház SSL tanúsítványának érvényességét rendszeres ellenőrzése.
+Kétlépcsős azonosítás időnkénti tesztelése.
 
 
+- **Tartalomkarbantartás**: A termékadatok, árak, készletinformációk és leírások frissítése. 
+Elavult vagy kifutott termékeket archiválása, törölése.
+A kategóriák és szűrők újrastrukturálása ha szükséges.
 
 
+- **Teljesítmény és monitoring**: A weboldal sebességét rendszeres tesztelése, PageSpeed vagy GTmetrix segítségével. 
+A mobil kompatibilitás ellenőrzése.
+A hibaoldalakat (404, 500) naplózása, javítása.
 
-13. Marci
+
+- **Tesztelés és minőségbiztosítás**: A vásárlási folyamatot rendszeres tesztelése, beleértve a kosár működését, 
+a fizetési folyamatot.
+A regisztrációs és belépési folyamatok időnkénti ellenőrzése.
+
+
+- **Kommunikáció és dokumentáció**: 
+A hibák és javítások dokumentálása belső naplóban vagy wiki rendszerben. 
+A változások listáját (changelog) célszerű vezetése.
