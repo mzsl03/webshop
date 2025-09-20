@@ -126,9 +126,9 @@ A termékleírás megtekintésén túl nincsen más privilégiuma az üzletbe be
 
 ### Képernyő terv
 
-![Image of front-page](./img/main_menu_figma_preview.png)
+![Image of front-page](imgain_menu_figma_preview.png)
 *A webalkalmazás főoldalának tervrajza*
-![Image of listedd receipt view](./img/listed_receipt_view_figma_preview.png)
+![Image of listedd receipt view](imgisted_receipt_view_figma_preview.png)
 *A webalkalmazás számla lista nézete*
 
 ### Forgatókönyv

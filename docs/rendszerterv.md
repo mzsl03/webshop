@@ -19,7 +19,7 @@ A rendszer elsődleges célja, hogy csökkentse az értékesítési folyamatok i
 egyszerűsítse a munkatársak mindennapi tevékenységeit,
 valamint pontos és naprakész információkat biztosítson a készletekről és az értékesítésekről.
 
-![Kép az alkalmazás elképzelt működési folyamatáról](./img/workflow_model.png)
+![Kép az alkalmazás elképzelt működési folyamatáról](imgorkflow_model.png)
 
 *A rendszer működésének folyamatábrája*
 
@@ -56,7 +56,7 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
 *Az Becslés/Aktuális becslés/Eltelt idő/Hátralévő idő oszlopok órában értendőek*
 
-![Kép egy kördiagramról, amely százalékokat tartalmaz a hátralévő teendőkről](/img/pie_chart_of_todo_tasks.png)
+![Kép egy kördiagramról, amely százalékokat tartalmaz a hátralévő teendőkről](/docs/imgs/img/pie_chart_of_todo_tasks.png)
 *Kördiagram a hátralévő teendőkről*
 
 
