@@ -61,9 +61,11 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
 
 3. Zoli
+### Üzleti folyamatok modellje
 
 
-
+![Kép az üzleti modellről, amely tartalmazza a felhasználok által használható funkciókat](/img/uzleti_modell.png)
+*Üzleti modell*
 
 
 
@@ -130,6 +132,7 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 
 
 9. Zoli
+### Adatbázis terv
 
 
 
@@ -140,7 +143,7 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 
 
 10. Zoli
-
+### Implementációs terv
 
 
 
