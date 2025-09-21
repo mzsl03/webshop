@@ -111,13 +111,64 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
 5. Geri
 
+# 5. Funkcionális terv
 
+## Rendszerszereplők:
+- Adminisztrátor  
+- Értékesítő  
+- Partnercég  
+- Vásárló  
 
+## Rendszerhasználati esetek és lefutásaik:
 
+### ADMINISZTRÁTOR:
+● Teljes körű hozzáférése van a rendszerhez.    
+● Jogosultsági szintek kezelése (admin, értékesítő, partner).  
+● Termékek és készlet manuális bővítése, frissítése.  
+● Partnercégek regisztrálása és készlet-hozzárendelés.  
+● Számlák sztornózása és javítása.  
+● Rendszernaplók és riportok ellenőrzése.  
 
+### ÉRTÉKESÍTŐ:
+● Bejelentkezés a rendszerbe email-címmel és jelszóval.  
+● Termékek listázása és készletadatok megtekintése.  
+● Termékek keresése és szűrése különféle paraméterek alapján.  
+● Termékek kosárba helyezése, mennyiség módosítása, eltávolítás.  
+● Vásárlás lebonyolítása és számla kiállítása.  
+● Hibás számlák sztornózása.  
+● Napi riport manuális indítása és letöltése.  
 
+### PARTNERCÉG:
+● Saját hozzáférés kezelése.  
+● Hozzárendelt készletek megtekintése.  
+● Termékek státuszának követése.  
 
+### VÁSÁRLÓ:
+● Termékek megtekintése és leírásaik olvasása.  
+● Kosárba helyezés az értékesítő közreműködésével.  
+● Vásárlás jóváhagyása és visszaigazolás fogadása.  
 
+## Menü-hierarchiák:
+
+● **BEJELENTKEZÉS**  
+  - Bejelentkezés  
+  - Regisztráció  
+  - Segítség (Help)  
+
+● **FŐMENÜ (Értékesítő számára)**  
+  - Terméklista  
+  - Keresés és szűrés  
+  - Kosár megtekintése  
+  - Vásárlás / számla kiállítás  
+  - Riportok (Napi / Heti / Havi)  
+  - Kijelentkezés  
+
+● **ADMIN MENÜ**  
+  - Felhasználókezelés  
+  - Termék- és készletkezelés  
+  - Partnercégek kezelése  
+  - Számlák kezelése  
+  - Rendszernaplók és biztonsági beállítások  
 
 6. Zsolti
 ### Fizikai környezet
