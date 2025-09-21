@@ -67,11 +67,6 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 ![Kép az üzleti modellről, amely tartalmazza a felhasználok által használható funkciókat](/img/uzleti_modell.png)
 *Üzleti modell*
 
-
-
-
-
-
 4. Geri
 
 
@@ -134,17 +129,13 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 9. Zoli
 ### Adatbázis terv
 
-
-
-
-
-
-
+![Kép az adatbázis kapcsolatokról, amely tartalmazza a mezőneveket és a típusokat](/img/database_relationships.png)
+*Adatbázis terv*
 
 
 10. Zoli
 ### Implementációs terv
-
+A webes felület HTML, CSS és JavaScript segítségével készül el. Ezek jól el lesznek különítve egymástól, a könnyebb átláthatóság és bővítés érdekében.
 
 
 
