@@ -191,13 +191,8 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 - Git és Github - verziókezelés és csapatmunka támogatása
 
 7. Geri
-(/img/abstract_domain_modell.png)
 
-
-
-
-
-
+![Kép az absztrakt domain modell a webshophoz ami tartalmazza a viszonyokat](/img/abstract_domain_modell.png)
 
 8. Marci
 
