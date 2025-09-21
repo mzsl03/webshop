@@ -191,7 +191,7 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 - Git és Github - verziókezelés és csapatmunka támogatása
 
 7. Geri
-(/img/abstract_domain_model.png)
+(/img/abstract_domain_modell.png)
 
 
 
