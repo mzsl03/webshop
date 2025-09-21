@@ -135,12 +135,18 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 
 10. Zoli
 ### Implementációs terv
-A webes felület HTML, CSS és JavaScript segítségével készül el. Ezek jól el lesznek különítve egymástól, a könnyebb átláthatóság és bővítés érdekében.
 
+A webes felület főként HTML, CSS és JavaScript nyelveken fog készülni. A HTML struktúrák, a CSS stíluslapok és a JavaScript kódok külön fájlokba kerülnek, hogy a rendszer átlátható, könnyen módosítható és bővíthető legyen. A frontend a backend felé REST API-n keresztül kommunikál, amely CRUD műveleteket biztosít az adatbázis kezelésére. Az oldalon a felhasználók képesek lesznek termékeket megtekinteni, kosárba helyezni és rendeléseket leadni, miközben a kosár tartalmát a kliens oldalon is nyilvántartjuk, így a felhasználó azonnal láthatja a változásokat.
 
+A rendelési folyamat során a rendszer ellenőrzi a raktárkészletet és a felhasználói jogosultságokat. A felhasználói bejelentkezés és regisztráció biztonságos jelszókezeléssel történik, a jelszavak titkosított formában kerülnek tárolásra az adatbázisban. A backend Django keretrendszerre épül, és felelős az adatbázis lekérdezések és módosítások pontos végrehajtásáért. Az adatbázis MySQL alapú, normalizált és indexelt, a termékek, rendelések, számlák és riportok nyilvántartására.
 
+A termékek és kategóriák listája dinamikusan jelenik meg a backend adatai alapján, míg a kosár interaktív kezelése JavaScript eseményekkel történik. A rendelés leadása előtt a backend ellenőrzi az adatok érvényességét, és a kosárban lévő mennyiségeket a szerverrel szinkronizálja. A rendelés leadása után a rendszer generálja a számlát PDF formátumban, amely letölthető és nyomtatható, továbbá lehetőség van sztornózásra, ami a rendelés státuszának módosításával történik.
 
+A riportok menedzseri jogosultság szerint jelennek meg, és exportálhatók PDF vagy CSV formátumban. A riportok a backend aggregált adataira épülnek, és a frontend grafikonjai JavaScript (például Chart.js) segítségével jelennek meg. Az oldal reszponzív kialakítású, mobilon és asztali gépen egyaránt jól használható, a CSS biztosítja az egységes megjelenést, míg a HTML sablonok a Django Template Engine segítségével kerülnek összeállításra.
 
+A felhasználói profil oldalon a személyes adatok szerkeszthetők, a backend pedig minden inputot validál a biztonság érdekében. A rendszer képes több felhasználó párhuzamos kezelésére, a tevékenységek naplózása biztosítja az auditálhatóságot és a hibakeresést. A REST API végpontjai dokumentáltak és verziózottak, a frontend és backend közötti kommunikáció pedig biztonságos HTTPS-en keresztül történik.
+
+A kosár funkció lehetővé teszi a mennyiségek módosítását és termékek eltávolítását, a rendelés leadása után pedig visszaigazolást kap a felhasználó. Az admin felület biztosítja a termékek, felhasználók, rendelések és számlák kezelését, míg az oldal hibakezelése kiterjed a formák érvényesítésére és a backend válaszaira is. A weboldal teljes funkcionalitása tesztelve lesz a fejlesztés minden szakaszában, a kód dokumentált, és a rendszer könnyen karbantartható és bővíthető. Összességében a projekt célja egy átlátható, biztonságos, reszponzív és jól karbantartható értékesítési rendszer létrehozása, amely támogatja a felhasználói műveleteket, a rendeléseket, a számlázást és a riportok generálását.
 
 
 11. Zsolti
