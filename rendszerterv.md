@@ -68,7 +68,8 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 *Üzleti modell*
 
 4. Geri
-# 4. Követelmények
+
+# Követelmények
 
 - Leírja nagyvonalakban, miket kell teljesítenie a programnak.  
 - **Példa: Funkcionális követelmények:**
@@ -111,7 +112,7 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
 5. Geri
 
-# 5. Funkcionális terv
+# Funkcionális terv
 
 ## Rendszerszereplők:
 - Adminisztrátor  
@@ -190,8 +191,7 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 - Git és Github - verziókezelés és csapatmunka támogatása
 
 7. Geri
-
-
+(/img/abstract_domain_model.png)
 
 
 
