@@ -68,14 +68,46 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 *Üzleti modell*
 
 4. Geri
+# 4. Követelmények
 
+- Leírja nagyvonalakban, miket kell teljesítenie a programnak.  
+- **Példa: Funkcionális követelmények:**
 
+## Funkcionális követelmények
 
+- Felhasználók regisztrációja és bejelentkezése email-cím és jelszó alapján.  
+- Jogosultsági szintek kezelése (admin, értékesítő, partner).  
+- Termékek listájának megjelenítése valós idejű készletadatokkal.  
+- Készletfigyelés és automatikus riasztás alacsony készletszint esetén.  
+- Termékek keresése név, ár, típus alapján.  
+- Találatok szűrése kategóriák és árkategóriák szerint.  
+- Kosár funkció: termékek hozzáadása, eltávolítása, végösszeg számítása.  
+- Vásárlási folyamat támogatása számla előnézettel és kiállítással.  
+- Számla sztornózása hibás tranzakció esetén.  
+- Napi riport manuális indítása az eladásokról.  
+- Heti és havi riportok automatikus generálása Excel formátumban.  
+- Adminisztrátor által kezelt készletkezelés és felhasználó-hozzárendelés.  
+- Partnercégek regisztrációja és jogosultsági kiosztása.  
+- Rendszer naplózza a felhasználói és adminisztratív műveleteket.  
 
+## Nem funkcionális követelmények
 
+- A felhasználói felület legyen reszponzív és könnyen áttekinthető.  
+- Nagy terhelés alatt is biztosítson stabil működést.  
+- Keresési és szűrési műveletek maximum 2 másodpercen belül válaszoljanak.  .  
+- A felület webes környezetben hibátlanul működjön.  
+- A riportok letöltése szabványos formátumban (Excel) történjen.  
+- Felhasználók nem férhetnek hozzá más felhasználók személyes adataihoz.  
+- Adatbázis-tárolás titkosítással történjen.  
+- Jelszavak biztonságos, egyirányúan kódolt formában legyenek tárolva.  
+- Naplózott adatokhoz kizárólag adminisztrátor férhet hozzá.  
 
+## Törvényi előírások, szabványok
 
-
+- GDPR előírásoknak való megfelelés.  
+- Adatbiztonsági szabványok (ISO/IEC 27001) követése.  
+- Szoftverminőségi szabványok (ISO/IEC 25010) figyelembevétele.  
+- Naplózás és adathozzáférés nyomonkövethetősége. 
 
 5. Geri
 
