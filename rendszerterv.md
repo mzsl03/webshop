@@ -109,15 +109,39 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 
 
 
-8. Marci
 
 
+8.  ### Architekturális terv - Marci
+- A webáruház architektúrája három fő rétegre tagolódik: prezentációs réteg (frontend), alkalmazásréteg (backend), 
+és adatkezelési réteg (adatbázis). A cél egy jól strukturált, biztonságos és könnyen bővíthető rendszer, 
+amely támogatja a termékek megjelenítését, kosárkezelést, rendelésfeldolgozást és felhasználói autentikációt.
 
 
+- A frontend a Django sablonrendszerére épül, HTML, CSS és JavaScript segítségével jeleníti meg az oldalakat. 
+A JavaScript felelős az interaktív elemekért, 
+például a kosár dinamikus frissítéséért vagy az AJAX-alapú kommunikációért a backend felé.
 
 
+- Az alkalmazásréteg Django keretrendszert használ, amely MVC mintát követ. 
+A modellek definiálják az adatstruktúrákat, a view-k kezelik az üzleti logikát, 
+míg a template-ek a megjelenítést biztosítják. A Django REST Framework lehetőséget ad API-k kialakítására, 
+így a frontend akár SPA-ként is működhet, vagy külső rendszerek is integrálhatók.
 
 
+- Az adatkezelési réteg MySQL adatbázist használ, amelyet a Django ORM kezel. 
+Az adatbázis tárolja a felhasználók, termékek, rendelések, kosártételek és adminisztrációs adatok struktúráját. 
+A rendszer támogatja a relációs kapcsolatokat, például egy rendelés több terméket is tartalmazhat, 
+és egy felhasználó több rendelést is leadhat.
+
+
+- A rendszer moduljai közé tartozik a termékkezelés, kosárkezelés, rendelésfeldolgozás, 
+felhasználói regisztráció és bejelentkezés, valamint az adminisztrációs felület. 
+A jogosultságkezelés Django beépített auth rendszerével történik, amely kiegészíthető JWT vagy session alapú autentikációval.
+
+  
+- A rendszer Dockerrel konténerizálható, így a fejlesztési és éles környezetek egységesíthetők. 
+CI/CD pipeline bevezetésével automatizálható a tesztelés és a telepítés. 
+A teszteléshez Django beépített tesztkeretrendszere, valamint Pytest is használható.
 
 ### Adatbázis terv
 
