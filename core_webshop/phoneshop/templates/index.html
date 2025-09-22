@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alma</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block main %}
+    <h3>Szűrők</h3>
+      <label class="ctrl" style="display:block; margin-bottom:12px;">
+        <input id="q" type="search" placeholder="Keresés (pl. „fülhallgató”)" style="width:100%;" />
+      </label>
+      <label class="ctrl" style="display:block; margin-bottom:12px;">
+        <select id="cat" style="width:100%;">
+          <option value="all">Összes kategória</option>
+        </select>
+      </label>
+      <button class="btn" id="clear" style="width:100%;">Szűrők törlése</button>
+{% endblock %}
