@@ -54,7 +54,6 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
 ### Üzleti folyamatok modellje
 
-
 ![Kép az üzleti modellről, amely tartalmazza a felhasználok által használható funkciókat](/img/uzleti_modell.png)
 *Üzleti modell*
 
@@ -110,40 +109,40 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 ## Rendszerhasználati esetek és lefutásaik:
 
 ### ADMINISZTRÁTOR:
-● Teljes körű hozzáférése van a rendszerhez.    
-● Jogosultsági szintek kezelése (admin, értékesítő, partner).  
-● Termékek és készlet manuális bővítése, frissítése.  
-● Partnercégek regisztrálása és készlet-hozzárendelés.  
-● Számlák sztornózása és javítása.  
-● Rendszernaplók és riportok ellenőrzése.  
+- Teljes körű hozzáférése van a rendszerhez.    
+- Jogosultsági szintek kezelése (admin, értékesítő, partner).  
+- Termékek és készlet manuális bővítése, frissítése.  
+- Partnercégek regisztrálása és készlet-hozzárendelés.  
+- Számlák sztornózása és javítása.  
+- Rendszernaplók és riportok ellenőrzése.  
 
 ### ÉRTÉKESÍTŐ:
-● Bejelentkezés a rendszerbe email-címmel és jelszóval.  
-● Termékek listázása és készletadatok megtekintése.  
-● Termékek keresése és szűrése különféle paraméterek alapján.  
-● Termékek kosárba helyezése, mennyiség módosítása, eltávolítás.  
-● Vásárlás lebonyolítása és számla kiállítása.  
-● Hibás számlák sztornózása.  
-● Napi riport manuális indítása és letöltése.  
+- Bejelentkezés a rendszerbe email-címmel és jelszóval.  
+- Termékek listázása és készletadatok megtekintése.  
+- Termékek keresése és szűrése különféle paraméterek alapján.  
+- Termékek kosárba helyezése, mennyiség módosítása, eltávolítás.  
+- Vásárlás lebonyolítása és számla kiállítása.  
+- Hibás számlák sztornózása.  
+- Napi riport manuális indítása és letöltése.  
 
 ### PARTNERCÉG:
-● Saját hozzáférés kezelése.  
-● Hozzárendelt készletek megtekintése.  
-● Termékek státuszának követése.  
+- Saját hozzáférés kezelése.  
+- Hozzárendelt készletek megtekintése.  
+- Termékek státuszának követése.  
 
 ### VÁSÁRLÓ:
-● Termékek megtekintése és leírásaik olvasása.  
-● Kosárba helyezés az értékesítő közreműködésével.  
-● Vásárlás jóváhagyása és visszaigazolás fogadása.  
+- Termékek megtekintése és leírásaik olvasása.  
+- Kosárba helyezés az értékesítő közreműködésével.  
+- Vásárlás jóváhagyása és visszaigazolás fogadása.  
 
 ## Menü-hierarchiák:
 
-● **BEJELENTKEZÉS**  
+- **BEJELENTKEZÉS**  
   - Bejelentkezés  
   - Regisztráció  
   - Segítség (Help)  
 
-● **FŐMENÜ (Értékesítő számára)**  
+- **FŐMENÜ (Értékesítő számára)**  
   - Terméklista  
   - Keresés és szűrés  
   - Kosár megtekintése  
@@ -151,7 +150,7 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
   - Riportok (Napi / Heti / Havi)  
   - Kijelentkezés  
 
-● **ADMIN MENÜ**  
+- **ADMIN MENÜ**  
   - Felhasználókezelés  
   - Termék- és készletkezelés  
   - Partnercégek kezelése  
@@ -179,10 +178,7 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 ![Kép a használt fejlesztői eszközök](./img/used_tools_diagram.png)
 *Fejlesztésre használt eszközök*
 
-
 ![Kép az absztrakt domain modell a webshophoz ami tartalmazza a viszonyokat](/img/abstract_domain_modell.png)
-
-
 
 ### Architekturális terv - Marci
 - A webáruház architektúrája három fő rétegre tagolódik: prezentációs réteg (frontend), alkalmazásréteg (backend), 
