@@ -1,4 +1,5 @@
-1. Zsolti
+# Phoneshop Rendszerterv
+
 ### A rendszer célja
 
 A rendszer célja, hogy az értékesítők számára egy modern, 
@@ -19,11 +20,9 @@ A rendszer elsődleges célja, hogy csökkentse az értékesítési folyamatok i
 egyszerűsítse a munkatársak mindennapi tevékenységeit,
 valamint pontos és naprakész információkat biztosítson a készletekről és az értékesítésekről.
 
-![Kép az alkalmazás elképzelt működési folyamatáról](./img/workflow_model.png)
 
 *A rendszer működésének folyamatábrája*
 
-2. Zsolti
 ### Projektterv
 
 **Csapattagok és közös felelősség körök**
@@ -56,11 +55,6 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
 *Az Becslés/Aktuális becslés/Eltelt idő/Hátralévő idő oszlopok órában értendőek*
 
-![Kép egy kördiagramról, amely százalékokat tartalmaz a hátralévő teendőkről](/img/pie_chart_of_todo_tasks.png)
-*Kördiagram a hátralévő teendőkről*
-
-
-3. Zoli
 ### Üzleti folyamatok modellje
 
 
@@ -87,7 +81,6 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
 
 
-6. Zsolti
 ### Fizikai környezet
 
 Az alkalmazás webes platformra készül, reszponzív kialakítással, így asztali számítógépeken és laptopokon is használható.
@@ -105,6 +98,9 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 - Visual Studio Code - fronted fejlesztése (HTML/CSS)
 - Figma - felhasználói felület tervezése, képernyő tervezés
 - Git és Github - verziókezelés és csapatmunka támogatása
+
+![Kép a használt fejlesztői eszközök](./img/used_tools_diagram.png)
+*Fejlesztésre használt eszközök*
 
 7. Geri
 
@@ -126,14 +122,11 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 
 
 
-9. Zoli
 ### Adatbázis terv
 
 ![Kép az adatbázis kapcsolatokról, amely tartalmazza a mezőneveket és a típusokat](/img/database_relationships.png)
 *Adatbázis terv*
 
-
-10. Zoli
 ### Implementációs terv
 
 A tervezett webes felület fejlesztése során a fő cél egy olyan modern, biztonságos és jól skálázható rendszer létrehozása, amely egyszerre képes kiszolgálni a felhasználói igényeket és a menedzsment szempontokat is. A frontend elsősorban HTML, CSS és JavaScript nyelveken készül, a kódok elkülönítve kerülnek kezelésre: a HTML biztosítja az oldalak szerkezetét és tartalmi elemeit, a CSS a megjelenést és reszponzív elrendezést szabályozza, míg a JavaScript az interaktív funkciókért, eseménykezelésekért és dinamikus tartalmak betöltéséért felel. A kód külön fájlokba szervezése elősegíti az átláthatóságot, a karbantarthatóságot, valamint a jövőbeli bővítések egyszerű végrehajtását.
@@ -166,8 +159,6 @@ A rendszer tervezése során figyelembe vesszük a jövőbeni bővíthetőséget
 
 Összességében a projekt célja egy olyan átlátható, biztonságos, reszponzív és skálázható értékesítési rendszer létrehozása, amely nemcsak a végfelhasználók vásárlási folyamatait támogatja, hanem az adminisztrátorok és menedzserek munkáját is megkönnyíti. A rendszer lefedi a teljes folyamatot – a termékek kezelésétől a kosáron és a rendelésen át a számlázásig és riportkészítésig –, így egy komplex, mégis jól karbantartható megoldás valósul meg.
 
-
-11. Zsolti
 ### Tesztterv
 
 A tesztelés célja, hogy a rendszer és a komponensi megfelelően működjenek, hibamenetesen szolgálják ki a felhasználók igényit, 
@@ -229,17 +220,14 @@ amely csapat az elvárt működést próbálják elérni.
     - Napi riport manuális készítése.
     - Heti és havi riportok automatikus generálása.
 
-
-
-12. ### Telepitési terv
+### Telepitési terv
 
 Webes elérés és kliensoldali követelmények - A szoftver webes felületének használatához nincs szükség külön telepítendő 
 alkalmazásra. A felhasználók számára elegendő egy modern, ajánlott böngésző telepítése (pl. Google Chrome, Mozilla Firefox, 
 Opera vagy Safari). Az alkalmazás platformfüggetlen, és közvetlenül elérhető az interneten keresztül, így a kliensek a 
 webszerverhez böngészőn keresztül csatlakoznak, további konfiguráció nélkül.
 
-
-13. ### Karbantartási terv
+### Karbantartási terv
 
 A webáruház karbantartása rendszeres és tervezett feladatokat igényel annak érdekében, hogy a 
 rendszer biztonságosan, gyorsan és megbízhatóan működjön. A karbantartási terv az alábbi területekre terjed ki:
