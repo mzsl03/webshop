@@ -111,7 +111,7 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 
 
 
-8.  ### Architekturális terv - Marci
+### Architekturális terv - Marci
 - A webáruház architektúrája három fő rétegre tagolódik: prezentációs réteg (frontend), alkalmazásréteg (backend), 
 és adatkezelési réteg (adatbázis). A cél egy jól strukturált, biztonságos és könnyen bővíthető rendszer, 
 amely támogatja a termékek megjelenítését, kosárkezelést, rendelésfeldolgozást és felhasználói autentikációt.
