@@ -58,8 +58,6 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 ![Kép az üzleti modellről, amely tartalmazza a felhasználok által használható funkciókat](/img/uzleti_modell.png)
 *Üzleti modell*
 
-4. Geri
-
 # Követelmények
 
 - Leírja nagyvonalakban, miket kell teljesítenie a programnak.  
@@ -100,8 +98,6 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 - Adatbiztonsági szabványok (ISO/IEC 27001) követése.  
 - Szoftverminőségi szabványok (ISO/IEC 25010) figyelembevétele.  
 - Naplózás és adathozzáférés nyomonkövethetősége. 
-
-5. Geri
 
 # Funkcionális terv
 
@@ -183,7 +179,6 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 ![Kép a használt fejlesztői eszközök](./img/used_tools_diagram.png)
 *Fejlesztésre használt eszközök*
 
-7. Geri
 
 ![Kép az absztrakt domain modell a webshophoz ami tartalmazza a viszonyokat](/img/abstract_domain_modell.png)
 
