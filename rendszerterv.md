@@ -20,9 +20,6 @@ A rendszer elsődleges célja, hogy csökkentse az értékesítési folyamatok i
 egyszerűsítse a munkatársak mindennapi tevékenységeit,
 valamint pontos és naprakész információkat biztosítson a készletekről és az értékesítésekről.
 
-
-*A rendszer működésének folyamatábrája*
-
 ### Projektterv
 
 **Csapattagok és közös felelősség körök**
