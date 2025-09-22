@@ -1,4 +1,5 @@
-1. Zsolti
+# Phoneshop Rendszerterv
+
 ### A rendszer célja
 
 A rendszer célja, hogy az értékesítők számára egy modern, 
@@ -19,11 +20,6 @@ A rendszer elsődleges célja, hogy csökkentse az értékesítési folyamatok i
 egyszerűsítse a munkatársak mindennapi tevékenységeit,
 valamint pontos és naprakész információkat biztosítson a készletekről és az értékesítésekről.
 
-![Kép az alkalmazás elképzelt működési folyamatáról](./img/workflow_model.png)
-
-*A rendszer működésének folyamatábrája*
-
-2. Zsolti
 ### Projektterv
 
 **Csapattagok és közös felelősség körök**
@@ -56,11 +52,6 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
 *Az Becslés/Aktuális becslés/Eltelt idő/Hátralévő idő oszlopok órában értendőek*
 
-![Kép egy kördiagramról, amely százalékokat tartalmaz a hátralévő teendőkről](/img/pie_chart_of_todo_tasks.png)
-*Kördiagram a hátralévő teendőkről*
-
-
-3. Zoli
 ### Üzleti folyamatok modellje
 
 
@@ -171,7 +162,6 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
   - Számlák kezelése  
   - Rendszernaplók és biztonsági beállítások  
 
-6. Zsolti
 ### Fizikai környezet
 
 Az alkalmazás webes platformra készül, reszponzív kialakítással, így asztali számítógépeken és laptopokon is használható.
@@ -190,44 +180,84 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 - Figma - felhasználói felület tervezése, képernyő tervezés
 - Git és Github - verziókezelés és csapatmunka támogatása
 
+![Kép a használt fejlesztői eszközök](./img/used_tools_diagram.png)
+*Fejlesztésre használt eszközök*
+
 7. Geri
 
 ![Kép az absztrakt domain modell a webshophoz ami tartalmazza a viszonyokat](/img/abstract_domain_modell.png)
 
-8. Marci
 
 
+### Architekturális terv - Marci
+- A webáruház architektúrája három fő rétegre tagolódik: prezentációs réteg (frontend), alkalmazásréteg (backend), 
+és adatkezelési réteg (adatbázis). A cél egy jól strukturált, biztonságos és könnyen bővíthető rendszer, 
+amely támogatja a termékek megjelenítését, kosárkezelést, rendelésfeldolgozást és felhasználói autentikációt.
 
 
+- A frontend a Django sablonrendszerére épül, HTML, CSS és JavaScript segítségével jeleníti meg az oldalakat. 
+A JavaScript felelős az interaktív elemekért, 
+például a kosár dinamikus frissítéséért vagy az AJAX-alapú kommunikációért a backend felé.
 
 
+- Az alkalmazásréteg Django keretrendszert használ, amely MVC mintát követ. 
+A modellek definiálják az adatstruktúrákat, a view-k kezelik az üzleti logikát, 
+míg a template-ek a megjelenítést biztosítják. A Django REST Framework lehetőséget ad API-k kialakítására, 
+így a frontend akár SPA-ként is működhet, vagy külső rendszerek is integrálhatók.
 
 
+- Az adatkezelési réteg MySQL adatbázist használ, amelyet a Django ORM kezel. 
+Az adatbázis tárolja a felhasználók, termékek, rendelések, kosártételek és adminisztrációs adatok struktúráját. 
+A rendszer támogatja a relációs kapcsolatokat, például egy rendelés több terméket is tartalmazhat, 
+és egy felhasználó több rendelést is leadhat.
 
-9. Zoli
+
+- A rendszer moduljai közé tartozik a termékkezelés, kosárkezelés, rendelésfeldolgozás, 
+felhasználói regisztráció és bejelentkezés, valamint az adminisztrációs felület. 
+A jogosultságkezelés Django beépített auth rendszerével történik, amely kiegészíthető JWT vagy session alapú autentikációval.
+
+  
+- A rendszer Dockerrel konténerizálható, így a fejlesztési és éles környezetek egységesíthetők. 
+CI/CD pipeline bevezetésével automatizálható a tesztelés és a telepítés. 
+A teszteléshez Django beépített tesztkeretrendszere, valamint Pytest is használható.
+
 ### Adatbázis terv
 
 ![Kép az adatbázis kapcsolatokról, amely tartalmazza a mezőneveket és a típusokat](/img/database_relationships.png)
 *Adatbázis terv*
 
-
-10. Zoli
 ### Implementációs terv
 
-A webes felület főként HTML, CSS és JavaScript nyelveken fog készülni. A HTML struktúrák, a CSS stíluslapok és a JavaScript kódok külön fájlokba kerülnek, hogy a rendszer átlátható, könnyen módosítható és bővíthető legyen. A frontend a backend felé REST API-n keresztül kommunikál, amely CRUD műveleteket biztosít az adatbázis kezelésére. Az oldalon a felhasználók képesek lesznek termékeket megtekinteni, kosárba helyezni és rendeléseket leadni, miközben a kosár tartalmát a kliens oldalon is nyilvántartjuk, így a felhasználó azonnal láthatja a változásokat.
+A tervezett webes felület fejlesztése során a fő cél egy olyan modern, biztonságos és jól skálázható rendszer létrehozása, amely egyszerre képes kiszolgálni a felhasználói igényeket és a menedzsment szempontokat is. A frontend elsősorban HTML, CSS és JavaScript nyelveken készül, a kódok elkülönítve kerülnek kezelésre: a HTML biztosítja az oldalak szerkezetét és tartalmi elemeit, a CSS a megjelenést és reszponzív elrendezést szabályozza, míg a JavaScript az interaktív funkciókért, eseménykezelésekért és dinamikus tartalmak betöltéséért felel. A kód külön fájlokba szervezése elősegíti az átláthatóságot, a karbantarthatóságot, valamint a jövőbeli bővítések egyszerű végrehajtását.
 
-A rendelési folyamat során a rendszer ellenőrzi a raktárkészletet és a felhasználói jogosultságokat. A felhasználói bejelentkezés és regisztráció biztonságos jelszókezeléssel történik, a jelszavak titkosított formában kerülnek tárolásra az adatbázisban. A backend Django keretrendszerre épül, és felelős az adatbázis lekérdezések és módosítások pontos végrehajtásáért. Az adatbázis MySQL alapú, normalizált és indexelt, a termékek, rendelések, számlák és riportok nyilvántartására.
+A frontend és a backend közötti kommunikáció REST API-n keresztül valósul meg, amely teljes körű CRUD (Create, Read, Update, Delete) műveleteket biztosít az adatbázis kezelésére. Ez azt jelenti, hogy minden adat – legyen szó termékekről, felhasználókról vagy rendelések adatairól – biztonságosan és pontosan módosítható, lekérdezhető és törölhető. A felhasználói élmény egyik kulcseleme, hogy a látogatók könnyedén böngészhessenek a termékek között, a kiválasztott termékeket kosárba tehessék, majd a rendelési folyamaton keresztül egyszerűen leadhassák a megrendeléseiket. A kosár kezelése a kliens oldalon is történik, vagyis a felhasználó azonnal láthatja a mennyiségek változását, a kosár teljes árát, valamint a hozzáadott vagy eltávolított termékek listáját, ami jelentősen növeli a felhasználói élményt.
 
-A termékek és kategóriák listája dinamikusan jelenik meg a backend adatai alapján, míg a kosár interaktív kezelése JavaScript eseményekkel történik. A rendelés leadása előtt a backend ellenőrzi az adatok érvényességét, és a kosárban lévő mennyiségeket a szerverrel szinkronizálja. A rendelés leadása után a rendszer generálja a számlát PDF formátumban, amely letölthető és nyomtatható, továbbá lehetőség van sztornózásra, ami a rendelés státuszának módosításával történik.
+A rendelési folyamat során a rendszer valós idejű ellenőrzéseket hajt végre. Például ellenőrzi, hogy a kiválasztott termékek raktárkészlete rendelkezésre áll-e, illetve hogy a felhasználó megfelelő jogosultsággal rendelkezik-e a tranzakció végrehajtásához. A raktárkészlet változása nyomon követhető lesz a főoldalon, ahol ha nagyon kevés termék áll rendelkezésre, akkor jelzést ad a felhasználónak, hogy rendelnie kell. Ez egy fiktív központi raktárból megoldhatóvá válik. Valójában leadja a rendelést és egy előre beállított időn belül növekszik az üzlet raktárkészlete, ezzel együtt a státusza is megváltozik a rendelésnek. Ezekről visszaigazoló üzenet is érkezik, hogy egy adott termék kosárba tétele sikeres, vagy nem. Nem csak szöveges formában, hanem színekkel is segítjük a felhasználói élményt, így egyszerűen fel lehet ismerni, ha hiba keletkezik. A bejelentkezés és regisztráció folyamata biztonságos jelszókezeléssel van megoldva: a jelszavak nem nyers formában kerülnek tárolásra, hanem korszerű titkosítási algoritmusokkal hash-elve. Ez biztosítja, hogy az esetleges adatvédelmi incidensek során a felhasználói adatok ne legyenek közvetlenül hozzáférhetők.
 
-A riportok menedzseri jogosultság szerint jelennek meg, és exportálhatók PDF vagy CSV formátumban. A riportok a backend aggregált adataira épülnek, és a frontend grafikonjai JavaScript (például Chart.js) segítségével jelennek meg. Az oldal reszponzív kialakítású, mobilon és asztali gépen egyaránt jól használható, a CSS biztosítja az egységes megjelenést, míg a HTML sablonok a Django Template Engine segítségével kerülnek összeállításra.
+A backend réteg Django keretrendszerre épül, amely biztosítja az adatbázis-műveletek pontos és biztonságos végrehajtását, valamint támogatja a moduláris fejlesztést. Az adatbázis MySQL alapú, normalizált struktúrával rendelkezik a redundancia minimalizálása érdekében, és megfelelően indexelt a gyors lekérdezésekhez. Az adatbázis tárolja a termékek, kategóriák, rendelések, számlák, felhasználói profilok és riportok adatait.
 
-A felhasználói profil oldalon a személyes adatok szerkeszthetők, a backend pedig minden inputot validál a biztonság érdekében. A rendszer képes több felhasználó párhuzamos kezelésére, a tevékenységek naplózása biztosítja az auditálhatóságot és a hibakeresést. A REST API végpontjai dokumentáltak és verziózottak, a frontend és backend közötti kommunikáció pedig biztonságos HTTPS-en keresztül történik.
+A termékek és kategóriák listája dinamikusan, a backend adatai alapján jelenik meg, tehát a tartalom bármikor frissíthető az adminisztrátori felületen keresztül, és azonnal tükröződik a felhasználói oldalon. A kosár működését JavaScript eseménykezelések teszik interaktívvá: lehetőség van mennyiségek növelésére vagy csökkentésére, valamint egyes termékek eltávolítására. A rendelés véglegesítése előtt a rendszer szinkronizálja a kliens oldali adatokat a szerverrel, ezzel biztosítva a pontosságot és a készletinformációk helyességét.
 
-A kosár funkció lehetővé teszi a mennyiségek módosítását és termékek eltávolítását, a rendelés leadása után pedig visszaigazolást kap a felhasználó. Az admin felület biztosítja a termékek, felhasználók, rendelések és számlák kezelését, míg az oldal hibakezelése kiterjed a formák érvényesítésére és a backend válaszaira is. A weboldal teljes funkcionalitása tesztelve lesz a fejlesztés minden szakaszában, a kód dokumentált, és a rendszer könnyen karbantartható és bővíthető. Összességében a projekt célja egy átlátható, biztonságos, reszponzív és jól karbantartható értékesítési rendszer létrehozása, amely támogatja a felhasználói műveleteket, a rendeléseket, a számlázást és a riportok generálását.
+A rendelés leadása után a rendszer automatikusan generál egy számlát PDF formátumban, amelyet az értékesítő ott helyben ki is. A tud nyomtatni. Amennyiben a rendelést mégis vissza kell vonni, akár ott helyben, akár napokkal később, a sztornózás lehetősége is biztosított: a rendelés státusza ilyenkor módosul, és a készlet visszaállításra kerül.
 
+A riportkészítési modul különösen fontos a menedzsment számára. A riportok csak az értékesítők tudják majd legenerálni, emellett heti és havi riportok automatikusan kerülnek legenerálásra. Ezek a riportok a backendben előre aggregált és feldolgozott adatokra épülnek, amely Excel file-ba lesz kiexportálva. Így a felhasználók gyors áttekintést kaphatnak az értékesítési trendekről, a legnépszerűbb termékekről, vagy a rendelések volumenéről.
 
-11. Zsolti
+A weboldal teljes mértékben reszponzív kialakítású, vagyis asztali számítógépen, tableten és mobiltelefonon egyaránt felhasználóbarát megjelenést biztosít. A CSS gondoskodik arról, hogy az egyes elemek méretezése, elrendezése és stílusa minden képernyőméreten megfelelő legyen. A CSS gondoskodik majd a nyomtatási kép helyes megjelenítéséért, hogy minden fontos információ látható legyen a nyomtatott számlán. A HTML sablonokat a Django Template Engine állítja össze, így lehetőség van dinamikus tartalmak és komponensek könnyű integrálására.
+
+A felhasználói profil oldalon lehetőség van a személyes adatok módosítására, például a név, elérhetőségek vagy jelszó frissítésére. Emellett az első bejelentkezéskor a felhasználónak kötelező lesz a jelszavát megváltoztatni, mert az adminisztrátor, amikor regisztráltatja az értékesítőket, akkor automatikusan generálódik felhasználónév és jelszó, amelyből utóbbi egységes lesz kezdetben mindenki számára. A backend minden bevitt adatot ellenőriz, hogy megakadályozza a hibás vagy rosszindulatú bevitelek okozta problémákat. A rendszer egyszerre képes több felhasználót kezelni, és minden művelet naplózásra kerül, ami nemcsak az auditálhatóságot, hanem a hibakeresést és a biztonsági vizsgálatokat is támogatja.
+
+A REST API végpontjai részletesen dokumentáltak és verziózottak, így a jövőben más rendszerek vagy szolgáltatások is könnyedén integrálhatók. Az adatátvitel minden esetben biztonságos HTTPS protokollon keresztül történik, így az érzékeny információk – például felhasználói adatok és rendelési információk – védve vannak a lehallgatással szemben.
+
+Az adminisztrátori felület kiterjedt funkciókat biztosít: a rendszergazdák kezelhetik a termékeket, kategóriákat, felhasználókat, rendeléseket és számlákat. A hibakezelés kiterjed mind a frontend oldali űrlap-validációra, mind pedig a backend válaszainak ellenőrzésére, így a felhasználók mindig egyértelmű visszajelzést kapnak a rendszer működéséről.
+
+A fejlesztési folyamat során kiemelt figyelmet kap a tesztelés, amely több szinten valósul meg: egységtesztek, integrációs tesztek és végpontok közötti tesztelések biztosítják, hogy a rendszer minden komponense hibamentesen működjön. A tesztelési fázis nem az implementációt fogja követni, hanem az alap teszteseteket már az elején leírjuk, ezzel is kizárva alapvető hibákat, hogy később ne kelljen ezzel foglalkozni. Ez csökkenti az implementáció költségét és később lehet foglalkozni az összetettebb esetekkel. Tesztelés során követjük a FIRST és a CORRECT alapelveket. Emellett követjük a TDD (Test-Driven Development) fejlesztési módszertant, amely ciklikusan megismétel egy folyamatot, amely 3 részből áll. Először tesztet írunk az új funkcióhoz, de ez még az elején persze elbukik, mert még nem létezik az a funkció. Majd megírhatjuk a legegyszerűbb kódot, amely az előbb említett tesztesetet kizöldíti. Majd következhet a refaktorálás, amelynél hatékonyabb kódot írunk úgy, hogy a teszt mindig zölt marad. A kód megfelelően dokumentált, ami elősegíti a jövőbeni karbantartást és a további fejlesztések egyszerű beillesztését.
+
+A fejlesztési folyamat során kiemelt szerepet kap a verziókezelés és az együttműködés támogatása. A rendszer forráskódja Git alapú verziókezelés alatt áll, amely biztosítja a kódváltoztatások nyomon követhetőségét, a párhuzamos munkavégzést, valamint a hibák egyszerűbb azonosítását és javítását. Ez a megközelítés lehetővé teszi a fejlesztők számára, hogy biztonságosan kísérletezzenek új funkciókkal, miközben az éles működéshez szükséges stabilitás is megmarad.
+
+A rendszer tervezése során figyelembe vesszük a jövőbeni bővíthetőséget és rugalmasságot. A moduláris kialakításnak köszönhetően a rendszer később könnyen kiegészíthető további funkciókkal, például új riporttípusokkal, adminisztrációs lehetőségekkel vagy felhasználói szolgáltatásokkal. Az alkalmazott architektúra előnye, hogy a különálló részek fejlesztése és karbantartása jól elkülöníthető, így a projekt hosszabb távon is fenntartható és továbbfejleszthető marad.
+
+Összességében a projekt célja egy olyan átlátható, biztonságos, reszponzív és skálázható értékesítési rendszer létrehozása, amely nemcsak a végfelhasználók vásárlási folyamatait támogatja, hanem az adminisztrátorok és menedzserek munkáját is megkönnyíti. A rendszer lefedi a teljes folyamatot – a termékek kezelésétől a kosáron és a rendelésen át a számlázásig és riportkészítésig –, így egy komplex, mégis jól karbantartható megoldás valósul meg.
+
 ### Tesztterv
 
 A tesztelés célja, hogy a rendszer és a komponensi megfelelően működjenek, hibamenetesen szolgálják ki a felhasználók igényit, 
@@ -289,17 +319,14 @@ amely csapat az elvárt működést próbálják elérni.
     - Napi riport manuális készítése.
     - Heti és havi riportok automatikus generálása.
 
-
-
-12. ### Telepitési terv
+### Telepitési terv
 
 Webes elérés és kliensoldali követelmények - A szoftver webes felületének használatához nincs szükség külön telepítendő 
 alkalmazásra. A felhasználók számára elegendő egy modern, ajánlott böngésző telepítése (pl. Google Chrome, Mozilla Firefox, 
 Opera vagy Safari). Az alkalmazás platformfüggetlen, és közvetlenül elérhető az interneten keresztül, így a kliensek a 
 webszerverhez böngészőn keresztül csatlakoznak, további konfiguráció nélkül.
 
-
-13. ### Karbantartási terv
+### Karbantartási terv
 
 A webáruház karbantartása rendszeres és tervezett feladatokat igényel annak érdekében, hogy a 
 rendszer biztonságosan, gyorsan és megbízhatóan működjön. A karbantartási terv az alábbi területekre terjed ki:
