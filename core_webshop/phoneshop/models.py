@@ -98,3 +98,19 @@ class Workers(models.Model):
     )
     admin = models.BooleanField(default=False)
 
+class Orders(models.Model):
+    product = models.ForeignKey(
+        Products,
+        on_delete=models.CASCADE,
+        related_name='orders'
+    )
+    shop = models.ForeignKey(
+        Shops,
+        on_delete=models.CASCADE,
+        related_name='orders'
+    )
+    quantity = models.IntegerField()
+    order_time = models.DateTimeField()
+    status = models.IntegerField()
+    color = models.CharField(max_length=255)
+    storage = models.IntegerField()
