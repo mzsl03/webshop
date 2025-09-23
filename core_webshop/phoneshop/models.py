@@ -124,3 +124,22 @@ class Users(models.Model):
 
     username = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
+
+class Storage(models.Model):
+    product = models.ForeignKey(
+        Products,
+        on_delete=models.CASCADE,
+        related_name='storage'
+    )
+    shop = models.ForeignKey(
+        Shops,
+        on_delete=models.CASCADE,
+        related_name='storage'
+    )
+    quantity = models.IntegerField()
+    num_items = ArrayField(
+        models.IntegerField(),
+        blank=False,
+        default=list
+    )
+
