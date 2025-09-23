@@ -1,0 +1,36 @@
+<!doctype html>
+{% load static %}
+<html lang="hu">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+        PhoneShop
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <ul class="nav--list">
+                <li class="active"></li>
+                <li class="item"><a href="/">Home</a></li>
+                <li class="item"><a href="/cart/">Kosár</a></li>
+                <li class="item"><a href="/receipts/">Számlák</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main class="wrap" id="app" style="padding-top:22px; display:flex; gap:20px;">
+    {% block main %}
+    {% endblock %}
+</main>
+<footer>
+    <div class="wrap"
+         style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:18px 0;">
+        <small class="muted">SZFM-Webshop © 2025</small>
+    </div>
+</footer>
+</body>
+</html>
