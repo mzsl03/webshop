@@ -108,7 +108,7 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
 ## Rendszerhasználati esetek és lefutásaik:
 
-### ADMINISZTRÁTOR:
+### Adminisztrátor:
 - Teljes körű hozzáférése van a rendszerhez.    
 - Jogosultsági szintek kezelése (admin, értékesítő, partner).  
 - Termékek és készlet manuális bővítése, frissítése.  
@@ -116,7 +116,7 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 - Számlák sztornózása és javítása.  
 - Rendszernaplók és riportok ellenőrzése.  
 
-### ÉRTÉKESÍTŐ:
+### Értékesítő:
 - Bejelentkezés a rendszerbe email-címmel és jelszóval.  
 - Termékek listázása és készletadatok megtekintése.  
 - Termékek keresése és szűrése különféle paraméterek alapján.  
@@ -125,12 +125,12 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 - Hibás számlák sztornózása.  
 - Napi riport manuális indítása és letöltése.  
 
-### PARTNERCÉG:
+### Partnercég:
 - Saját hozzáférés kezelése.  
 - Hozzárendelt készletek megtekintése.  
 - Termékek státuszának követése.  
 
-### VÁSÁRLÓ:
+### Vásárló:
 - Termékek megtekintése és leírásaik olvasása.  
 - Kosárba helyezés az értékesítő közreműködésével.  
 - Vásárlás jóváhagyása és visszaigazolás fogadása.  
@@ -180,7 +180,8 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 
 ![Kép az absztrakt domain modell a webshophoz ami tartalmazza a viszonyokat](./img/abstract_domain_modell.png)
 
-### Architekturális terv - Marci
+### Architekturális terv 
+
 - A webáruház architektúrája három fő rétegre tagolódik: prezentációs réteg (frontend), alkalmazásréteg (backend), 
 és adatkezelési réteg (adatbázis). A cél egy jól strukturált, biztonságos és könnyen bővíthető rendszer, 
 amely támogatja a termékek megjelenítését, kosárkezelést, rendelésfeldolgozást és felhasználói autentikációt.
