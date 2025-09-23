@@ -142,6 +142,7 @@ class Storage(models.Model):
         blank=False,
         default=list
     )
+
 class Sales(models.Model):
     product = models.ForeignKey(
         Products,
@@ -165,6 +166,27 @@ class Sales(models.Model):
     address = models.CharField(max_length=255)
     costumer_name = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
+    price = models.IntegerField()
+    color = models.CharField(max_length=255)
+    storage = models.IntegerField()
+
+class Cart(models.Model):
+    user = models.ForeignKey(
+        Users,
+        on_delete=models.CASCADE,
+        related_name='cart'
+    )
+    product = models.ForeignKey(
+        Products,
+        on_delete=models.CASCADE,
+        related_name='cart'
+    )
+    shop = models.ForeignKey(
+        Shops,
+        on_delete=models.CASCADE,
+        related_name='cart'
+    )
+    quantity = models.IntegerField()
     price = models.IntegerField()
     color = models.CharField(max_length=255)
     storage = models.IntegerField()
