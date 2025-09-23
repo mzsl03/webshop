@@ -1,21 +1,5 @@
 {% extends 'layout.html' %}
 
 {% block main %}
-      <h2>Kosár</h2>
-
-  <div id="empty" class="empty" style="display:none;">
-    A kosarad üres. <a href="/" class="btn" style="margin-left:10px;">Vásárlás folytatása</a>
-  </div>
-
-  <div id="cartItems"></div>
-
-  <div id="summary" style="margin-top:20px; display:none;">
-    <div class="price">
-      <strong>Összesen:</strong>
-      <b id="totalPrice">0 Ft</b>
-    </div>
-    <button class="btn" style="width:100%; margin-top:10px;" onclick="checkout()">
-      Pénztár
-    </button>
-  </div>
+    <h2>Kosár</h2>
 {% endblock %}
