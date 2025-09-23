@@ -6,3 +6,6 @@ def index(request):
 
 def cart(request):
     return render(request, 'cart.html')
+
+def receipts(request):
+    return render(request, 'receipts.html')
