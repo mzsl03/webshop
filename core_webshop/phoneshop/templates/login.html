@@ -1,0 +1,48 @@
+<!doctype html>
+{% load static %}
+<html lang="hu">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+        PhoneShop
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body class="login-page">
+<div class="login-div">
+    <div class="login-container">
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            <h2 class="login-title-card">Bejelentkezés</h2>
+            <div class="login-group" style="margin-bottom: 12px;">
+                <label for="username"></label>
+                <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Felhasználónév"
+                        required
+                >
+            </div>
+            <div class="login-group">
+                <label for="password"></label>
+                <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Jelszó"
+                        required
+                >
+            </div>
+            <div>
+                <button type="submit" class="btn">Bejelentkezés</button>
+            </div>
+            {% if error %}
+                <p style="color: var(--danger); text-align: center; margin-top: 10px;">{{ error }}</p>
+            {% endif %}
+        </form>
+    </div>
+</div>
+</body>
+</html>

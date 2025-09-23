@@ -10,3 +10,6 @@ def cart(request):
 
 def receipts(request):
     return render(request, 'receipts.html')
+
+def login(request):
+    return render(request, 'login.html')
