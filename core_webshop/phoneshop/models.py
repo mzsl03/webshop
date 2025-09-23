@@ -74,5 +74,27 @@ class Shops(models.Model):
         ("3", "Pólus")
     )
 
-    name = models.CharField(max_length=255)
-    location = models.CharField(choices=names, default='1')
+    name = models.CharField(max_length=255, choices=names, default='1') 
+    location = models.CharField(max_length=255)
+
+class Workers(models.Model):
+
+    positions = (
+        ('uzletvezeto', 'Üzletvezető'),
+        ('ertekesito', 'Értékesítő'),
+        ('promoter', 'Promoter'),
+    )
+
+    last_name = models.CharField(max_length=255)
+    first_name = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+    birth_date = models.DateField()
+    phone_number = models.CharField(max_length=12)
+    position = models.CharField(choices=positions, default='uzletvezeto')
+    shop = models.ForeignKey(
+        Shops,
+        on_delete=models.CASCADE,
+        related_name='workers'
+    )
+    admin = models.BooleanField(default=False)
+
