@@ -54,7 +54,7 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
 ### Üzleti folyamatok modellje
 
-![Kép az üzleti modellről, amely tartalmazza a felhasználok által használható funkciókat](/img/uzleti_modell.png)
+![Kép az üzleti modellről, amely tartalmazza a felhasználok által használható funkciókat](./img/uzleti_modell.png)
 *Üzleti modell*
 
 # Követelmények
@@ -178,7 +178,7 @@ A rendszer teljes mértékben open source komponensekre épül, nem használ meg
 ![Kép a használt fejlesztői eszközök](./img/used_tools_diagram.png)
 *Fejlesztésre használt eszközök*
 
-![Kép az absztrakt domain modell a webshophoz ami tartalmazza a viszonyokat](/img/abstract_domain_modell.png)
+![Kép az absztrakt domain modell a webshophoz ami tartalmazza a viszonyokat](./img/abstract_domain_modell.png)
 
 ### Architekturális terv - Marci
 - A webáruház architektúrája három fő rétegre tagolódik: prezentációs réteg (frontend), alkalmazásréteg (backend), 
@@ -214,7 +214,7 @@ A teszteléshez Django beépített tesztkeretrendszere, valamint Pytest is haszn
 
 ### Adatbázis terv
 
-![Kép az adatbázis kapcsolatokról, amely tartalmazza a mezőneveket és a típusokat](/img/database_relationships.png)
+![Kép az adatbázis kapcsolatokról, amely tartalmazza a mezőneveket és a típusokat](./img/database_relationships.png)
 *Adatbázis terv*
 
 ### Implementációs terv
