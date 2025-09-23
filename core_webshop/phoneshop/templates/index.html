@@ -1,14 +1,16 @@
 {% extends 'layout.html' %}
 
 {% block main %}
-    <h3>Szűrők</h3>
-      <label class="ctrl" style="display:block; margin-bottom:12px;">
-        <input id="q" type="search" placeholder="Keresés (pl. „fülhallgató”)" style="width:100%;" />
-      </label>
-      <label class="ctrl" style="display:block; margin-bottom:12px;">
-        <select id="cat" style="width:100%;">
-          <option value="all">Összes kategória</option>
-        </select>
-      </label>
-      <button class="btn" id="clear" style="width:100%;">Szűrők törlése</button>
+    <div class="filters">
+        <h3>Szűrők</h3>
+        <label class="ctrl" style="display:block; margin-bottom:12px;">
+            <input id="q" type="search" placeholder="Keresés (pl. „fülhallgató”)" style="width:100%;"/>
+        </label>
+        <label class="ctrl" style="display:block; margin-bottom:12px;">
+            <select id="cat" style="width:100%;">
+                <option value="all">Összes kategória</option>
+            </select>
+        </label>
+        <button class="btn" id="clear" style="width:100%;">Szűrők törlése</button>
+    </div>
 {% endblock %}
