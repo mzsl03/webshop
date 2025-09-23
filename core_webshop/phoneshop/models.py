@@ -142,4 +142,29 @@ class Storage(models.Model):
         blank=False,
         default=list
     )
-
+class Sales(models.Model):
+    product = models.ForeignKey(
+        Products,
+        on_delete=models.CASCADE,
+        related_name='sales'
+    )
+    shop = models.ForeignKey(
+        Shops,
+        on_delete=models.CASCADE,
+        related_name='sales'
+    )
+    user = models.ForeignKey(
+        Users,
+        on_delete=models.CASCADE,
+        related_name='sales'
+    )
+    quantity = models.IntegerField()
+    selling_time = models.DateTimeField()
+    tax_number = models.IntegerField(max_length=10)
+    zip_code = models.IntegerField(max_length=4)
+    address = models.CharField(max_length=255)
+    costumer_name = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    price = models.IntegerField()
+    color = models.CharField(max_length=255)
+    storage = models.IntegerField()
