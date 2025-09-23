@@ -65,3 +65,14 @@ class Specs(models.Model):
     weight = models.CharField(max_length=255)
     battery = models.IntegerField()
     release_date = models.DateField()
+
+class Shops(models.Model):
+
+    names = (
+        ('1', 'Westend'),
+        ("2", 'Árkád'),
+        ("3", "Pólus")
+    )
+
+    name = models.CharField(max_length=255)
+    location = models.CharField(choices=names, default='1')
