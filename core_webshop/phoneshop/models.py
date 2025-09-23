@@ -4,13 +4,13 @@ from django.contrib.postgres.fields import ArrayField
 class Products(models.Model):
 
     categories = (
-        ("1", "Telefon"),
-        ("2", "Tartozék")
+        ("telefon", "Telefon"),
+        ("tartozek", "Tartozék")
     )
     
     name = models.CharField(max_length=255)
     price = models.IntegerField()
-    category = models.CharField(choices=categories, default='1')
+    category = models.CharField(choices=categories, default='telefon')
     colors = ArrayField(
         models.CharField(max_length=50),
         blank=False,
@@ -31,6 +31,9 @@ class Products(models.Model):
         blank=False,
         default=list
     )
+
+    def __str__(self):
+        return f"{self.name}"
 
 class Specs(models.Model):
 
@@ -62,27 +65,30 @@ class Specs(models.Model):
     charge = models.CharField(max_length=255)
     sensors = models.CharField(max_length=255)
     size = models.CharField(max_length=255)
-    weight = models.CharField(max_length=255)
+    weight = models.IntegerField()
     battery = models.IntegerField()
     release_date = models.DateField()
 
 class Shops(models.Model):
 
     names = (
-        ('1', 'Westend'),
-        ("2", 'Árkád'),
-        ("3", "Pólus")
+        ('westend', 'Westend'),
+        ("arkad", 'Árkád'),
+        ("polus", "Pólus")
     )
 
-    name = models.CharField(max_length=255, choices=names, default='1') 
+    name = models.CharField(choices=names, default='westend') 
     location = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.name}"
 
 class Workers(models.Model):
 
     positions = (
         ('uzletvezeto', 'Üzletvezető'),
         ('ertekesito', 'Értékesítő'),
-        ('promoter', 'Promoter'),
+        ('promoter', 'Promóter'),
     )
 
     last_name = models.CharField(max_length=255)
@@ -97,6 +103,9 @@ class Workers(models.Model):
         related_name='workers'
     )
     admin = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.last_name} {self.first_name}"
 
 class Orders(models.Model):
     product = models.ForeignKey(
@@ -124,6 +133,9 @@ class Users(models.Model):
 
     username = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.username}"
 
 class Storage(models.Model):
     product = models.ForeignKey(
