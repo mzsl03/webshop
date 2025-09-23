@@ -48,8 +48,16 @@ class Specs(models.Model):
     max_refresh_rate = models.CharField(max_length=255)
     Spen = models.BooleanField(default=False)
     camera = models.CharField(max_length=255)
-    memory = models.CharField(max_length=255)
-    storage = models.CharField(max_length=255)
+    memory = ArrayField(
+        models.CharField(max_length=255),
+        blank=False,
+        default=list
+    )
+    storage = ArrayField(
+        models.CharField(max_length=255),
+        blank=False,
+        default=list
+    )
     os = models.CharField(max_length=255)
     charge = models.CharField(max_length=255)
     sensors = models.CharField(max_length=255)
