@@ -57,12 +57,9 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 ![Kép az üzleti modellről, amely tartalmazza a felhasználok által használható funkciókat](./img/uzleti_modell.png)
 *Üzleti modell*
 
-# Követelmények
+### Követelmények
 
-- Leírja nagyvonalakban, miket kell teljesítenie a programnak.  
-- **Példa: Funkcionális követelmények:**
-
-## Funkcionális követelmények
+**Funkcionális követelmények**
 
 - Felhasználók regisztrációja és bejelentkezése email-cím és jelszó alapján.  
 - Jogosultsági szintek kezelése (admin, értékesítő, partner).  
@@ -79,7 +76,7 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 - Partnercégek regisztrációja és jogosultsági kiosztása.  
 - Rendszer naplózza a felhasználói és adminisztratív műveleteket.  
 
-## Nem funkcionális követelmények
+**Nem funkcionális követelmények**
 
 - A felhasználói felület legyen reszponzív és könnyen áttekinthető.  
 - Nagy terhelés alatt is biztosítson stabil működést.  
@@ -91,24 +88,24 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 - Jelszavak biztonságos, egyirányúan kódolt formában legyenek tárolva.  
 - Naplózott adatokhoz kizárólag adminisztrátor férhet hozzá.  
 
-## Törvényi előírások, szabványok
+**Törvényi előírások, szabványok**
 
 - GDPR előírásoknak való megfelelés.  
 - Adatbiztonsági szabványok (ISO/IEC 27001) követése.  
 - Szoftverminőségi szabványok (ISO/IEC 25010) figyelembevétele.  
 - Naplózás és adathozzáférés nyomonkövethetősége. 
 
-# Funkcionális terv
+### Funkcionális terv
 
-## Rendszerszereplők:
+**Rendszerszereplők:**
 - Adminisztrátor  
 - Értékesítő  
 - Partnercég  
 - Vásárló  
 
-## Rendszerhasználati esetek és lefutásaik:
+**Rendszerhasználati esetek és lefutásaik:**
 
-### Adminisztrátor:
+**Adminisztrátor:**
 - Teljes körű hozzáférése van a rendszerhez.    
 - Jogosultsági szintek kezelése (admin, értékesítő, partner).  
 - Termékek és készlet manuális bővítése, frissítése.  
@@ -116,7 +113,7 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 - Számlák sztornózása és javítása.  
 - Rendszernaplók és riportok ellenőrzése.  
 
-### Értékesítő:
+**Értékesítő:**
 - Bejelentkezés a rendszerbe email-címmel és jelszóval.  
 - Termékek listázása és készletadatok megtekintése.  
 - Termékek keresése és szűrése különféle paraméterek alapján.  
@@ -125,17 +122,17 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 - Hibás számlák sztornózása.  
 - Napi riport manuális indítása és letöltése.  
 
-### Partnercég:
+**Partnercég:**
 - Saját hozzáférés kezelése.  
 - Hozzárendelt készletek megtekintése.  
 - Termékek státuszának követése.  
 
-### Vásárló:
+**Vásárló:**
 - Termékek megtekintése és leírásaik olvasása.  
 - Kosárba helyezés az értékesítő közreműködésével.  
 - Vásárlás jóváhagyása és visszaigazolás fogadása.  
 
-## Menü-hierarchiák:
+### Menü-hierarchiák:
 
 - **BEJELENTKEZÉS**  
   - Bejelentkezés  
