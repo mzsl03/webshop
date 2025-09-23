@@ -69,12 +69,15 @@ class Specs(models.Model):
     battery = models.IntegerField()
     release_date = models.DateField()
 
+    def __str__(self):
+        return f"{self.product.name} specifikációs adatai"
+
 class Shops(models.Model):
 
     names = (
         ('westend', 'Westend'),
-        ("arkad", 'Árkád'),
-        ("polus", "Pólus")
+        ("árkád", 'Árkád'),
+        ("pólus", "Pólus")
     )
 
     name = models.CharField(choices=names, default='westend') 
@@ -108,6 +111,12 @@ class Workers(models.Model):
         return f"{self.last_name} {self.first_name}"
 
 class Orders(models.Model):
+    status_choices = (
+        ("feldolgozás_alatt", "Feldolgozás alatt"),
+        ("kiszállítva", "Kiszállítva"),
+        ("törölve", "Törölve"),
+    )
+
     product = models.ForeignKey(
         Products,
         on_delete=models.CASCADE,
@@ -120,9 +129,15 @@ class Orders(models.Model):
     )
     quantity = models.IntegerField()
     order_time = models.DateTimeField()
-    status = models.IntegerField()
+    status = models.CharField(choices=status_choices, default="feldolgozás alatt")
     color = models.CharField(max_length=255)
     storage = models.IntegerField()
+
+    def __str__(self):
+        unit = "TB"
+        if self.storage > 100:
+            unit = "GB"
+        return f"{self.product.name} rendelés {self.color} színnel {self.storage} {unit} tárhellyel"
 
 class Users(models.Model):
     worker = models.ForeignKey(
@@ -155,6 +170,9 @@ class Storage(models.Model):
         default=list
     )
 
+    def __str__(self):
+        return f"{self.product.name} raktárkészlet {self.shop} üzletben"
+
 class Sales(models.Model):
     product = models.ForeignKey(
         Products,
@@ -182,6 +200,9 @@ class Sales(models.Model):
     color = models.CharField(max_length=255)
     storage = models.IntegerField()
 
+    def __str__(self):
+        return f"{self.costumer_name} vásárlása"
+
 class Cart(models.Model):
     user = models.ForeignKey(
         Users,
@@ -202,3 +223,6 @@ class Cart(models.Model):
     price = models.IntegerField()
     color = models.CharField(max_length=255)
     storage = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.user} felhasználónak kosárban levő termékei"
