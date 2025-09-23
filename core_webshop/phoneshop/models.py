@@ -114,3 +114,13 @@ class Orders(models.Model):
     status = models.IntegerField()
     color = models.CharField(max_length=255)
     storage = models.IntegerField()
+
+class Users(models.Model):
+    worker = models.ForeignKey(
+        Workers,
+        on_delete=models.CASCADE,
+        related_name='users'
+    )
+
+    username = models.CharField(max_length=255)
+    password = models.CharField(max_length=255)
