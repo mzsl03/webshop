@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login as auth_login
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Products
 from support_files.sorting import sort_product
 
@@ -13,7 +13,7 @@ def index(request):
 
     products, categories = sort_product(request, products)
 
-    
+
 
     context = {
         'products': products,
@@ -30,6 +30,11 @@ def cart(request):
 @login_required(login_url='/')
 def receipts(request):
     return render(request, 'receipts.html')
+
+@login_required(login_url='/')
+def product_detail(request, name):
+        product = get_object_or_404(Products, name=name)
+        return render(request, 'item_info.html', {'product': product})
 
 
 def login(request):
