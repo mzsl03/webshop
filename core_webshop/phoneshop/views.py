@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login as auth_login
 from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Products, Cart, Shops, Users
+from .models import Products, Cart, Shops, Users, Sales
 from support_files.sorting import sort_product
 
 @login_required(login_url='/')
