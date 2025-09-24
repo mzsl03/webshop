@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Products
+from .models import Products, Sales
 from support_files.sorting import sort_product
 
 @login_required(login_url='/')
@@ -29,7 +29,8 @@ def cart(request):
 
 @login_required(login_url='/')
 def receipts(request):
-    return render(request, 'receipts.html')
+    receipts = Sales.objects.all()
+    return render(request, 'receipts.html',{'receipts': receipts})
 
 @login_required(login_url='/')
 def product_detail(request, name):
