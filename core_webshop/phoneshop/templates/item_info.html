@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block main %}
+    <div class="product-container">
+        <div class="image-section">
+            <img class="product-image-page" src="{% static 'images/' %}{{ product.image_path.0 }}"
+                 alt="{{ product.name }}" width="300">
+
+        </div>
+        <div class="text-section">
+            <h2>{{ product.name }}</h2>
+            <p><strong>Ár:</strong> {{ product.price }},-Ft</p>
+            <p><strong>Színek:</strong>
+                {% for color in product.colors %}
+                    <span class="color-badge">{{ color }}</span>
+                {% endfor %}
+            </p>
+            <p><strong>Specs:</strong></p>
+            <ul class="spec-list">
+                <li>CPU: {{ product.specs.CPU_type }} @ {{ product.specs.CPU_speed }}</li>
+                <li>Display: {{ product.specs.display_size }} - {{ product.specs.resolution }}
+                    ({{ product.specs.display_technology }})
+                </li>
+                <li>Refresh Rate: {{ product.specs.max_refresh_rate }}</li>
+                <li>S Pen Support: {{ product.specs.Spen|yesno:"Igen,Nem" }}</li>
+                <li>Camera: {{ product.specs.camera }}</li>
+                <li>Memory: {{ product.specs.memory|join:", " }}</li>
+                <li>Storage: {{ product.specs.storage|join:", " }}</li>
+                <li>OS: {{ product.specs.os }}</li>
+                <li>Charging: {{ product.specs.charge }}</li>
+                <li>Sensors: {{ product.specs.sensors }}</li>
+                <li>Size: {{ product.specs.size }}</li>
+                <li>Weight: {{ product.specs.weight }} g</li>
+                <li>Battery: {{ product.specs.battery }} mAh</li>
+                <li>Release Date: {{ product.specs.release_date }}</li>
+            </ul>
+            <a href="/cart/add/{{ product.id }}/" class="btn kosar_btn">Kosárba</a>
+        </div>
+    </div>
+{% endblock %}
+
