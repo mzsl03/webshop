@@ -30,7 +30,8 @@ def cart(request):
 
 @login_required(login_url='/')
 def receipts(request):
-    return render(request, 'receipts.html')
+    receipts = Sales.objects.all()
+    return render(request, 'receipts.html',{'receipts': receipts})
 
 @login_required(login_url='/')
 def product_detail(request, name):

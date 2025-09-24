@@ -1,5 +1,20 @@
 {% extends 'layout.html' %}
+{% load static %}
 
 {% block main %}
-    <h2>Számlák</h2>
+<div class="receipt_container">
+    {% for receipt in receipts %}
+    <ul class="receipt-list">
+        <li>Mennyiség: {{ receipt.quantity }}</li>
+        <li>Értékesítés ideje: {{ receipt.selling_time }}</li>
+        <li>Adószám: {{ receipt.tax_number }}</li>
+        <li>Irányítószám: {{ receipt.zip_code }}</li>
+        <li>Cím: {{ receipt.address }}</li>
+        <li>Vevő neve: {{ receipt.costumer_name }}</li>
+        <li>Város: {{ receipt.city }}</li>
+        <li>Ár: {{ receipt.price }} Ft</li>
+        <li>Tárhely: {{ receipt.storage }} GB</li>
+    </ul>
+    {% endfor %}
+</div>
 {% endblock %}}
