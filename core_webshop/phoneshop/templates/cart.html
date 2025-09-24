@@ -1,5 +1,12 @@
 {% extends 'layout.html' %}
 
 {% block main %}
-    <h2>Kosár</h2>
+    <h2>Kosár tartalma</h2>
+    <ul class="cart-list">
+    {% for item in cart_items %}
+        <li>{{ item.product.name }} - {{ item.quantity }} db - {{ item.price }} Ft</li>
+    {% empty %}
+        <li>A kosár üres.</li>
+    {% endfor %}
+    </ul>
 {% endblock %}

@@ -34,7 +34,16 @@
                 <li>Battery: {{ product.specs.battery }} mAh</li>
                 <li>Release Date: {{ product.specs.release_date }}</li>
             </ul>
-            <a href="/cart/add/{{ product.id }}/" class="btn kosar_btn">Kosárba</a>
+             <form method="get" action="{% url 'add_to_cart' product.id %}">
+                <label for="shop-select"><strong>Válassz boltot:</strong></label>
+                <select name="shop" id="shop-select" required>
+                    <option value="">-- Válassz --</option>
+                    {% for shop in shops %}
+                        <option value="{{ shop.id }}">{{ shop.name }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn kosar_btn">Kosárba</button>
+            </form>
         </div>
     </div>
 {% endblock %}
