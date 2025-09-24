@@ -5,13 +5,13 @@ from django.contrib.auth.models import User
 
 class Products(models.Model):
     categories = (
-        ("telefon", "Telefon"),
-        ("tartozek", "Tartozék")
+        ("Telefon", "Telefon"),
+        ("Tartozék", "Tartozék")
     )
 
     name = models.CharField(max_length=255)
     price = models.IntegerField()
-    category = models.CharField(choices=categories, default='telefon')
+    category = models.CharField(choices=categories, default='Telefon')
     colors = ArrayField(
         models.CharField(max_length=50),
         blank=False,

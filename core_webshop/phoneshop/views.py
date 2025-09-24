@@ -2,12 +2,26 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import render, redirect
 from .models import Products
+from support_files.sorting import sort_product
 
 @login_required(login_url='/')
 def index(request):
+    # Alap queryset - minden termék
     products = Products.objects.all()
-    print("DEBUG: home view futott", request.user)
-    return render(request, 'index.html', {"products": products})
+
+    all_categories = Products.objects.values_list("category", flat=True).distinct()
+
+    products, categories = sort_product(request, products)
+
+    
+
+    context = {
+        'products': products,
+        'categories': categories,
+        'allCategory': all_categories
+    }
+
+    return render(request, 'index.html', context)
 
 @login_required(login_url='/')
 def cart(request):

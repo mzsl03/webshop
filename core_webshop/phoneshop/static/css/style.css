@@ -128,8 +128,7 @@ footer {
     background: #e05555;
 }
 
-input[type="search"],
-select {
+.ctrl > input, select {
     width: 100%;
     padding: 8px 10px;
     border: 1px solid var(--border);
