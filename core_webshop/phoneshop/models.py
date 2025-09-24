@@ -1,13 +1,14 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from django.contrib.auth.models import User
+
 
 class Products(models.Model):
-
     categories = (
         ("Telefon", "Telefon"),
         ("Tartozék", "Tartozék")
     )
-    
+
     name = models.CharField(max_length=255)
     price = models.IntegerField()
     category = models.CharField(choices=categories, default='Telefon')
@@ -26,7 +27,7 @@ class Products(models.Model):
         blank=True,
         default=list
     )
-    prices=ArrayField(
+    prices = ArrayField(
         models.IntegerField(),
         blank=False,
         default=list
@@ -35,8 +36,8 @@ class Products(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-class Specs(models.Model):
 
+class Specs(models.Model):
     product = models.OneToOneField(
         Products,
         on_delete=models.CASCADE,
@@ -72,22 +73,22 @@ class Specs(models.Model):
     def __str__(self):
         return f"{self.product.name} specifikációs adatai"
 
-class Shops(models.Model):
 
+class Shops(models.Model):
     names = (
         ('westend', 'Westend'),
         ("árkád", 'Árkád'),
         ("pólus", "Pólus")
     )
 
-    name = models.CharField(choices=names, default='westend') 
+    name = models.CharField(choices=names, default='westend')
     location = models.CharField(max_length=255)
 
     def __str__(self):
         return f"{self.name}"
 
-class Workers(models.Model):
 
+class Workers(models.Model):
     positions = (
         ('uzletvezeto', 'Üzletvezető'),
         ('ertekesito', 'Értékesítő'),
@@ -109,6 +110,7 @@ class Workers(models.Model):
 
     def __str__(self):
         return f"{self.last_name} {self.first_name}"
+
 
 class Orders(models.Model):
     status_choices = (
@@ -139,18 +141,21 @@ class Orders(models.Model):
             unit = "GB"
         return f"{self.product.name} rendelés {self.color} színnel {self.storage} {unit} tárhellyel"
 
+
 class Users(models.Model):
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        related_name='phoneshop_user',
+        null=False,
+        blank=False
+    )
     worker = models.ForeignKey(
         Workers,
         on_delete=models.CASCADE,
         related_name='users'
     )
 
-    username = models.CharField(max_length=255)
-    password = models.CharField(max_length=255)
-
-    def __str__(self):
-        return f"{self.username}"
 
 class Storage(models.Model):
     product = models.ForeignKey(
@@ -172,6 +177,7 @@ class Storage(models.Model):
 
     def __str__(self):
         return f"{self.product.name} raktárkészlet {self.shop} üzletben"
+
 
 class Sales(models.Model):
     product = models.ForeignKey(
@@ -202,6 +208,7 @@ class Sales(models.Model):
 
     def __str__(self):
         return f"{self.costumer_name} vásárlása"
+
 
 class Cart(models.Model):
     user = models.ForeignKey(
