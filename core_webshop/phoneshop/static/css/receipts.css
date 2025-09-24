@@ -1,0 +1,41 @@
+.receipt_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.receipt-list {
+    list-style: none;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.receipt-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.receipt-list li:last-child {
+    border-bottom: none;
+}
+
+
+@media (max-width: 600px) {
+    .receipt_container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .receipt-list {
+        padding: 14px;
+    }
+}
