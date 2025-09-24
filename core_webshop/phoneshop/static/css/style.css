@@ -69,14 +69,25 @@ header {
 .nav--list {
     list-style: none;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
     gap: 24px;
 }
+
+.logout {
+    position: absolute;
+    left: 0;
+}
+
 
 .nav--list .item a {
     color: var(--text);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
+    margin-bottom: 5px;
 }
 
 .nav--list .item a:hover {
