@@ -10,42 +10,49 @@
         <div class="register-container">
             <form method="POST">
                 <h3 class="register-title-card">Felhasználó regisztrációja</h3>
-                <label for="cat"></label><select name="shop-opt" id="cat" style="width:100%;">
-                    {% for shop in shops %}
-                        <option value="{{ shop }}">{{ shop }}</option>
-                    {% endfor %}
-                </select>
-                <div class="register-group" style="margin-bottom: 12px;">
-                    <label for="username"></label>
-                    <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            placeholder="Felhasználónév"
-                            required
-                    >
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">Felhasználónév</label>
+                    {{ form.username }}
                 </div>
-                <div class="register-group" style="margin-bottom: 12px;">
-                    <label for="username"></label>
-                    <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            placeholder="Vezeték név"
-                            required
-                    >
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">E-mail</label>
+                    {{ form.email }}
                 </div>
-                <div class="register-group">
-                    <label for="password"></label>
-                    <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Jelszó"
-                            required
-                    >
+
+                <div class="form-group">
+                    <label for="{{ form.password.id_for_label }}">Jelszó</label>
+                    {{ form.password }}
                 </div>
-                <button class="btn" id="register-button">Regisztrálás</button>
+                <div class="form-group">
+                    <label for="{{ form.first_name.id_for_label }}">Keresztnév</label>
+                    {{ form.first_name }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.last_name.id_for_label }}">Vezetéknév</label>
+                    {{ form.last_name }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.address.id_for_label }}">Cím</label>
+                    {{ form.address }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.birth_date.id_for_label }}">Születési dátum</label>
+                    {{ form.birth_date }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.phone_number.id_for_label }}">Telefonszám</label>
+                    {{ form.phone_number }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.position.id_for_label }}">Pozíció</label>
+                    {{ form.position }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.shop.id_for_label }}">Üzlet</label>
+                    {{ form.shop }}
+                </div>
+                <button class="btn" type="submit">Regisztráció</button>
             </form>
         </div>
     </div>
