@@ -28,10 +28,14 @@ def index(request):
 
 @login_required(login_url='/')
 def cart(request):
+    if request.user.is_superuser:
+        return redirect('home')
     return render(request, 'cart.html')
 
 @require_POST
 def delete_cart_item(request, item_id):
+    if request.user.is_superuser:
+        return redirect('home')
     try:
         item = Cart.objects.get(id=item_id)
         item.delete()
@@ -56,12 +60,16 @@ def product_detail(request, name):
 
 @login_required
 def user_cart(request):
+    if request.user.is_superuser:
+        return redirect('home')
     phoneshop_user = request.user.phoneshop_user
     cart_items = Cart.objects.filter(user_id=phoneshop_user.id)
     return render(request, 'cart.html', {'cart_items': cart_items})
 
 @login_required
 def add_to_cart(request, product_id):
+    if request.user.is_superuser:
+        return redirect('home')
     phoneshop_user = request.user.phoneshop_user
     print("Adding to cart for:", phoneshop_user.id)
     product = get_object_or_404(Products, id=product_id)
@@ -97,3 +105,9 @@ def login(request):
         else:
             return render(request, 'login.html', {'error': 'Hibás felhasználónév vagy jelszó!'})
     return render(request, 'login.html')
+
+@login_required
+def register(request):
+    if not request.user.is_superuser:
+        return redirect('home')
+    return render(request, 'register_worker.html')
