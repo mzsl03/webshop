@@ -1,11 +1,15 @@
+from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.views.decorators.http import require_POST
 from django.contrib.auth import authenticate, login as auth_login
 from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Products, Cart, Shops, Users, Sales
+from .models import Products, Cart, Shops, Users, Sales, Workers
 from support_files.sorting import sort_product
 from django.http import HttpResponse, JsonResponse
+from support_files.register import RegistrationForm
+
 
 @login_required(login_url='/')
 def index(request):
@@ -110,4 +114,39 @@ def login(request):
 def register(request):
     if not request.user.is_superuser:
         return redirect('home')
-    return render(request, 'register_worker.html')
+    if request.method == "POST":
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+
+            worker = Workers.objects.create(
+                last_name=form.cleaned_data['last_name'],
+                first_name=form.cleaned_data['first_name'],
+                address=form.cleaned_data['address'],
+                birth_date=form.cleaned_data['birth_date'],
+                phone_number=form.cleaned_data['phone_number'],
+                position=form.cleaned_data['position'],
+                shop=form.cleaned_data['shop'],
+                admin=False
+            )
+
+
+            user = User.objects.create_user(
+                last_name=form.cleaned_data['last_name'],
+                first_name=form.cleaned_data['first_name'],
+                username=form.cleaned_data['username'],
+                email=form.cleaned_data['email'],
+                password=form.cleaned_data['password']
+            )
+
+
+            Users.objects.create(
+                user=user,
+                worker=worker
+            )
+
+            return redirect('home')
+
+    else:
+        form = RegistrationForm()
+
+    return render(request, 'register_worker.html', {'form': form})
