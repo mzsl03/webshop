@@ -1,0 +1,57 @@
+<!doctype html>
+{% load static %}
+<html lang="hu">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>PhoneShop — Dolgozó szerkesztése</title>
+    <link rel="stylesheet" href="{% static 'css/worker_edit.css' %}"/>
+</head>
+<body class="worker-edit-page">
+<div class="worker-edit-div">
+    <div class="worker-edit-container">
+        <form method="post" class="worker-edit-form">
+            {% csrf_token %}
+            <h2 class="worker-edit-title">Dolgozó szerkesztése</h2>
+            <p class="worker-edit-name">{{ worker.last_name }} {{ worker.first_name }}</p>
+
+            {% if form.non_field_errors %}
+              <div class="worker-edit-error">{{ form.non_field_errors }}</div>
+            {% endif %}
+
+            <div class="worker-edit-group">
+                <label for="{{ form.last_name.id_for_label }}">Vezetéknév</label>
+                {{ form.last_name}}
+                {{ form.last_name.errors }}
+            </div>
+
+            <div class="worker-edit-group">
+                <label for="{{ form.first_name.id_for_label }}">Keresztnév</label>
+                {{ form.first_name }}
+                {{ form.first_name.errors }}
+            </div>
+
+            <div class="worker-edit-group">
+                <label for="{{ form.address.id_for_label }}">Lakcím</label>
+                {{ form.address}}
+                {{ form.address.errors }}
+            </div>
+
+            <div class="worker-edit-group">
+                <label for="{{ form.birth_date.id_for_label }}">Születési dátum</label>
+                {{ form.birth_date }}
+                {{ form.birth_date.errors }}
+            </div>
+
+            <div class="worker-edit-group">
+                <label for="{{ form.phone_number.id_for_label }}">Telefonszám</label>
+                {{ form.phone_number}}
+                {{ form.phone_number.errors }}
+            </div>
+
+            <button type="submit" class="worker-edit-btn">Mentés</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
