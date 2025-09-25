@@ -9,7 +9,9 @@ from .models import Products, Cart, Shops, Users, Sales, Workers
 from support_files.sorting import sort_product
 from django.http import HttpResponse, JsonResponse
 from support_files.register import RegistrationForm
-
+from django.contrib import messages
+from .forms import WorkerForm
+from .models import Products, Cart, Shops, Users, Sales, Workers
 
 @login_required(login_url='/')
 def index(request):
@@ -94,6 +96,24 @@ def add_to_cart(request, product_id):
         storage=256
     )
     return redirect('user_cart')
+
+@login_required
+def edit_my_worker(request):
+    ps_user = get_object_or_404(
+        Users.objects.select_related("worker"),
+        user=request.user
+    )
+    worker = ps_user.worker
+    if request.method == "POST":
+        form = WorkerForm(request.POST, instance=worker)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "A dolgozó adatai frissítve lettek.")
+            return redirect("worker_edit")
+    else:
+        form = WorkerForm(instance=worker)
+
+    return render(request, "workers_edit.html", {"form": form, "worker": worker})
 
 
 def login(request):
