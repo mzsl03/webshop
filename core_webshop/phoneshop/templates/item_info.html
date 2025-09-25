@@ -1,5 +1,11 @@
 {% extends 'layout.html' %}
 {% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/item_info.css' %}">
+{% endblock %}
+
+
 {% block main %}
     <div class="product-container">
         <div class="image-section">

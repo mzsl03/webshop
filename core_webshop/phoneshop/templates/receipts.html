@@ -1,6 +1,10 @@
 {% extends 'layout.html' %}
 {% load static %}
 
+{% block extra_css %}
+	<link rel="stylesheet" href="{% static 'css/receipts.css' %}">
+{% endblock %}
+
 {% block main %}
 <div class="receipt_container">
     {% for receipt in receipts %}
