@@ -79,8 +79,15 @@ def add_to_cart(request, product_id):
     product = get_object_or_404(Products, id=product_id)
 
     shop_id = request.GET.get('shop')
+    color = request.GET.get('color')
+    storage = request.GET.get('storage')
+
     if not shop_id or not shop_id.isdigit():
         return HttpResponseBadRequest("Missing or invalid shop ID.")
+    if not color or color.strip().lower() not in [productColor.lower() for productColor in product.colors]:
+        return HttpResponseBadRequest("Missing or invalid color selection.")
+    if not storage or storage not in [s for s in product.specs.storage]:
+        return HttpResponseBadRequest("Missing or invalid storage selection.")
 
     shop = get_object_or_404(Shops, id=shop_id)
 
@@ -90,8 +97,8 @@ def add_to_cart(request, product_id):
         shop=shop,
         quantity=1,
         price=product.price,
-        color='black',
-        storage=256
+        color=color,
+        storage=storage
     )
     return redirect('user_cart')
 
