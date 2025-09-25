@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}"/>
+{% endblock %}
+
+{% block main %}
+    <div class="register-div">
+        <div class="register-container">
+            <form method="POST">
+                <h3 class="register-title-card">Felhasználó regisztrációja</h3>
+                <label for="cat"></label><select name="shop-opt" id="cat" style="width:100%;">
+                    {% for shop in shops %}
+                        <option value="{{ shop }}">{{ shop }}</option>
+                    {% endfor %}
+                </select>
+                <div class="register-group" style="margin-bottom: 12px;">
+                    <label for="username"></label>
+                    <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Felhasználónév"
+                            required
+                    >
+                </div>
+                <div class="register-group" style="margin-bottom: 12px;">
+                    <label for="username"></label>
+                    <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Vezeték név"
+                            required
+                    >
+                </div>
+                <div class="register-group">
+                    <label for="password"></label>
+                    <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Jelszó"
+                            required
+                    >
+                </div>
+                <button class="btn" id="register-button">Regisztrálás</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}}
