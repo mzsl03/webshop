@@ -3,15 +3,18 @@
 {% load static %}
 
 {% block extra_css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="{% static 'css/cart.css' %}">
 {% endblock %}
 
 {% block main %}
     <ul class="cart-list">
     {% for item in cart_items %}
-        <li>{{ item.product.name }} - {{ item.quantity }} db - {{ item.price }} Ft</li>
+        <li id="{{ item.id }}">{{ item.product.name }} - {{ item.quantity }} db - {{ item.price }} Ft   <button class="delete-item" data-item-id="{{ item.id }}"><i class="fa fa-trash-o"></i></button></li>
     {% empty %}
         <li>A kosár üres.</li>
     {% endfor %}
     </ul>
+
+    <script src="{% static 'js/cart_delete.js' %}"></script>
 {% endblock %}

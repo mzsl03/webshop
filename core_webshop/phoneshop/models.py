@@ -156,6 +156,9 @@ class Users(models.Model):
         related_name='users'
     )
 
+    def __str__(self):
+        return f"{self.user}"
+
 
 class Storage(models.Model):
     product = models.ForeignKey(
@@ -232,4 +235,4 @@ class Cart(models.Model):
     storage = models.IntegerField()
 
     def __str__(self):
-        return f"{self.user} felhasználónak kosárban levő termékei"
+        return f"{self.user.user} felhasználónak kosárban levő termékei"

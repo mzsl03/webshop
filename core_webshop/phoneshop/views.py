@@ -1,9 +1,11 @@
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 from django.contrib.auth import authenticate, login as auth_login
 from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Products, Cart, Shops, Users, Sales
 from support_files.sorting import sort_product
+from django.http import HttpResponse, JsonResponse
 
 @login_required(login_url='/')
 def index(request):
@@ -27,6 +29,15 @@ def index(request):
 @login_required(login_url='/')
 def cart(request):
     return render(request, 'cart.html')
+
+@require_POST
+def delete_cart_item(request, item_id):
+    try:
+        item = Cart.objects.get(id=item_id)
+        item.delete()
+        return JsonResponse({'success': True})
+    except Cart.DoesNotExist:
+        return JsonResponse({'success': False, 'error': 'Item not found'}, status=404)
 
 @login_required(login_url='/')
 def receipts(request):
