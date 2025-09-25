@@ -20,11 +20,16 @@
                     <form method="POST" action="{% url 'logout' %}">
                         {% csrf_token %}
                         <button class="btn" id="logout">Kijelentkezés</button>
-                        </form>
+                    </form>
                 </li>
                 <li class="item"><a href="/home/">Home</a></li>
-                <li class="item"><a href="{% url 'user_cart' %}">Kosár</a></li>
+                {% if request.user.is_authenticated and not request.user.is_staff %}
+                    <li class="item"><a href="{% url 'user_cart' %}">Kosár</a></li>
+                {% endif %}
                 <li class="item"><a href="/receipts/">Számlák</a></li>
+                {% if request.user.is_authenticated and request.user.is_staff %}
+                    <li class="item"><a href="/register/">Regisztráció</a></li>
+                {% endif %}
             </ul>
         </nav>
     </div>
