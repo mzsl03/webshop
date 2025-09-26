@@ -2,62 +2,65 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
 
 {% block main %}
-    <div class="filters">
-        <h3>Szűrők</h3>
-        <form method="get">
-            <label class="ctrl" style="display:block; margin-bottom:12px;">
-                <input name='name' id="q" type="search" placeholder="Keresés (pl. „fülhallgató”)" style="width:100%;"/>
-            </label>
-            <label class="ctrl" style="display:block; margin-bottom:12px;">
-                <select name="category" id="cat" style="width:100%;">
-                    <option value="all"></option>
-                    {% for category in allCategory %}
-                        <option value="{{ category }}">{{ category }}</option>
-                    {% endfor %}
-                </select>
-            </label>
-            <label class="ctrl" style="display:block; margin-bottom:12px;">
-                <input name="minPrice" type="search" placeholder="Minimum ár" style="width:100%;"/>
-            </label>
+    <div class="ind-container">
+        <div class="filters">
+            <h3>Szűrők</h3>
+            <form method="get">
+                <label class="ctrl" style="display:block; margin-bottom:12px;">
+                    <input name='name' id="q" type="search" placeholder="Keresés (pl. „fülhallgató”)"
+                           style="width:100%;"/>
+                </label>
+                <label class="ctrl" style="display:block; margin-bottom:12px;">
+                    <select name="category" id="cat" style="width:100%;">
+                        <option value="all">Összes termék</option>
+                        {% for category in allCategory %}
+                            <option value="{{ category }}">{{ category }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+                <label class="ctrl" style="display:block; margin-bottom:12px;">
+                    <input name="minPrice" type="search" placeholder="Minimum ár" style="width:100%;"/>
+                </label>
 
-            <label class="ctrl" style="display:block; margin-bottom:12px;">
-                <input name="maxPrice" type="search" placeholder="Maximum ár" style="width:100%;"/>
-            </label>
+                <label class="ctrl" style="display:block; margin-bottom:12px;">
+                    <input name="maxPrice" type="search" placeholder="Maximum ár" style="width:100%;"/>
+                </label>
 
-            <button class="btn" id="save" style="width:100%;">Szűrés</button>
+                <button class="btn" id="save" style="width:100%;">Szűrés</button>
 
-            <button class="btn" id="clear" style="width:100%;">Szűrők törlése</button>
-        </form>
+                <button class="btn" id="clear" style="width:100%;">Szűrők törlése</button>
+            </form>
 
-    </div>
-    <div class="product-grid">
-        {% for product in products %}
-            <a class="product-link" href="{% url 'product-name' product.name %}">
-                <div class="product-card">
-                    <div class="product-image-container">
-                        {% if product.image_path %}
-                            <img src="{% static 'images/' %}{{ product.image_path.0 }}"
-                                 alt="{{ product.name }}" class="product-image" width="200">
-                        {% else %}
-                            <img src="{% static 'images/no-image.png' %}"
-                                 alt="No image available" class="product-image" width="200">
-                        {% endif %}
+        </div>
+        <div class="product-grid">
+            {% for product in products %}
+                <a class="product-link" href="{% url 'product-name' product.name %}">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            {% if product.image_path %}
+                                <img src="{% static 'images/' %}{{ product.image_path.0 }}"
+                                     alt="{{ product.name }}" class="product-image" width="200">
+                            {% else %}
+                                <img src="{% static 'images/no-image.png' %}"
+                                     alt="No image available" class="product-image" width="200">
+                            {% endif %}
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">{{ product.name }}</h3>
+                            <p class="product-price">{{ product.price }},-Ft</p>
+                            <p class="product-colors">
+                                {% for color in product.colors %}
+                                    <span class="color-badge">{{ color }}</span>
+                                {% endfor %}
+                            </p>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">{{ product.name }}</h3>
-                        <p class="product-price">{{ product.price }},-Ft</p>
-                        <p class="product-colors">
-                            {% for color in product.colors %}
-                                <span class="color-badge">{{ color }}</span>
-                            {% endfor %}
-                        </p>
-                    </div>
-                </div>
-            </a>
-        {% endfor %}
+                </a>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
