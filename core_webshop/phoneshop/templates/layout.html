@@ -30,6 +30,9 @@
                 {% if request.user.is_authenticated and request.user.is_staff %}
                     <li class="item"><a href="/register/">Regisztráció</a></li>
                 {% endif %}
+                {% if request.user.is_authenticated and request.user.is_staff %}
+                    <li class="item"><a href="/add_prod/">Termék létrehozása</a></li>
+                {% endif %}
             </ul>
         </nav>
     </div>
