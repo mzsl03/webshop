@@ -44,11 +44,15 @@ body {
     border-radius: 25px;
     background-color: var(--panel);
     padding: 20px;
-    width: auto;
+    min-width: 500px;
     height: auto;
     max-height: 80vh;
     box-shadow: 0 10px 25px #515151;
     transition: box-shadow 1s;
+}
+
+.register-div::-webkit-scrollbar {
+    display: none;
 }
 
 .register-div {
@@ -111,7 +115,6 @@ form * {
 }
 
 .btn {
-    margin-top: 25px;
     background: #4a89e8;
     color: white;
     padding: 10px 14px;
