@@ -13,4 +13,5 @@ urlpatterns = [
     path('cart/add/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
     path('cart/delete/<int:item_id>/', views.delete_cart_item, name='delete_cart_item'),
     path('register/', views.register, name='register_worker'),
+    path('add_prod/', views.add_product, name='add_product'),
 ]
