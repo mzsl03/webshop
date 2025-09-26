@@ -170,6 +170,8 @@ def register(request):
 
 @login_required
 def add_product(request):
+    all_categories = Products.objects.values_list("category", flat=True).distinct()
+
     if not request.user.is_superuser:
         return redirect('home')
     if request.method == 'POST':
@@ -182,7 +184,10 @@ def add_product(request):
                 return redirect('home')
     else:
         form = ProductForm()
-    return render(request, 'add_product.html', {'form': form})
+    return render(request, 'add_product.html', {
+        'form': form,
+        "categories": all_categories
+    })
 
 @login_required
 def edit_specs(request, product_id):

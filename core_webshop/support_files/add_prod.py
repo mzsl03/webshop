@@ -10,7 +10,7 @@ class ProductForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(),
             'price': forms.NumberInput(),
-            'category': forms.TextInput(),
+            'category': forms.Select(),
             'colors': forms.TextInput(),
         }
 
