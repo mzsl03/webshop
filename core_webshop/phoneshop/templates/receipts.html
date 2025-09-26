@@ -2,23 +2,35 @@
 {% load static %}
 
 {% block extra_css %}
-	<link rel="stylesheet" href="{% static 'css/receipts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/receipts.css' %}">
 {% endblock %}
 
 {% block main %}
-<div class="receipt_container">
-    {% for receipt in receipts %}
-    <ul class="receipt-list">
-        <li>Mennyiség: {{ receipt.quantity }}</li>
-        <li>Értékesítés ideje: {{ receipt.selling_time }}</li>
-        <li>Adószám: {{ receipt.tax_number }}</li>
-        <li>Irányítószám: {{ receipt.zip_code }}</li>
-        <li>Cím: {{ receipt.address }}</li>
-        <li>Vevő neve: {{ receipt.costumer_name }}</li>
-        <li>Város: {{ receipt.city }}</li>
-        <li>Ár: {{ receipt.price }} Ft</li>
-        <li>Tárhely: {{ receipt.storage }} GB</li>
-    </ul>
-    {% endfor %}
-</div>
-{% endblock %}}
+    <div class="receipt_container">
+        <table class="receipt-list">
+            <tr class="receipt-head">
+                <th>Vevő</th>
+                <th>Értékesítés ideje</th>
+                <th>Adószám</th>
+                <th>Irányítószám</th>
+                <th>Cím</th>
+                <th>Város</th>
+                <th>Ár</th>
+                <th>Számla Sztornózása</th>
+            </tr>
+            {% for receipt in receipts %}
+                <tr class="receipt-item">
+                    <td>{{ receipt.costumer_name }}</td>
+                    <td>{{ receipt.selling_time|date:"Y-m-d H:i" }}</td>
+                    <td>{{ receipt.tax_number }}</td>
+                    <td>{{ receipt.zip_code }}</td>
+                    <td>{{ receipt.address }}</td>
+                    <td>{{ receipt.city }}</td>
+                    <td>{{ receipt.price }} Ft</td>
+                    <td><button class="btn delete-receipt" data-id="{{ receipt.id }}">Sztornó</button></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <script src="{% static 'js/receipt_delete.js' %}"></script>
+{% endblock %}
