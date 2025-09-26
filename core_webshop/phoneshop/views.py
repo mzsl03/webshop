@@ -48,9 +48,15 @@ def delete_cart_item(request, item_id):
         return JsonResponse({'success': False, 'error': 'Item not found'}, status=404)
 
 @login_required(login_url='/')
-def receipts(request):
+def receipts(request, receipt_id=None):
+    if request.method == "DELETE" and receipt_id:
+        receipt_item = get_object_or_404(Sales, id=receipt_id)
+        receipt_item.delete()
+        return render(request, 'receipts.html', {
+            'receipts': Sales.objects.all()
+        })
     receipts = Sales.objects.all()
-    return render(request, 'receipts.html',{'receipts': receipts})
+    return render(request, 'receipts.html', {'receipts': receipts})
 
 @login_required(login_url='/')
 def product_detail(request, name):
