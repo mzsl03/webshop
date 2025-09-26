@@ -21,7 +21,7 @@
                     <span class="color-badge">{{ color }}</span>
                 {% endfor %}
             </p>
-            <p><strong>Specs:</strong></p>
+            <p class="dropdown-label"><strong>Specs:</strong></p>
             <ul class="spec-list">
                 <li>CPU: {{ product.specs.CPU_type }} @ {{ product.specs.CPU_speed }}</li>
                 <li>Display: {{ product.specs.display_size }} - {{ product.specs.resolution }}
@@ -57,6 +57,7 @@
                         <option value="{{ storage }}">{{ storage }}</option>
                     {% endfor %}
                 </select>
+                    {% if product.colors|length > 1 %}
                 <label class="dropdown-label" for="color-select"><strong>Válassz színt:</strong></label>
                 <select class="dropdown-padding" name="color" id="color-select" required>
                     <option value="">-- Válassz --</option>
@@ -64,6 +65,7 @@
                         <option value="{{ color }}">{{ color }}</option>
                     {% endfor %}
                 </select>
+                    {% endif %}
                 <label class="dropdown-label" for="shop-select"><strong>Válassz boltot:</strong></label>
                 <select name="shop" id="shop-select" required>
                     <option value="">-- Válassz --</option>
