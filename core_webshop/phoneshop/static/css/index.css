@@ -12,6 +12,14 @@ main {
     transition: border-color 0.2s ease, background 0.2s ease;
 }
 
+.ind-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+}
+
 .filters {
     background: var(--panel);
     padding: 20px;
@@ -82,9 +90,12 @@ main {
 }
 
 .product-grid {
+    flex: 1;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    min-width: 760px;
+    max-width: 760px;
 }
 
 .product-image {
