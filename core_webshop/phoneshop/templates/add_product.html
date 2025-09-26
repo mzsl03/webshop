@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/add_product.css' %}"/>
+{% endblock %}
+
+{% block main %}
+    <div class="prod-add-div">
+        <div class="prod-add-container">
+            <form method="POST" enctype="multipart/form-data">
+                <h3 class="prod-add-title-card">Új termék létrehozása</h3>
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.name.id_for_label }}">Termék neve</label>
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.price.id_for_label }}">Ár (Ft)</label>
+                    {{ form.price }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.category.id_for_label }}">Kategória</label>
+                    {{ form.category }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.colors.id_for_label }}">Színek (vesszővel elválasztva)</label>
+                    {{ form.colors }}
+                </div>
+                <button class="btn" type="submit">Termék létrehozása</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
