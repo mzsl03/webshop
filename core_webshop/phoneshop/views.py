@@ -1,16 +1,18 @@
-import os
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.utils import timezone
 from django.views.decorators.http import require_POST
 from django.contrib.auth import authenticate, login as auth_login
 from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect, get_object_or_404
-from django.conf import settings
-from .models import Products, Cart, Shops, Users, Sales, Workers
+
+from .models import Products, Cart, Shops, Users, Sales, Workers, Specs
 from support_files.sorting import sort_product
 from django.http import HttpResponse, JsonResponse
 from support_files.register import RegistrationForm
 from support_files.add_prod import ProductForm
+from support_files.modify_product_info import SpecsForm
 
 
 @login_required(login_url='/')
@@ -168,14 +170,43 @@ def register(request):
 
 @login_required
 def add_product(request):
+    all_categories = Products.objects.values_list("category", flat=True).distinct()
+
     if not request.user.is_superuser:
         return redirect('home')
     if request.method == 'POST':
         form = ProductForm(request.POST)
         if form.is_valid():
+            product = form.save()
+            if product.category == 'Telefon':
+                return redirect('edit_specs', product_id=product.id)
+            else:
+                return redirect('home')
+    else:
+        form = ProductForm()
+    return render(request, 'add_product.html', {
+        'form': form,
+        "categories": all_categories
+    })
+
+@login_required
+def edit_specs(request, product_id):
+    if not request.user.is_superuser:
+        return redirect('home')
+    product = get_object_or_404(Products, id=product_id)
+    specs, created = Specs.objects.get_or_create(product=product,
+                                                 defaults={
+                                                     "weight": 0,
+                                                     "battery": 0,
+                                                     "release_date": timezone.now(),
+                                                 })
+
+    if request.method == 'POST':
+        form = SpecsForm(request.POST, instance=specs)
+        if form.is_valid():
             form.save()
             return redirect('home')
     else:
-        form = ProductForm()
+        form = SpecsForm(instance=specs)
 
-    return render(request, 'add_product.html', {'form': form})
+    return render(request, 'edit_specs.html', {'form': form, 'product': product})

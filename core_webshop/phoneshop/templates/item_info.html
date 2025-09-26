@@ -21,7 +21,7 @@
                     <span class="color-badge">{{ color }}</span>
                 {% endfor %}
             </p>
-            <p class="dropdown-label"><strong>Specs:</strong></p>
+            <p class="dropdown-label"><strong>Termék adatok:</strong></p>
             <ul class="spec-list">
                 <li>CPU: {{ product.specs.CPU_type }} @ {{ product.specs.CPU_speed }}</li>
                 <li>Display: {{ product.specs.display_size }} - {{ product.specs.resolution }}
@@ -76,6 +76,12 @@
                     </select>
                     <button type="submit" class="btn kosar_btn">Kosárba</button>
                 </form>
+            {% else %}
+                {% if user.is_superuser %}
+                    <div style="align-content: center">
+                        <a href="{% url 'edit_specs' product.id %}" class="btn">Termék szerkesztése</a>
+                    </div>
+                {% endif %}
             {% endif %}
         </div>
     </div>
