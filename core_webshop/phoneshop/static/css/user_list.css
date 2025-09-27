@@ -1,0 +1,62 @@
+.user_container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.user-list {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    color: var(--text);
+    text-align: center;
+    overflow: hidden;
+}
+
+.user-list th,
+.user-list td {
+    padding: 12px 15px;
+    text-align: center;
+    vertical-align: center;
+    border: 1px solid var(--border);
+}
+
+.user-list th {
+    background-color: #1e222a;
+    -moz-border-radius-topleft: 12px;
+    color: var(--text);
+    font-weight: bold;
+}
+
+.user-list tr:hover {
+    background-color: rgba(91, 156, 255, 0.05);
+}
+
+.user-list tr:first-child th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.user-list tr:first-child th:last-child {
+    border-top-right-radius: 12px;
+}
+
+.user-list tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+.user-list tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .user-list th,
+    .user-list td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
