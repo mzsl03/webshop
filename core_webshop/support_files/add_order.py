@@ -22,4 +22,6 @@ class OrderForm(forms.ModelForm):
             choices_storage = [(s, f"{s} GB" if int(s) > 1 else f"{s} TB") for s in specs.storage]
             self.fields['color'].widget = forms.Select(choices=choices)
             self.fields['storage'].widget = forms.Select(choices=choices_storage)
+            if product and product.category == "Tartozék":
+                self.fields['storage'].required = False
 
