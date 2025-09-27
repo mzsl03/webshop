@@ -1,4 +1,3 @@
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.utils import timezone
@@ -12,6 +11,7 @@ from support_files.sorting import sort_product
 from django.http import HttpResponse, JsonResponse
 from support_files.register import RegistrationForm
 from support_files.add_prod import ProductForm
+from support_files.add_order import OrderForm
 from support_files.modify_product_info import SpecsForm
 
 
@@ -65,11 +65,30 @@ def receipts(request, receipt_id=None):
 @login_required(login_url='/')
 def product_detail(request, name):
     product = get_object_or_404(Products, name=name)
+    specs = get_object_or_404(Specs, product=product)
     shops = Shops.objects.all()
+
+        
+    form = OrderForm(request.POST or None, product=product, specs=specs)
+    user_worker = Users.objects.get(user=request.user).worker
+
+
+    if request.method == "POST" and form.is_valid():
+        order = form.save(commit=False)
+        order.product = product
+        order.status = "feldolgozás_alatt"
+        order.shop = user_worker.shop
+        order.order_time = timezone.now()
+        order.save()
+        return redirect("home")
+
+
+
 
     return render(request, 'item_info.html', {
         'product': product,
-        'shops': shops
+        'shops': shops,
+        'form': form
     })
 
 @login_required
@@ -79,6 +98,14 @@ def user_cart(request):
     phoneshop_user = request.user.phoneshop_user
     cart_items = Cart.objects.filter(user_id=phoneshop_user.id)
     return render(request, 'cart.html', {'cart_items': cart_items})
+
+# @login_required
+# def add_to_order(request, product_id):
+#     form = OrderForm()
+#     return render(request, "item_info.html", {
+#         "form": form
+#     })
+
 
 @login_required
 def add_to_cart(request, product_id):
