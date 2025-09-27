@@ -23,8 +23,7 @@
             <p><strong>Bolt:</strong>
                 <span class="shop-badge">{{ shops.name }}</span>
             </p>
-            {% if product.category != 'Telefon' %}
-            {% else %}
+            {% if product.category == 'Telefon' %}
                 <p class="dropdown-label"><strong>Termék adatok:</strong></p>
                 <ul class="spec-list">
                     <li>CPU: {{ product.specs.CPU_type }} @ {{ product.specs.CPU_speed }}</li>

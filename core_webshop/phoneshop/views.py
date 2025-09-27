@@ -134,7 +134,9 @@ def receipts(request):
 @login_required(login_url='/')
 def product_detail(request, name):
     product = get_object_or_404(Products, name=name)
-    specs = get_object_or_404(Specs, product=product)
+    specs = None
+    if product.category != "Tartozék":
+        specs = Specs.objects.filter(product=product).first()
 
     phoneshop_user = request.user.phoneshop_user
     worker = Workers.objects.get(id=phoneshop_user.worker_id)
@@ -144,10 +146,11 @@ def product_detail(request, name):
     user_worker = Users.objects.get(user=request.user).worker
 
     if request.method == "POST" and form.is_valid():
+
         order = form.save(commit=False)
         order.product = product
         if (order.product.category == "Tartozék"):
-            order.tarhely = 0
+            order.storage = 0
         order.status = "feldolgozás_alatt"
         order.shop = user_worker.shop
         order.order_time = timezone.now()
@@ -337,6 +340,15 @@ def update_order(request, order_id):
                 if (order.status == "törölve"):
                     order.delete()
                 else:
+                
+                
+                
+                    if (order.product.category == "Telefon"):
+                        order.product.available[list_index(order.product.id, order.color, order.storage)]  += order.quantity
+                    else:
+                        order.product.available[list_index_for_accessories(order.product.id, order.color)] += order.quantity
+                    order.product.save()
+
                     order.save()
 
                 return JsonResponse({"success": True, "redirect_url": reverse("home")})
