@@ -1,0 +1,97 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/list_orders.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="in-progress-orders">
+        <h3>Folyamatban levő rendelések</h3>
+        <table>
+            <thead>
+                <th>Üzlet neve</th>
+                <th>Termék neve</th>
+                <th>Mennyiség</th>
+                <th>Szín</th>
+                <th>Tárhely</th>
+                <th>Státusz</th>
+                {% if user.is_superuser %}
+                    <th>Műveletek</th>
+                {% endif %}
+
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    {% if order.status != "kiszállítva"%}
+                    <tr>
+                        <td>{{ order.product.name }}</td>
+                        <td>{{ order.shop.name }}</td>
+                        <td>{{ order.quantity }}</td>
+                        <td>{{ order.color }}</td>
+                        {% if order.product.category == "Telefon" %}
+                            {% if order.storage > 1 %}
+                                <td>{{ order.storage }} GB</td>
+                            {% else %}
+                                <td>{{ order.storage }} TB</td>
+                            {% endif %}
+                        {% else %}
+                            <td> - </td>
+                        {% endif %}
+
+                        <td>{{ order.status }}</td>
+                        
+                        {% if user.is_superuser %}
+                            <td><button id="{{ order.id }}" class="modify_order_button">Szerkesztés</button></td>
+                        {% endif %}
+                    {% endif %}
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="delivered-orders">
+        <h3>Kiszállított rendelések</h3>
+        <table>
+            <thead>
+                <th>Üzlet neve</th>
+                <th>Termék neve</th>
+                <th>Mennyiség</th>
+                <th>Szín</th>
+                <th>Tárhely</th>
+                <th>Rendelési idő</th>
+
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    {% if order.status == "kiszállítva" %}
+                    <tr>
+                        <td>{{ order.product.name }}</td>
+                        <td>{{ order.shop.name }}</td>
+                        <td>{{ order.quantity }}</td>
+                        <td>{{ order.color }}</td>
+                        {% if order.product.category == "Telefon" %}
+                            {% if order.storage > 1 %}
+                                <td>{{ order.storage }} GB</td>
+                            {% else %}
+                                <td>{{ order.storage }} TB</td>
+                            {% endif %}
+                        {% else %}
+                            <td> - </td>
+                        {% endif %}
+                        <td>{{ order.order_time }}</td>
+                    {% endif %}
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{% static 'js/modify_order.js' %}"></script>
+{% endblock %}

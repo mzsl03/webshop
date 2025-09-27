@@ -133,7 +133,7 @@ class Orders(models.Model):
     order_time = models.DateTimeField()
     status = models.CharField(choices=status_choices, default="feldolgozás alatt")
     color = models.CharField(max_length=255)
-    storage = models.IntegerField()
+    storage = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         unit = "TB"

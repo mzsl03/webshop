@@ -100,12 +100,15 @@
                     {{ form.color }}
                     {{ form.color.errors }}
                 </div>
-
+                
+                {% if product.category == "Telefon" %}
                 <div class="form-group">
                     <label for="{{ form.storage.id_for_label }}">Tárhely</label>
                     {{ form.storage }}
                     {{ form.storage.errors }}
                 </div>
+                {% endif %}
+
                 <button class="btn" type="submit">Rendelés leadása</button>
                 <button class="back_btn" type="submit">Vissza</button>
                 

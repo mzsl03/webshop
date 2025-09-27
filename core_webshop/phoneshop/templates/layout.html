@@ -33,6 +33,7 @@
                 {% if request.user.is_authenticated and request.user.is_staff %}
                     <li class="item"><a href="/add_prod/">Termék létrehozása</a></li>
                 {% endif %}
+                <li class="item"><a href="/order/">Rendelések</a></li>
                 {% if request.user.is_authenticated and request.user.is_superuser %}
                     <li class="item"><a href="/user_list/">Felhasználók listája</a></li>
                 {% endif %}
