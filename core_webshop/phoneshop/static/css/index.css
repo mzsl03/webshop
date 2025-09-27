@@ -86,7 +86,7 @@ main {
     display: grid;
     place-items: center;
     height: 200px;
-    width: 300px;
+    width: 200px;
 }
 
 .product-grid {
@@ -94,12 +94,13 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    min-width: 760px;
-    max-width: 760px;
+    min-width: 900px;
+    max-width: 900px;
+    margin-bottom: 12px;
 }
 
 .product-image {
-    height: 200px;
+    height: 150px;
     width: auto;
 }
 
@@ -109,7 +110,12 @@ main {
 }
 
 .product-info * {
+    max-width: 200px;
     text-align: center;
+}
+
+.product-info .product-name {
+    min-height: 60px;
 }
 
 #save {
