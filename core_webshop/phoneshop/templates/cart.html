@@ -27,7 +27,11 @@
                         {% if item.storage > 1 %}
                             <td>{{ item.storage }} GB</td>
                         {% else %}
-                            <td>{{ item.storage }} TB</td>
+                            {% if item.storage == None %}
+                                <td>-</td>
+                            {% else %}
+                                <td>{{ item.storage }} TB</td>
+                            {% endif %}
                         {% endif %}
                         <td>{{ item.price }} Ft</td>
                         <td>
