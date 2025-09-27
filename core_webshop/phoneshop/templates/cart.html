@@ -18,13 +18,12 @@
             </tr>
             {% if cart_items %}
                 {% for item in cart_items %}
-                    <tr class="cart-items">
+                    <tr id="{{ item.id }}" class="cart-items">
                         <td>{{ item.product }}</td>
                         <td>{{ item.quantity }}</td>
                         <td>{{ item.price }}</td>
                         <td>
-                            <button class="delete-item" data-item-id="{{ item.id }}"><i class="fa fa-trash-o"></i>
-                            </button>
+                            <button class="delete-item" data-item-id="{{ item.id }}"><i class="fa fa-trash-o"></i></button>
                         </td>
                     </tr>
                 {% endfor %}
