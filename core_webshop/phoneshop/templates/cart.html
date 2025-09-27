@@ -33,6 +33,15 @@
                 <td colspan="4">A kosár üres</td>
             {% endif %}
         </table>
+        {% if cart_items %}
+            <div>
+                <a href="{% url 'checkout' %}" class="btn btn-primary">
+                    Checkout
+                </a>
+            </div>
+        {% else %}
+            <p>A kosár üres</p>
+        {% endif %}
     </div>
     <script src="{% static 'js/cart_delete.js' %}"></script>
 {% endblock %}

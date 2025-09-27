@@ -9,25 +9,19 @@
     <div class="receipt_container">
         <table class="receipt-list">
             <tr class="receipt-head">
-                <th>Vevő</th>
-                <th>Értékesítés ideje</th>
-                <th>Adószám</th>
-                <th>Irányítószám</th>
-                <th>Cím</th>
-                <th>Város</th>
-                <th>Ár</th>
+                <th>Dátum</th>
+                <th>Vásárló neve</th>
+                <th>Összeg</th>
                 <th>Számla Sztornózása</th>
             </tr>
             {% for receipt in receipts %}
                 <tr class="receipt-item">
+                    <td>{{ receipt.selling_date|date:"Y-m-d H:i" }}</td>
                     <td>{{ receipt.costumer_name }}</td>
-                    <td>{{ receipt.selling_time|date:"Y-m-d H:i" }}</td>
-                    <td>{{ receipt.tax_number }}</td>
-                    <td>{{ receipt.zip_code }}</td>
-                    <td>{{ receipt.address }}</td>
-                    <td>{{ receipt.city }}</td>
-                    <td>{{ receipt.price }} Ft</td>
-                    <td><button class="btn delete-receipt" data-id="{{ receipt.id }}">Sztornó</button></td>
+                    <td>{{ receipt.total_price }} Ft</td>
+                    <td>
+                        <button class="btn delete-receipt" data-id="{{ receipt.id }}">Sztornó</button>
+                    </td>
                 </tr>
             {% endfor %}
         </table>
