@@ -1,4 +1,4 @@
-.cart-container {
+#cart-container {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -6,6 +6,7 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    justify-content: center;
 }
 
 .cart-list {
@@ -69,6 +70,13 @@
 
 .delete-item:hover {
     background: var(--brand);
+}
+
+table + div {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
