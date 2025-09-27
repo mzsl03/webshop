@@ -37,6 +37,10 @@
                 {% if request.user.is_authenticated and request.user.is_superuser %}
                     <li class="item"><a href="/user_list/">Felhasználók listája</a></li>
                 {% endif %}
+                {% if request.user.is_authenticated and not request.user.is_staff %}
+                    <li class="item"><a href="/export/report/">Riport generálás</a></li>
+                {% endif %}
+
             </ul>
         </nav>
     </div>

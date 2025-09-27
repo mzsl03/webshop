@@ -7,6 +7,8 @@ from django.views.decorators.http import require_POST
 from django.contrib.auth import authenticate, login as auth_login
 from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect, get_object_or_404
+from openpyxl import Workbook
+
 
 from .models import Products, Cart, Shops, Users, Sales, Workers, Specs, Orders
 from django.db.models import Sum
@@ -21,13 +23,17 @@ from support_files.add_cart import increment_cart_item
 from django.urls import reverse
 from support_files.sell_prod_from_cart import CheckoutForm
 from support_files.user_updater import UserUpdateForm
-
+from datetime import date
 
 
 @login_required(login_url='/')
 def index(request):
     # Alap queryset - minden termék
     products = Products.objects.all()
+
+    phoneshop_user = request.user.phoneshop_user
+    id = phoneshop_user.worker_id
+    request.session['shop'] = Workers.objects.get(id=id).shop.name
 
     all_categories = Products.objects.values_list("category", flat=True).distinct()
 
@@ -206,6 +212,7 @@ def login(request):
 
         if user is not None:
             auth_login(request, user)
+
             return redirect('home')
         else:
             return render(request, 'login.html', {'error': 'Hibás felhasználónév vagy jelszó!'})
@@ -350,3 +357,40 @@ def update_user(request, user_id):
         form = UserUpdateForm(instance=user)
 
     return render(request, 'update_user.html', {'form': form, 'user': user})
+
+
+def export_report_excel(request):
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Sales"
+
+    today = date.today()
+    shop = request.session.get('shop')
+
+    ws.append(["Termék neve", "Szín", "Tárhely", "Mennyiség", "Ár"])
+
+    sales = Sales.objects.all()
+    for sale in sales:
+        print(shop)
+        print(f"{type(sale.shop.name)} - {type(shop)}")
+        print(f"{type(sale.selling_time.date())} - {type(today)}")
+        if (shop == sale.shop.name and today == sale.selling_time.date()):
+            is_TB = "TB"
+            if (sale.storage > 1):
+                is_TB = "GB"
+            ws.append([
+                sale.product.name,
+                sale.color,
+                str(sale.storage) + is_TB,
+                str(sale.quantity) + "db",
+                str(sale.price) + "Ft",
+            ])
+
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    filename = f"report_{shop}_{today}.xlsx"
+    response['Content-Disposition'] = f'attachment; filename="{filename}"'
+
+
+    wb.save(response)
+    return response
