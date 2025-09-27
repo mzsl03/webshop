@@ -169,8 +169,11 @@ def add_to_cart(request, product_id):
         color = product.colors[0]
         if not color:
             return HttpResponseBadRequest("Missing or invalid color selection.")
-    if not storage or storage not in [s for s in product.specs.storage]:
-        return HttpResponseBadRequest("Missing or invalid storage selection.")
+    if product.category == 'Telefon':
+        if not storage or storage not in [s for s in product.specs.storage]:
+            return HttpResponseBadRequest("Missing or invalid storage selection.")
+    else:
+        storage = None
 
     id = phoneshop_user.worker_id
     worker = Workers.objects.get(id=id)
