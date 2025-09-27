@@ -1,41 +1,81 @@
-h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--brand);
-    text-shadow: 0 2px 6px rgba(91, 156, 255, 0.3);
-}
-
-.cart-list {
-    list-style: none;
-    padding: 0;
-    max-width: 600px;
+.cart-container {
+    padding: 20px;
+    max-width: 1200px;
     margin: 0 auto;
     background: var(--panel);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    align-self: flex-start;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.cart-list li {
-    padding: 15px 20px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.cart-list {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
     color: var(--text);
-    font-size: 1rem;
-    transition: background 0.2s ease;
-}
-
-.cart-list li:hover {
-    background: rgba(91, 156, 255, 0.1);
-}
-
-.cart-list li:only-child {
     text-align: center;
-    color: var(--muted);
-    font-style: italic;
+    overflow: hidden;
+}
+
+.cart-list th,
+.cart-list td {
+    padding: 12px 15px;
+    text-align: center;
+    vertical-align: center;
+    border: 1px solid var(--border);
+}
+
+.cart-list th {
+    background-color: #1e222a;
+    -moz-border-radius-topleft: 12px;
+    color: var(--text);
+    font-weight: bold;
+}
+
+.cart-list tr:hover {
+    background-color: rgba(91, 156, 255, 0.05);
+}
+
+.cart-list tr:first-child th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.cart-list tr:first-child th:last-child {
+    border-top-right-radius: 12px;
+}
+
+.cart-list tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+.cart-list tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+.delete-item {
+
+
+    background: #4a89e8;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 1rem;
+
+}
+
+.delete-item:hover {
+    background: var(--brand);
+}
+
+
+@media (max-width: 768px) {
+    .cart-list th,
+    .cart-list td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
 }
