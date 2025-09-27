@@ -307,6 +307,9 @@ def edit_specs(request, product_id):
         form = SpecsForm(request.POST, instance=specs)
         if form.is_valid():
             form.save()
+            available_count = len(specs.storage) * len(specs.product.colors)
+            product.available =  [10] * available_count
+            product.save()
             return redirect('home')
     else:
         form = SpecsForm(instance=specs)
