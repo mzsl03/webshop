@@ -1,8 +1,9 @@
+console.log("Csatlakozás sikeres")
 let delete_buttons = document.querySelectorAll(".delete-item")
 
 function delete_item_from_cart(event) {
-    if (event.target.closest("li")) {
-        const itemId = event.target.closest("li").id
+    if (event.target.closest("tr")) {
+        const itemId = event.target.closest("tr").id
         console.log(itemId)
 
         fetch(`/cart/delete/${itemId}/`, {
@@ -14,7 +15,7 @@ function delete_item_from_cart(event) {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                event.target.closest("li").remove()
+                event.target.closest("tr").remove()
             } else {
                 alert("Hiba: " + data.error)
             }
