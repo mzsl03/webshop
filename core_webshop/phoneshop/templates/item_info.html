@@ -70,8 +70,10 @@
                             {% endfor %}
                         </select>
                     {% endif %}
+
                     <button type="submit" class="btn kosar_btn">Kosárba</button>
                 </form>
+                <button type="submit" class="btn order_btn" id="order">Megrendelés</button>
             {% else %}
                 {% if user.is_superuser %}
                     <div style="align-content: center">
@@ -81,5 +83,36 @@
             {% endif %}
         </div>
     </div>
+
+
+
+    <div class="order-product order-product-out">
+        <form method="POST">
+            <h3 class="order-add-title-card">{{product.name}} termék megrendelése</h3>
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.quantity.id_for_label }}">Mennyiség</label>
+                    {{ form.quantity }}
+                    {{ form.quantity.errors }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.color.id_for_label }}">Szín</label>
+                    {{ form.color }}
+                    {{ form.color.errors }}
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.storage.id_for_label }}">Tárhely</label>
+                    {{ form.storage }}
+                    {{ form.storage.errors }}
+                </div>
+                <button class="btn" type="submit">Rendelés leadása</button>
+                <button class="back_btn" type="submit">Vissza</button>
+                
+        </form>
+    </div>
+
+
+    <script src="{% static 'js/order_product.js' %}"></script>
 {% endblock %}
 
