@@ -19,9 +19,13 @@ class OrderForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         if product and product.colors:
             choices = [(c, c.capitalize()) for c in product.colors]
-            choices_storage = [(s, f"{s} GB" if int(s) > 1 else f"{s} TB") for s in specs.storage]
             self.fields['color'].widget = forms.Select(choices=choices)
+
+        if product and product.category != "Tartozék" and specs:
+            choices_storage = [(s, f"{s} GB" if int(s) > 1 else f"{s} TB") for s in specs.storage]
             self.fields['storage'].widget = forms.Select(choices=choices_storage)
-            if product and product.category == "Tartozék":
-                self.fields['storage'].required = False
+        else:
+            self.fields['storage'].required = False
+            self.fields['storage'].widget = forms.HiddenInput()
+
 
