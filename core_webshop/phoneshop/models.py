@@ -207,7 +207,7 @@ class Sales(models.Model):
     city = models.CharField(max_length=255)
     price = models.IntegerField()
     color = models.CharField(max_length=255)
-    storage = models.IntegerField()
+    storage = models.IntegerField(null = True, blank = True)
 
     def __str__(self):
         return f"{self.costumer_name} vásárlása"

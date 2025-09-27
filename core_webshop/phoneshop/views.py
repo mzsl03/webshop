@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login as auth_login
 from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect, get_object_or_404
 from openpyxl import Workbook
+from support_files.availability import *
 
 
 from .models import Products, Cart, Shops, Users, Sales, Workers, Specs, Orders
@@ -81,6 +82,12 @@ def checkout(request):
         form = CheckoutForm(request.POST)
         if form.is_valid():
             for item in cart_items:
+                if (item.product.category == "Telefon"):
+                    item.product.available[list_index(item.product.id, item.color, item.storage)]  -= item.quantity
+                else:
+                    item.product.available[list_index_for_accessories(item.product.id, item.color)] -= item.quantity
+                item.product.save()
+
                 Sales.objects.create(
                     quantity=item.quantity,
                     selling_time=timezone.now(),
@@ -96,6 +103,7 @@ def checkout(request):
                     shop=item.shop,
                     user=item.user
                 )
+
 
             cart_items.delete()
 
