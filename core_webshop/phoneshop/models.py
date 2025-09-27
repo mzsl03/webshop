@@ -27,11 +27,6 @@ class Products(models.Model):
         blank=True,
         default=list
     )
-    prices = ArrayField(
-        models.IntegerField(),
-        blank=False,
-        default=list
-    )
 
     def __str__(self):
         return f"{self.name}"
