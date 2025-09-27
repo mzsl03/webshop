@@ -302,11 +302,12 @@ def update_user(request, user_id):
 
     if request.method == 'POST':
         form = UserUpdateForm(request.POST, instance=user)
-        for field, value in form.cleaned_data.items():
-            if value != '' and value is not None:
-                setattr(user, field, value)
-        user.save()
-        return redirect('user_list')
+        if form.is_valid():
+            for field, value in form.cleaned_data.items():
+                if value != '' and value is not None:
+                    setattr(user, field, value)
+            user.save()
+            return redirect('user_list')
     else:
         form = UserUpdateForm(instance=user)
 
