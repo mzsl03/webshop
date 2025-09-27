@@ -41,6 +41,7 @@ body {
 
 .wrap {
     flex: 1 0 auto;
+    min-width: 1200px;
 }
 
 .wrap,
