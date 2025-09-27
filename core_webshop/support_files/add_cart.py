@@ -7,6 +7,7 @@ def increment_cart_item(shop, worker_obj, p_name, color, storage):
         name = item.user.worker
         if (item.shop == shop and name == worker_obj and item.product == p_name and item.color == color and item.storage == int(storage)):
             item.quantity += 1
+            item.price += item.product.price
             item.save()
             return True
     return False
