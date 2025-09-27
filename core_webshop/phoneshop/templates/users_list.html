@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/user_list.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="user_container">
+        <table class="user-list">
+            <tr class="user-head">
+                <th>Felhasználó teljes neve</th>
+                <th>Felhasználóneve</th>
+                <th>E-mail címe</th>
+                <th>Fiók aktív</th>
+                <th>Módosítás</th>
+            </tr>
+            {% for user in users %}
+                <tr class="user-item">
+                    <td>{{ user.last_name }} {{ user.first_name }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{% if user.is_active %}Igen{% else %}Nem{% endif %}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        <a href="{% url 'update_user' user.id %}" class="btn btn-warning btn-sm">
+                            Szerkesztés
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

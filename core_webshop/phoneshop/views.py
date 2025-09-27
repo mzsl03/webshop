@@ -15,6 +15,7 @@ from support_files.add_prod import ProductForm
 from support_files.add_order import OrderForm
 from support_files.modify_product_info import SpecsForm
 from support_files.sell_prod_from_cart import CheckoutForm
+from support_files.user_updater import UserUpdateForm
 
 
 @login_required(login_url='/')
@@ -34,11 +35,13 @@ def index(request):
 
     return render(request, 'index.html', context)
 
+
 @login_required(login_url='/')
 def cart(request):
     if request.user.is_superuser:
         return redirect('home')
     return render(request, 'cart.html')
+
 
 @require_POST
 def delete_cart_item(request, item_id):
@@ -50,6 +53,7 @@ def delete_cart_item(request, item_id):
         return JsonResponse({'success': True})
     except Cart.DoesNotExist:
         return JsonResponse({'success': False, 'error': 'Item not found'}, status=404)
+
 
 @login_required(login_url='/')
 def checkout(request):
@@ -92,6 +96,8 @@ def checkout(request):
         'cart_items': cart_items,
         'worker': worker
     })
+
+
 @login_required(login_url='/')
 def receipts(request):
     grouped_sales = (
@@ -132,7 +138,7 @@ def product_detail(request, name):
     })
 
 
-@login_required
+@login_required(login_url='/')
 def user_cart(request):
     if request.user.is_superuser:
         return redirect('home')
@@ -149,7 +155,7 @@ def user_cart(request):
 #     })
 
 
-@login_required
+@login_required(login_url='/')
 def add_to_cart(request, product_id):
     if request.user.is_superuser:
         return redirect('home')
@@ -198,7 +204,7 @@ def login(request):
     return render(request, 'login.html')
 
 
-@login_required
+@login_required(login_url='/')
 def register(request):
     if not request.user.is_superuser:
         return redirect('home')
@@ -237,7 +243,7 @@ def register(request):
     return render(request, 'register_worker.html', {'form': form})
 
 
-@login_required
+@login_required(login_url='/')
 def add_product(request):
     all_categories = Products.objects.values_list("category", flat=True).distinct()
 
@@ -259,7 +265,7 @@ def add_product(request):
     })
 
 
-@login_required
+@login_required(login_url='/')
 def edit_specs(request, product_id):
     if not request.user.is_superuser:
         return redirect('home')
@@ -280,3 +286,29 @@ def edit_specs(request, product_id):
         form = SpecsForm(instance=specs)
 
     return render(request, 'edit_specs.html', {'form': form, 'product': product})
+
+
+@login_required(login_url='/')
+def user_list(request):
+    if not request.user.is_superuser:
+        return redirect('home')
+    users = User.objects.all()
+    return render(request, 'users_list.html', {'users': users})
+
+
+@login_required(login_url='/')
+def update_user(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST, instance=user)
+        if form.is_valid():
+            for field, value in form.cleaned_data.items():
+                if value != '' and value is not None:
+                    setattr(user, field, value)
+            user.save()
+            return redirect('user_list')
+    else:
+        form = UserUpdateForm(instance=user)
+
+    return render(request, 'update_user.html', {'form': form, 'user': user})
