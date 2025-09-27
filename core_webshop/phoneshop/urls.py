@@ -20,4 +20,6 @@ urlpatterns = [
     path('checkout/', views.checkout, name='checkout'),
     path('user_list/',views.user_list, name='user_list'),
     path('users/<int:user_id>/edit/', views.update_user, name='update_user'),
+    path('export/report/', views.export_report_excel, name='export_report_excel'),
+
 ]
