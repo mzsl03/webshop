@@ -17,6 +17,7 @@ from support_files.register import RegistrationForm
 from support_files.add_prod import ProductForm
 from support_files.add_order import OrderForm
 from support_files.modify_product_info import SpecsForm
+from support_files.add_cart import increment_cart_item
 from django.urls import reverse
 from support_files.sell_prod_from_cart import CheckoutForm
 from support_files.user_updater import UserUpdateForm
@@ -176,15 +177,20 @@ def add_to_cart(request, product_id):
     worker = Workers.objects.get(id=id)
     shop = get_object_or_404(Shops, id=worker.shop_id)
 
-    Cart.objects.create(
-        user=phoneshop_user,
-        product=product,
-        shop=shop,
-        quantity=1,
-        price=product.price,
-        color=color,
-        storage=storage
-    )
+    
+    is_in_cart = increment_cart_item(shop, worker, product, color, storage)
+
+    if (is_in_cart == False):
+        Cart.objects.create(
+            user=phoneshop_user,
+            product=product,
+            shop=shop,
+            quantity=1,
+            price=product.price,
+            color=color,
+            storage=storage
+        )
+
     return redirect('user_cart')
 
 

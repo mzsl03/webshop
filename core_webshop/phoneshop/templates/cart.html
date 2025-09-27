@@ -13,6 +13,8 @@
             <tr class="cart-header">
                 <th>Termék</th>
                 <th>Darabszám</th>
+                <th>Szín</th>
+                <th>Tárhely</th>
                 <th>Ára</th>
                 <th>Törlés</th>
             </tr>
@@ -20,8 +22,14 @@
                 {% for item in cart_items %}
                     <tr class="cart-items">
                         <td>{{ item.product }}</td>
-                        <td>{{ item.quantity }}</td>
-                        <td>{{ item.price }}</td>
+                        <td>{{ item.quantity }} db</td>
+                        <td>{{ item.color }}</td>
+                        {% if item.storage > 1 %}
+                            <td>{{ item.storage }} GB</td>
+                        {% else %}
+                            <td>{{ item.storage }} TB</td>
+                        {% endif %}
+                        <td>{{ item.price }} Ft</td>
                         <td>
                             <button class="delete-item" data-item-id="{{ item.id }}"><i class="fa fa-trash-o"></i>
                             </button>
