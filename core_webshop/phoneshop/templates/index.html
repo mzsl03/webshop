@@ -11,7 +11,7 @@
             <h3>Szűrők</h3>
             <form method="get">
                 <label class="ctrl" style="display:block; margin-bottom:12px;">
-                    <input name='name' id="q" type="search" placeholder="Keresés (pl. „fülhallgató”)"
+                    <input value="{{filters.name|default:''}}" name='name' id="q" type="search" placeholder="Keresés (pl. „fülhallgató”)"
                            style="width:100%;"/>
                 </label>
                 <label class="ctrl" style="display:block; margin-bottom:12px;">
@@ -23,16 +23,14 @@
                     </select>
                 </label>
                 <label class="ctrl" style="display:block; margin-bottom:12px;">
-                    <input name="minPrice" type="search" placeholder="Minimum ár" style="width:100%;"/>
+                    <input value="{{filters.min_price|default:''}}" name="minPrice" type="search" placeholder="Minimum ár" style="width:100%;"/>
                 </label>
 
                 <label class="ctrl" style="display:block; margin-bottom:12px;">
-                    <input name="maxPrice" type="search" placeholder="Maximum ár" style="width:100%;"/>
+                    <input value="{{filters.max_price|default:''}}" name="maxPrice" type="search" placeholder="Maximum ár" style="width:100%;"/>
                 </label>
 
-                <button class="btn" id="save" style="width:100%;">Szűrés</button>
-
-                <button class="btn" id="clear" style="width:100%;">Szűrők törlése</button>
+                <button class="btn" id="save">Szűrés</button>
             </form>
 
         </div>

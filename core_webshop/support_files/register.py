@@ -4,7 +4,7 @@ from phoneshop.models import Workers, Shops
 class RegistrationForm(forms.Form):
 
     username = forms.CharField(max_length=150, label="Felhasználónév")
-    email = forms.EmailField(label="E-mail")
+    email = forms.EmailField(label="E-mail", error_messages={"invalid": "Helytelen formátum"})
     password = forms.CharField(widget=forms.PasswordInput, label="Jelszó")
 
 
