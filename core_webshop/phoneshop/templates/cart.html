@@ -4,17 +4,35 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
 {% endblock %}
 
 {% block main %}
-    <ul class="cart-list">
-    {% for item in cart_items %}
-        <li id="{{ item.id }}">{{ item.product.name }} - {{ item.quantity }} db - {{ item.price }} Ft   <button class="delete-item" data-item-id="{{ item.id }}"><i class="fa fa-trash-o"></i></button></li>
-    {% empty %}
-        <li>A kosár üres.</li>
-    {% endfor %}
-    </ul>
-
+    <div id="cart-container">
+        <table class="cart-list">
+            <tr class="cart-header">
+                <th>Termék</th>
+                <th>Darabszám</th>
+                <th>Ára</th>
+                <th>Törlés</th>
+            </tr>
+            {% if cart_items %}
+                {% for item in cart_items %}
+                    <tr class="cart-items">
+                        <td>{{ item.product }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.price }}</td>
+                        <td>
+                            <button class="delete-item" data-item-id="{{ item.id }}"><i class="fa fa-trash-o"></i>
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr class="cart-items">
+                <td colspan="4">A kosár üres</td>
+            {% endif %}
+        </table>
+    </div>
     <script src="{% static 'js/cart_delete.js' %}"></script>
 {% endblock %}
