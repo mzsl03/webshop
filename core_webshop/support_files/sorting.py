@@ -9,21 +9,28 @@ def sort_product(request, products):
     min_price = request.GET.get('minPrice')
     max_price = request.GET.get('maxPrice')
 
+    filters = {
+        "name": name,
+        "category": category,
+        "min_price": min_price,
+        "max_price": max_price,
+    }
+
     if name:
         name = name.replace(" ", "").lower()
         products = [p for p in products if name in p.name.replace(" ", "").lower()]
 
 
     if category and category != "all":
-        products = products.filter(category=category)
-
+        products = [p for p in products if p.category == category]
 
     if min_price:
-        products = products.filter(price__gte=min_price)
+        products = [p for p in products if p.price >= int(min_price)]
+
     if max_price:
-        products = products.filter(price__lte=max_price)
+        products = [p for p in products if p.price <= int(max_price)]
 
 
     categories = Products.objects.values_list('category', flat=True).distinct()
 
-    return products, categories
+    return products, categories, filters

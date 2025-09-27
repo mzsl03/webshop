@@ -29,7 +29,7 @@ from datetime import date
 
 @login_required(login_url='/')
 def index(request):
-    # Alap queryset - minden termék
+
     products = Products.objects.all()
 
     phoneshop_user = request.user.phoneshop_user
@@ -38,12 +38,13 @@ def index(request):
 
     all_categories = Products.objects.values_list("category", flat=True).distinct()
 
-    products, categories = sort_product(request, products)
+    products, categories, filters= sort_product(request, products)
 
     context = {
         'products': products,
         'categories': categories,
-        'allCategory': all_categories
+        'allCategory': all_categories,
+        "filters": filters
     }
 
     return render(request, 'index.html', context)
@@ -171,6 +172,8 @@ def user_cart(request):
 
 @login_required(login_url='/')
 def add_to_cart(request, product_id):
+
+    
     if request.user.is_superuser:
         return redirect('home')
     phoneshop_user = request.user.phoneshop_user

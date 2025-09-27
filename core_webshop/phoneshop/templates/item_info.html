@@ -47,15 +47,6 @@
             {% endif %}
             {% if request.user.is_authenticated and not request.user.is_staff %}
                 <form method="get" action="{% url 'add_to_cart' product.id %}">
-                    {% if product.specs.memory|length > 1 %}
-                        <label class="dropdown-label" for="memory-select"><strong>Válassz memóriát:</strong></label>
-                        <select class="dropdown-padding" name="memory" id="memory-select" required>
-                            <option value="">-- Válassz --</option>
-                            {% for memory in product.specs.memory %}
-                                <option value="{{ memory }}">{{ memory }}</option>
-                            {% endfor %}
-                        </select>
-                    {% endif %}
                     {% if product.category != 'Telefon' %}
                     {% else %}
                         <label class="dropdown-label" for="storage-select"><strong>Válassz tárhelyet:</strong></label>
@@ -102,6 +93,10 @@
             </div>
             <div class="form-group">
                 <label for="{{ form.color.id_for_label }}">Szín</label>
+                
+                {% if errors.color %}
+                    <span>{{errors.color}}<span>
+                {% endif %}
                 {{ form.color }}
                 {{ form.color.errors }}
             </div>
@@ -109,6 +104,9 @@
             {% if product.category == "Telefon" %}
                 <div class="form-group">
                     <label for="{{ form.storage.id_for_label }}">Tárhely</label>
+                    {% if errors.storage %}
+                        <span>{{errors.storage}}<span>
+                    {% endif %}
                     {{ form.storage }}
                     {{ form.storage.errors }}
                 </div>
