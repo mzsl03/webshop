@@ -1,0 +1,111 @@
+.orders-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.in-progress-orders,
+.delivered-orders {
+    margin-bottom: 24px;
+}
+
+.in-progress-orders h3,
+.delivered-orders h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 14px;
+    color: var(--text);
+    text-align: left;
+}
+
+.in-progress-orders table,
+.delivered-orders table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    color: var(--text);
+    text-align: center;
+    overflow: hidden;
+    background: var(--panel);
+    border: 1px solid var(--border);
+}
+
+.in-progress-orders th,
+.in-progress-orders td,
+.delivered-orders th,
+.delivered-orders td {
+    padding: 12px 15px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid var(--border);
+    background: var(--panel);
+}
+
+.in-progress-orders th,
+.delivered-orders th {
+    background-color: #1e222a;
+    color: var(--text);
+    font-weight: bold;
+}
+
+.in-progress-orders tr:hover td,
+.delivered-orders tr:hover td {
+    background-color: rgba(91, 156, 255, 0.08);
+}
+
+.in-progress-orders tr:first-child th:first-child,
+.delivered-orders tr:first-child th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.in-progress-orders tr:first-child th:last-child,
+.delivered-orders tr:first-child th:last-child {
+    border-top-right-radius: 12px;
+}
+
+.in-progress-orders tr:last-child td:first-child,
+.delivered-orders tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+.in-progress-orders tr:last-child td:last-child,
+.delivered-orders tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+.modify_order_button {
+    background: var(--brand);
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.modify_order_button:hover {
+    background: #4a89e8;
+    transform: translateY(-1px);
+}
+
+.modify_order_button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .in-progress-orders th,
+    .in-progress-orders td,
+    .delivered-orders th,
+    .delivered-orders td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
+
