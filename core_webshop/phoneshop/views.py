@@ -65,11 +65,13 @@ def receipts(request, receipt_id=None):
 @login_required(login_url='/')
 def product_detail(request, name):
     product = get_object_or_404(Products, name=name)
-    shops = Shops.objects.all()
+    phoneshop_user = request.user.phoneshop_user
+    worker = Workers.objects.get(id=phoneshop_user.worker_id)
+    shops = worker.shop
 
     return render(request, 'item_info.html', {
         'product': product,
-        'shops': shops
+        'shops': shops,
     })
 
 @login_required
@@ -88,18 +90,19 @@ def add_to_cart(request, product_id):
     print("Adding to cart for:", phoneshop_user.id)
     product = get_object_or_404(Products, id=product_id)
 
-    shop_id = request.GET.get('shop')
     color = request.GET.get('color')
     storage = request.GET.get('storage')
 
-    if not shop_id or not shop_id.isdigit():
-        return HttpResponseBadRequest("Missing or invalid shop ID.")
     if not color or color.strip().lower() not in [productColor.lower() for productColor in product.colors]:
-        return HttpResponseBadRequest("Missing or invalid color selection.")
+        color = product.colors[0]
+        if not color :
+            return HttpResponseBadRequest("Missing or invalid color selection.")
     if not storage or storage not in [s for s in product.specs.storage]:
         return HttpResponseBadRequest("Missing or invalid storage selection.")
 
-    shop = get_object_or_404(Shops, id=shop_id)
+    id = phoneshop_user.worker_id
+    worker = Workers.objects.get(id=id)
+    shop = get_object_or_404(Shops, id=worker.shop_id)
 
     Cart.objects.create(
         user=phoneshop_user,

@@ -21,6 +21,9 @@
                     <span class="color-badge">{{ color }}</span>
                 {% endfor %}
             </p>
+            <p><strong>Bolt:</strong>
+                <span class="shop-badge">{{ shops.name }}</span>
+            </p>
             <p class="dropdown-label"><strong>Termék adatok:</strong></p>
             <ul class="spec-list">
                 <li>CPU: {{ product.specs.CPU_type }} @ {{ product.specs.CPU_speed }}</li>
@@ -67,13 +70,6 @@
                             {% endfor %}
                         </select>
                     {% endif %}
-                    <label class="dropdown-label" for="shop-select"><strong>Válassz boltot:</strong></label>
-                    <select name="shop" id="shop-select" required>
-                        <option value="">-- Válassz --</option>
-                        {% for shop in shops %}
-                            <option value="{{ shop.id }}">{{ shop.name }}</option>
-                        {% endfor %}
-                    </select>
                     <button type="submit" class="btn kosar_btn">Kosárba</button>
                 </form>
             {% else %}
