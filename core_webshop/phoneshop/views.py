@@ -384,6 +384,8 @@ def user_list(request):
 
 @login_required(login_url='/')
 def update_user(request, user_id):
+    if not request.user.is_superuser:
+        return redirect('home')
     user = get_object_or_404(User, id=user_id)
 
     if request.method == 'POST':

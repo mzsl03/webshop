@@ -1,8 +1,7 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from django.urls import reverse
-from datetime import datetime, timedelta, date
-from django.db.models import Sum
+from datetime import  timedelta, date
 from django.utils import timezone
 
 from phoneshop.models import Sales, Products, Shops, Users, Workers
