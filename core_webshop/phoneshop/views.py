@@ -198,10 +198,8 @@ def add_to_cart(request, product_id):
     color = request.GET.get('color')
     storage = request.GET.get('storage')
 
-    if not color or color.strip().lower() not in [productColor.lower() for productColor in product.colors]:
-        color = product.colors[0]
-        if not color:
-            return HttpResponseBadRequest("Missing or invalid color selection.")
+    if not color or color.strip().lower() not in [c.lower() for c in product.colors]:
+        return HttpResponseBadRequest("Missing or invalid color selection.")
     if product.category == 'Telefon':
         if not storage or storage not in [s for s in product.specs.storage]:
             return HttpResponseBadRequest("Missing or invalid storage selection.")
