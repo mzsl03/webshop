@@ -1,10 +1,18 @@
 {% extends 'layout.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+{% endblock %}
 
 {% block main %}
-    <h2>Kosár eladásának véglegesítése - {{ worker.first_name }} {{ worker.last_name }}</h2>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Vásárlás befejezése</button>
-    </form>
+    <div class="cart-finalize-div">
+        <h2 class="cart-finalize-title-card">Kosár eladásának véglegesítése
+            - {{ worker.first_name }} {{ worker.last_name }}</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Vásárlás befejezése</button>
+        </form>
+    </div>
 {% endblock %}
