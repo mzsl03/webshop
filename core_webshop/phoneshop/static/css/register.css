@@ -96,17 +96,19 @@ form * {
     margin-bottom: 5px;
 }
 
+.form-group select,
 .form-group input,
-.form-group select {
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    background: none;
-    padding: 0.7rem;
+select option{
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #1f232c;
+    padding: 10px 12px;
     font-size: 1rem;
     color: var(--text);
     outline: none;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
+
 
 .form-group input:focus,
 .form-group select:focus {
