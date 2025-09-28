@@ -16,11 +16,14 @@ function modify_order_status(event) {
         {value: "törölve", label: "Törölve"}
     ]
 
+    let currentValue = statuses.find(s => s.label === statusCell.textContent.trim())?.value
+
+
     statuses.forEach(s => {
         const option = document.createElement("option")
         option.value = s.value
         option.textContent = s.label
-        if (s.label === currentStatus) option.selected = true
+        if (s.value === currentValue) option.selected = true
         select.appendChild(option)
     })
 
@@ -48,11 +51,9 @@ function modify_order_status(event) {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                // ha van redirect_url, akkor átirányítás
                 if (data.redirect_url) {
                     window.location.href = data.redirect_url
                 } else {
-                    // ha nem irányítunk, csak frissítjük a cellát
                     const selectedLabel = statuses.find(s => s.value === newStatus).label
                     statusCell.textContent = selectedLabel
                     button.textContent = "Szerkesztés"
