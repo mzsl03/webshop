@@ -136,6 +136,18 @@ input[type=number]::-webkit-inner-spin-button {
     background: var(--brand);
 }
 
+.form-group select,
+.form-group input {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #1f232c;
+    padding: 10px 12px;
+    font-size: 1rem;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
 @media (max-width: 768px) {
     main {
         flex-direction: column;
