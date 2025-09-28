@@ -398,9 +398,9 @@ def export_report_excel(request):
 
     sales = Sales.objects.all()
     for sale in sales:
-        print(shop)
-        print(f"{type(sale.shop.name)} - {type(shop)}")
-        print(f"{type(sale.selling_time.date())} - {type(today)}")
+        # print(shop)
+        # print(f"{type(sale.shop.name)} - {type(shop)}")
+        # print(f"{type(sale.selling_time.date())} - {type(today)}")
         if (shop == sale.shop.name and today == sale.selling_time.date()):
             is_TB = "TB"
             if (sale.storage > 1):
