@@ -6,6 +6,15 @@
 {% endblock %}
 
 {% block main %}
+
+{% if messages %}
+  <div id="message-modal" style="display:block; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:white; padding:20px; border:1px solid #ccc; z-index:1000;">
+    {% for message in messages %}
+      <p style="color: #000">{{ message }}</p>
+    {% endfor %}
+    <button onclick="document.getElementById('message-modal').style.display='none'">OK</button>
+  </div>
+{% endif %}
     <div class="prod-add-div">
         <div class="prod-add-container">
             <form method="POST">
