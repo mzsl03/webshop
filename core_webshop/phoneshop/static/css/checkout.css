@@ -1,0 +1,103 @@
+.cart-finalize-div {
+    margin: auto;
+    border-radius: 20px;
+    background-color: var(--panel);
+    padding: 25px 30px;
+    min-width: 450px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 10px 25px #515151;
+    transition: box-shadow 0.5s ease;
+}
+
+.cart-finalize-div:hover {
+    box-shadow: 0 0 4px 10px #5B9CFF33;
+}
+
+
+.cart-finalize-title-card {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: var(--text);
+    letter-spacing: 1px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form p {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+    margin: 0;
+}
+
+form label {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+form input,
+form select {
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: none;
+    padding: 0.7rem;
+    font-size: 1rem;
+    color: var(--text);
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form select:focus {
+    border-color: var(--brand);
+    box-shadow: 0 0 8px rgba(91, 156, 255, 0.4);
+}
+
+.btn {
+    background: #4a89e8;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.btn:hover {
+    background: var(--brand);
+}
+
+.btn-success {
+    background: #4a89e8;
+}
+
+.btn-success:hover {
+    background: var(--brand);
+}
+
+.error {
+    color: var(--danger);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: -8px;
+}
+
+@media (max-width: 768px) {
+    .cart-finalize-div {
+        min-width: 90%;
+        padding: 15px 20px;
+    }
+    .cart-finalize-title {
+        font-size: 18px;
+    }
+}
