@@ -1,12 +1,17 @@
 from django import forms
 from django.contrib.auth.models import User
+from django.contrib.auth.validators import UnicodeUsernameValidator
 
 
 class UserUpdateForm(forms.ModelForm):
-    password = forms.CharField(
-        widget=forms.PasswordInput(),
-        required=False,
-        help_text="Ha a jelszót nem szeretné változtatni, ezt a mezőt hagyja üresen!."
+    username = forms.CharField(
+        max_length=150,
+        label="Felhasználónév",
+        validators=[UnicodeUsernameValidator()],
+        error_messages={
+            'invalid': 'Csak betűk, számok és @/./+/-/_ karakterek engedélyezettek.',
+            'unique': 'Ez a felhasználónév már foglalt.'
+        }
     )
 
     class Meta:
@@ -19,6 +24,16 @@ class UserUpdateForm(forms.ModelForm):
             'email': 'Email cím',
             'is_active': 'Aktív'
         }
+        error_messages = {
+            'username': {
+                'unique': 'Ez a felhasználónév már foglalt.',
+                'invalid': 'A felhasználónév formátuma hibás.'
+            },
+            'email': {
+                'invalid': 'Helytelen e-mail formátum.'
+            },
+        }
+
         help_texts = {
             'username': 'Felhasználónév: csak betűk, számok és @/./+/-/_ karakterek engedélyezettek!',
             'is_active': 'A felhasználó aktiválása/deaktiválása'

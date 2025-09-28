@@ -9,11 +9,15 @@
     <div class="user-add-div">
         <div class="user-add-container">
             <form method="POST">
-                <h3 class="user-add-title-card">Felhasználó szerkesztése: {{ form.instance.username }} ({{ form.instance.last_name }} {{ form.instance.first_name }})</h3>
+                <h3 class="user-add-title-card">Felhasználó szerkesztése: {{ form.instance.username }}
+                    ({{ form.instance.last_name }} {{ form.instance.first_name }})</h3>
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="{{ form.username.id_for_label }}">Felhasználónév</label>
                     {{ form.username }}
+                    {% for error in form.username.errors %}
+                        <p class="error">{{ error }}</p>
+                    {% endfor %}
                     <small>Felhasználónév: csak betűk, számok és @/./+/-/_ karakterek engedélyezettek.</small>
                 </div>
                 <div class="form-group">
@@ -23,7 +27,6 @@
                 <div class="form-group">
                     <label for="{{ form.last_name.id_for_label }}">Vezetéknév</label>
                     {{ form.last_name }}
-
                 </div>
                 <div class="form-group">
                     <label for="{{ form.email.id_for_label }}">Email cím</label>
