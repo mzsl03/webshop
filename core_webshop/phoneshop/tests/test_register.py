@@ -105,7 +105,7 @@ class RegisterViewTests(TestCase):
         invalid_data['email'] = ''
 
         response = self.client.post(self.register_url, data=invalid_data)
-        self.assertEqual(response.status_code, 200)  # újra a form
+        self.assertEqual(response.status_code, 200)
         self.assertFalse(User.objects.filter(username='newuser').exists())
 
     def test_registration_requires_login(self):
