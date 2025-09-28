@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login as auth_login
 from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect, get_object_or_404
 from openpyxl import Workbook
+from django.views.decorators.csrf import csrf_exempt
 from support_files.availability import *
 
 
@@ -118,13 +119,24 @@ def checkout(request):
         'worker': worker
     })
 
+@login_required(login_url='/')
+@csrf_exempt
+def delete_receipt(request, id):
+    try:
+        qs = Sales.objects.filter(id=id)
+        deleted_count, _ = qs.delete()
+        return JsonResponse({"success": True, 'deleted': deleted_count})
+    except Exception as e:
+        return JsonResponse({"success": False, 'error': str(e)}, status=500)
+
 
 @login_required(login_url='/')
 def receipts(request):
+
     grouped_sales = (
         Sales.objects
         .annotate(selling_date=TruncMinute('selling_time'))
-        .values('costumer_name', 'selling_date')
+        .values("id",'costumer_name', 'selling_date')
         .annotate(total_price=Sum('price'))
         .order_by('-selling_date')
     )
