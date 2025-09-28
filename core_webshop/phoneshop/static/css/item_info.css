@@ -1,3 +1,8 @@
+.wrap {
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+}
+
 .product-container {
     display: flex;
     justify-content: space-between;
