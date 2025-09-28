@@ -10,8 +10,7 @@ Fontos szempont, hogy az alaklamazás felhasználóbarát legyen,
 
 A partnercégek számára biztosított felületen az értékesítők gyorsan elérhetik a hozzájuk tartozó üzletek készleteit,
 és szükség esetén bővíthetik azokat egy virtuális raktárból.
-Riportkészítési funkciót biztosít, amely lehetővé teszi a napi, heti és havi (utóbbi kettő autómatikusan, megadott rendszeresség alapján) 
-értékesítési adatok megjelenítését Excel formátumban, így segítve az értékesítő munkáját, és a vállalat üzleti folyamatainak módosítását.
+Riportkészítési funkciót biztosít, amely lehetővé teszi a napi riportok generálását, amely az aznapi vásárlásokat összesíti és megjelenítését biztosítja Excel formátumban, így segítve az értékesítő munkáját, és a vállalat üzleti folyamatainak módosítását.
 
 A több termék iránt érdeklődő vásárlók kielégítésének kulcsa a korsár funkció.
 Az értékesítő munkatárs így egyszerre több termék árusítását tudja elvégezni.
@@ -32,8 +31,8 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 **Fő feladatkörök:**
 
 - **Backend fejlesztés:** adatbázis, API-k, üzleti logika megvalósítása.
-- **Frontend fejlesztés:** reszponzív Angular alapú felhasználói felület kialakítása.
-- **Tesztelés:** egység- és funkcionális tesztek készítése, hibajavítás.
+- **Frontend fejlesztés:** HTML, CSS, JS használatával felhasználói felület kialakítása.
+- **Tesztelés:** egység tesztek elkészítése és hibajavítás.
 - **Dokumentáció:** követelmény- és rendszerterv, tesztterv, végső projektleírás elkészítése.
 
 | Funkció / Story            | Feladat / Task                            | Prioritás | Becslés | Aktuális becslés | Eltelt idő | Hátralévő idő |
@@ -61,24 +60,22 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
 **Funkcionális követelmények**
 
-- Felhasználók regisztrációja és bejelentkezése email-cím és jelszó alapján.  
-- Jogosultsági szintek kezelése (admin, értékesítő, partner).  
+- Felhasználók regisztrációja és bejelentkezése email-cím, felhasználónév és jelszó alapján.  
+- Jogosultsági szintek kezelése (admin, értékesítő).  
 - Termékek listájának megjelenítése valós idejű készletadatokkal.  
-- Készletfigyelés és automatikus riasztás alacsony készletszint esetén.  
-- Termékek keresése név, ár, típus alapján.  
-- Találatok szűrése kategóriák és árkategóriák szerint.  
-- Kosár funkció: termékek hozzáadása, eltávolítása, végösszeg számítása.  
-- Vásárlási folyamat támogatása számla előnézettel és kiállítással.  
+- Készletfigyelés és rendelés biztosítása alacsony termékszám esetén.  
+- Termékek keresése név, ár, kategória alapján.  
+- Találatok szűrése kategóriák és ár szerint.  
+- Kosár funkció: termékek hozzáadása, eltávolítása.  
+- Vásárlási folyamat támogatása, számla kiállítása.  
 - Számla sztornózása hibás tranzakció esetén.  
-- Napi riport manuális indítása az eladásokról.  
-- Heti és havi riportok automatikus generálása Excel formátumban.  
+- Napi riport manuális indítása az eladásokról Excel formátumban.  
 - Adminisztrátor által kezelt készletkezelés és felhasználó-hozzárendelés.  
 - Partnercégek regisztrációja és jogosultsági kiosztása.  
-- Rendszer naplózza a felhasználói és adminisztratív műveleteket.  
 
 **Nem funkcionális követelmények**
 
-- A felhasználói felület legyen reszponzív és könnyen áttekinthető.  
+- A felhasználói felület legyen könnyen áttekinthető.  
 - Nagy terhelés alatt is biztosítson stabil működést.  
 - Keresési és szűrési műveletek maximum 2 másodpercen belül válaszoljanak.  .  
 - A felület webes környezetben hibátlanul működjön.  
@@ -99,9 +96,7 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 
 **Rendszerszereplők:**
 - Adminisztrátor  
-- Értékesítő  
-- Partnercég  
-- Vásárló  
+- Értékesítő
 
 **Rendszerhasználati esetek és lefutásaik:**
 
@@ -122,37 +117,24 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 - Hibás számlák sztornózása.  
 - Napi riport manuális indítása és letöltése.  
 
-**Partnercég:**
-- Saját hozzáférés kezelése.  
-- Hozzárendelt készletek megtekintése.  
-- Termékek státuszának követése.  
-
-**Vásárló:**
-- Termékek megtekintése és leírásaik olvasása.  
-- Kosárba helyezés az értékesítő közreműködésével.  
-- Vásárlás jóváhagyása és visszaigazolás fogadása.  
-
 ### Menü-hierarchiák:
 
 - **BEJELENTKEZÉS**  
   - Bejelentkezés  
   - Regisztráció  
-  - Segítség (Help)  
 
 - **FŐMENÜ (Értékesítő számára)**  
   - Terméklista  
   - Keresés és szűrés  
   - Kosár megtekintése  
   - Vásárlás / számla kiállítás  
-  - Riportok (Napi / Heti / Havi)  
+  - Riportok (Napi)  
   - Kijelentkezés  
 
 - **ADMIN MENÜ**  
   - Felhasználókezelés  
   - Termék- és készletkezelés  
-  - Partnercégek kezelése  
   - Számlák kezelése  
-  - Rendszernaplók és biztonsági beállítások  
 
 ### Fizikai környezet
 
@@ -229,7 +211,7 @@ A termékek és kategóriák listája dinamikusan, a backend adatai alapján jel
 
 A rendelés leadása után a rendszer automatikusan generál egy számlát PDF formátumban, amelyet az értékesítő ott helyben ki is. A tud nyomtatni. Amennyiben a rendelést mégis vissza kell vonni, akár ott helyben, akár napokkal később, a sztornózás lehetősége is biztosított: a rendelés státusza ilyenkor módosul, és a készlet visszaállításra kerül.
 
-A riportkészítési modul különösen fontos a menedzsment számára. A riportok csak az értékesítők tudják majd legenerálni, emellett heti és havi riportok automatikusan kerülnek legenerálásra. Ezek a riportok a backendben előre aggregált és feldolgozott adatokra épülnek, amely Excel file-ba lesz kiexportálva. Így a felhasználók gyors áttekintést kaphatnak az értékesítési trendekről, a legnépszerűbb termékekről, vagy a rendelések volumenéről.
+A riportkészítési modul különösen fontos a menedzsment számára. A riportok csak az értékesítők tudják majd legenerálni, amelyek tartalmazzák az aznapi eladásokat és hogy melyik üzletben történt ez. Ezek a riportok a backendben előre aggregált és feldolgozott adatokra épülnek, amely Excel file-ba lesz kiexportálva. Így a felhasználók gyors áttekintést kaphatnak az értékesítési trendekről, a legnépszerűbb termékekről, vagy a rendelések volumenéről.
 
 A weboldal teljes mértékben reszponzív kialakítású, vagyis asztali számítógépen, tableten és mobiltelefonon egyaránt felhasználóbarát megjelenést biztosít. A CSS gondoskodik arról, hogy az egyes elemek méretezése, elrendezése és stílusa minden képernyőméreten megfelelő legyen. A CSS gondoskodik majd a nyomtatási kép helyes megjelenítéséért, hogy minden fontos információ látható legyen a nyomtatott számlán. A HTML sablonokat a Django Template Engine állítja össze, így lehetőség van dinamikus tartalmak és komponensek könnyű integrálására.
 
@@ -288,7 +270,7 @@ amely csapat az elvárt működést próbálják elérni.
   - Adatbázis kezelés:
     - adatok rögzítése, módosítása és törlése hibamentesen működjön.
   - Riport generálás:
-    - napi, heti és havi riportok pontos adatokat mutassanak.
+    - napi riportok pontos adatokat mutassanak.
   - Raktár funkció:
     - készletnövelés működjön minden partnercég esetén.
 - Frontend funkciók:
@@ -306,7 +288,6 @@ amely csapat az elvárt működést próbálják elérni.
     - Kosár tartalmának mentése kijelentkezés után.
   - Riportok:
     - Napi riport manuális készítése.
-    - Heti és havi riportok automatikus generálása.
 
 ### Telepitési terv
 
