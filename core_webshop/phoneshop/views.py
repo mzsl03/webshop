@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login as auth_login
 from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect, get_object_or_404
 from openpyxl import Workbook
+from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from support_files.availability import *
 
@@ -291,6 +292,16 @@ def add_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST)
         if form.is_valid():
+            name = form.cleaned_data["name"]
+            category = form.cleaned_data["category"]
+
+            if Products.objects.filter(name=name, category=category).exists():
+                messages.add_message(request, messages.ERROR, "Ez a termék már létezik!")
+                return render(request, 'add_product.html', {
+                    'form': form,
+                    "categories": all_categories
+                })
+
             product = form.save()
             if product.category == 'Telefon':
                 return redirect('edit_specs', product_id=product.id)
