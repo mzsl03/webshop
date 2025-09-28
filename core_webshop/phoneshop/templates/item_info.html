@@ -67,16 +67,18 @@
                     {% endif %}
 
                     <button type="submit" class="btn kosar_btn">Kosárba</button>
-                <div class="order-btn">
-                    <button type="submit" class="btn order_btn" id="order">Megrendelés</button>
-                </div>
+                    <div class="order-btn">
+                        <button type="submit" class="btn order_btn" id="order">Megrendelés</button>
+                    </div>
                 </form>
 
             {% else %}
                 {% if user.is_superuser %}
-                    <div style="align-content: center">
-                        <a href="{% url 'edit_specs' product.id %}" class="btn">Termék szerkesztése</a>
-                    </div>
+                    {% if product.category == 'Telefon' %}
+                        <div style="align-content: center">
+                            <a href="{% url 'edit_specs' product.id %}" class="btn">Termék szerkesztése</a>
+                        </div>
+                    {% endif %}
                 {% endif %}
             {% endif %}
         </div>
@@ -92,9 +94,9 @@
             </div>
             <div class="form-group">
                 <label for="{{ form.color.id_for_label }}">Szín</label>
-                
+
                 {% if errors.color %}
-                    <span>{{errors.color}}<span>
+                    <span>{{ errors.color }}<span>
                 {% endif %}
                 {{ form.color }}
                 {{ form.color.errors }}
@@ -104,7 +106,7 @@
                 <div class="form-group">
                     <label for="{{ form.storage.id_for_label }}">Tárhely</label>
                     {% if errors.storage %}
-                        <span>{{errors.storage}}<span>
+                        <span>{{ errors.storage }}<span>
                     {% endif %}
                     {{ form.storage }}
                     {{ form.storage.errors }}
