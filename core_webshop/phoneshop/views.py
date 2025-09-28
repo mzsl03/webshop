@@ -347,20 +347,25 @@ def update_order(request, order_id):
             status = data.get("status")
             order = Orders.objects.get(id=order_id)
 
-            if status in dict(Orders.status_choices):
-                order.status = status
+            old_status = order.status
+            new_status = data.get("status")
+
+            if new_status in dict(Orders.status_choices):
+                if (old_status == new_status):
+                    return JsonResponse({"success": True})
+
+                order.status = new_status
                 if (order.status == "törölve"):
                     order.delete()
                 else:
                 
                 
-                
                     if (order.product.category == "Telefon"):
                         order.product.available[list_index(order.product.id, order.color, order.storage)]  += order.quantity
+                        
                     else:
                         order.product.available[list_index_for_accessories(order.product.id, order.color)] += order.quantity
                     order.product.save()
-
                     order.save()
 
                 return JsonResponse({"success": True, "redirect_url": reverse("home")})
