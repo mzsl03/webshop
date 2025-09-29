@@ -2,7 +2,7 @@
 
 ### Áttekintés
 
-Az alkalmazás célja, hogy reszponzív felület által az értékesítők számára kényelmes és egyszerű eladási felületet biztosítson.
+Az alkalmazás célja, hogy barátságos felület által az értékesítők számára kényelmes és egyszerű eladási felületet biztosítson.
 A rendszer gyakori használata miatt a felület kialakításánál kiemelt szempont a kezelhetőség és az átláthatóság.
 Bejelentkezést követően láthatóvá válik az elérhető termékek listája.
 Alacsony készletszám esetén a rendszer jelzést ad, és lehetőséget biztosít a készlet bővítésére egy fiktív raktárból.
@@ -13,7 +13,7 @@ A rendszer szűrési funkciót biztosít, amely lehetővé teszi a termékek ár
 A rendszer lehetőséget biztosít az eladónak napi riport készítésére az adott napon eladott termékekről.
 A rendszer napi, heti és havi riportokat biztosít, amelyek közül a heti és havi riportok időzítő segítségével automatikusan generálódnak az adott időszakot követő hét, illetve hónap elején, Excel formátumban.
 A rendszer által generált riport tartalmazza az eladott termékek adatait, támogatva a raktárkészlet és a napi bevétel folyamatos ellenőrzését.
-A gördülékeny vásárlást segíti elő az eladó által kezelt kosár funkció, amelyben sorban helyezkednek el a megvásárolni kívánt tételek és a végösszeg is.
+A gördülékeny vásárlást segíti elő az eladó által kezelt kosár funkció, amelyben sorban helyezkednek el a megvásárolni kívánt tételek és a hozzájuk tartozó összeg.
 
 ### Jelenlegi helyzet
 
@@ -46,7 +46,6 @@ Az eladók hozzáadását és üzletekhez való hozzárendelését egy adminiszt
 | Adminisztrációs | Rendelés és számla kezelés         | Az értékesítők monitorozhatják a rendeléseket, sztornózhatják a számlákat.                          |
 | Adminisztrációs | Partnercégek hozzáférése           | Az admin kezeli a partnercégek jogosultságait, a terméklisták üzletenkénti aktualizálását.          |
 | Adminisztrációs | Jogosultságkezelés                 | A felhasználói jogosultságok kiosztása és karbantartása.                                            |
-| Egyéb           | Heti és havi riportok              | A rendszer automatikusan generál riportokat Excel formátumban, a készlet- és bevételi adatokkal.    |
 | Egyéb           | Riport- és naplózás támogatása     | A riportok és naplózás csökkentik a manuális adminisztrációs terheket, átláthatóságot biztosítanak. |
 | Egyéb           | Stabil működés és információelérés | Gyors, stabil rendszer, amely támogatja a vásárlási és döntési folyamatokat.                        |
 | Egyéb           | Vásárlói élmény                    | A rendszer gördülékennyé teszi az értékesítők munkáját és javítja a vásárlói élményt.               |
@@ -91,7 +90,7 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
 -	Kategorizálás, módosítása, törlése - A termékek besorolása kategóriákba segíti a kereshetőséget.
 -	Készletkezelés integráció - A webáruház kapcsolódjon a raktárkészlethez, információt nyújtson a termékek elérhetőségéről.
 -	Kulcsszavas keresés, szűrés kategóriák szerint - A felhasználók számára biztosítani kell egy hatékony kereső- és szűrőrendszert, hogy gyorsan megtalálják a kívánt termékeket.
--	Termékek hozzáadása/eltávolítása, árösszesítés - A kosár funkcióval az eladó hozzáadhatja vagy eltávolíthatja a termékeket, miközben a rendszer automatikusan kiszámítja a végösszeget.
+-	Termékek hozzáadása/eltávolítása - A kosár funkcióval az eladó hozzáadhatja vagy eltávolíthatja a termékeket és kiírja a termékekhez tartozó árakat.
 -	Kosárba helyezés - A kiválasztott terméket a felhasználó egy kattintással a kosárba helyezheti, ahol később módosíthatja a mennyiséget.
 -	Megrendelés leadása - A vásárló a kosár tartalmát megerősítve elindíthatja a rendelési folyamatot.
 -	Rendelés visszaigazolása - A sikeres tranzakció után a vásárló automatikus visszaigazolást kap a rendelés részleteiről.
@@ -111,7 +110,6 @@ A riportoknak és naplózásnak támogatniuk kell a pénzügyi és számviteli e
 | Felhasználói   | Keresés és szűrés  | A felhasználó kereshet és szűrhet számlaszám, ár, típus és egyéb tulajdonságok alapján.                                |
 | Felhasználói   | Kosár funkció      | A felhasználó a kiválasztott termékeket kosárba teheti, és azonnal láthatja a végösszeget.                             |
 | Riport         | Napi riport        | Az értékesítők napi riportot készíthetnek az eladott termékekről, manuálisan indítva.                                  |
-| Riport         | Heti/Havi riport   | A rendszer automatikusan heti és havi riportokat generál Excel formátumban, időzítő segítségével.                      |
 | Riport         | Riport tartalom    | A riportok tartalmazzák az eladott termékek adatait, a készlet állapotát és a napi bevételeket.                        |
 | Adminisztráció | Készletkezelés     | Az adminisztrátor jogosult a készletek frissítésére, bővítésére és üzletek közti szinkronizálására.                    |
 | Adminisztráció | Felhasználókezelés | Az admin eladók hozzáadását, üzletekhez rendelését és jogosultságaik kezelését végzi.                                  |
