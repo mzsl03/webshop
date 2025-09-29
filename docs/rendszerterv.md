@@ -19,6 +19,10 @@ A rendszer elsődleges célja, hogy csökkentse az értékesítési folyamatok i
 egyszerűsítse a munkatársak mindennapi tevékenységeit,
 valamint pontos és naprakész információkat biztosítson a készletekről és az értékesítésekről.
 
+Emellett a rendszer hozzájárul a hibák minimalizálásához, hiszen a digitális nyilvántartás csökkenti a kézi adminisztrációból fakadó tévedéseket.
+A modern, automatizált riportkészítés és készletkezelés segítségével a partnereik hatékonyabban tervezheti meg jövőbeli készleteit és értékesítési stratégiáit, ezáltal növelve a piaci versenyképességet.
+A folyamatos fejlesztéseknek köszönhetően a rendszer hosszú távon is rugalmasan alakítható, így képes lesz alkalmazkodni a változó üzleti igényekhez.
+
 ### Projektterv
 
 **Csapattagok és közös felelősség körök**
@@ -26,7 +30,10 @@ valamint pontos és naprakész információkat biztosítson a készletekről és
 A négy fejlesztő egységes csapatként dolgozik, így mindenki részt vesz a backend, 
 frontend, tesztelés és dokumentáció feladataiban is.
 
-A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
+A munka megosztás dinamikusan, ez a megközelítés lehetővé teszi, hogy a csapat gyorsan reagáljon a projekt igényeinek változásaira,
+valamint biztosítja, hogy ne legyen egyetlen kritikus tudáspont, ahol a projekt megakadna egy személy hiánya miatt.
+
+A tudásmegosztás és az átlátható kommunikáció így kiemelt szerepet kap a fejlesztési folyamatban.
 
 **Fő feladatkörök:**
 
@@ -39,17 +46,20 @@ A munka megosztás dinamikusan, az aktuális projektigények szerint történik.
 |----------------------------|-------------------------------------------|-----------|---------|------------------|------------|---------------|
 | Követelményspecifikáció    | Dokumentum elkészítése                    | 0         | 10      | 10               | 10         | 0             |
 | Funkcionális specifikáció  | Funkciók és folyamatok leírása            | 0         | 10      | 10               | 10         | 0             |
-| Rendszerterv               | Architektúra és adatmodell kidolgozása    | 0         | 14      | 14               | 8          | 6             |
-| Adatmodell                 | Adatbázis struktúra megtervezése          | 1         | 6       | 6                | 4          | 2             |
-| Backend alapfunkciók       | API fejlesztés és üzleti logika           | 2         | 12      | 12               | 2          | 10            |
-| Frontend alapok            | HTML/CSS, UI tervezés                     | 2         | 10      | 10               | 3          | 7             |
-| Login funkció              | Bejelentkezés és jogosultságkezelés       | 2         | 8       | 8                | 0          | 8             |
-| Termékkezelés              | Termékek megjelenítése, keresés, szűrés   | 2         | 10      | 10               | 0          | 10            |
-| Kosár funkció              | Kosár logika és UI implementálása         | 2         | 10      | 10               | 0          | 10            |
-| Riport funkció             | Napi/heti/havi riport készítése           | 1         | 8       | 8                | 0          | 8             |
-| Tesztelés                  | Unit és funkcionális tesztek végrehajtása | 1         | 10      | 10               | 0          | 10            |
+| Rendszerterv               | Architektúra és adatmodell kidolgozása    | 0         | 14      | 14               | 14         | 0             |
+| Adatmodell                 | Adatbázis struktúra megtervezése          | 0         | 6       | 6                | 6          | 0             |
+| Backend alapfunkciók       | API fejlesztés és üzleti logika           | 0         | 12      | 12               | 24         | 0             |
+| Frontend alapok            | HTML/CSS, UI tervezés                     | 0         | 10      | 10               | 10         | 0             |
+| Login funkció              | Bejelentkezés és jogosultságkezelés       | 0         | 8       | 8                | 8          | 0             |
+| Termékkezelés              | Termékek megjelenítése, keresés, szűrés   | 0         | 10      | 10               | 16         | 0             |
+| Kosár funkció              | Kosár logika és UI implementálása         | 0         | 10      | 10               | 12         | 0             |
+| Riport funkció             | Napi/heti/havi riport készítése           | 0         | 8       | 8                | 9          | 0             |
+| Tesztelés                  | Unit és funkcionális tesztek végrehajtása | 0         | 10      | 10               | 11         | 0             |
 
 *Az Becslés/Aktuális becslés/Eltelt idő/Hátralévő idő oszlopok órában értendőek*
+
+A táblázat folyamatosan frissítésre kerül a fejlesztés során, így mindig aktuális képet ad a projekt állapotáról.
+Segíti a csapatkommunikációt és az időgazdálkodást, mivel egyértelművé teszi, mely feladatok igényelnek azonnali figyelmet, és hol szükséges erőforrásokat átcsoportosítani.
 
 ### Üzleti folyamatok modellje
 
@@ -144,6 +154,10 @@ A rendszer nem igényel telepítést a felhasználó eszközére, mivel modern b
 A szerveroldali környezet a tervek szerint helyi (lokális) szerveren kerül kialakításra,
 mivel ennek üzemeltetése jelentősen alacsonyabb költséggel jár,
 így partnereink számára gazdaságosabb megoldást biztosít a rendszer hosszú távú fenntartására.
+
+Biztonsági lépéseket teszünk az adatok megfelelő kezelése érdekében is, azáltal, hogy az adatbázishoz való hozzáférést csak
+a megfelelő jogosultsággal rendelkezők számára ösztjuk meg. Az adatbázis szerver állandó üzemeltetésével és karbantartásával
+próbáljuk elérni, hogy a felhasználók számára gördülékeny adathozzáférés jöjjön létre.
 
 A rendszer teljes mértékben open source komponensekre épül, nem használ megvásárolt, zárt forráskódú szoftvert.
 
